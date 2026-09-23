@@ -1,4 +1,4 @@
-module github.com/lianqingsec/NucleiPocGather
+module github.com/AMJIYU/NucleiPocGather
 
 go 1.20
 

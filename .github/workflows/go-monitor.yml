@@ -32,10 +32,16 @@ jobs:
           echo "$HOME/.local/bin" >> "$GITHUB_PATH"
           nuclei -version
 
+      - name: Build Go monitor
+        run: |
+          go build -trimpath -ldflags "-s -w" \
+            -o "$RUNNER_TEMP/nuclei-poc-monitor" \
+            ./cmd/nuclei-poc-monitor
+
       - name: Run Go monitor
         run: |
           limit="${{ github.event.inputs.limit || '0' }}"
-          go run ./cmd/nuclei-poc-monitor --limit "$limit" --workers 4
+          "$RUNNER_TEMP/nuclei-poc-monitor" --limit "$limit" --workers 4
 
       - name: Commit generated results
         run: |

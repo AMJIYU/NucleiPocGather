@@ -6,7 +6,7 @@ import (
 	"log"
 
 	"github.com/gogf/gf/v2/errors/gerror"
-	"github.com/lianqingsec/NucleiPocGather/internal/monitor"
+	"github.com/AMJIYU/NucleiPocGather/internal/monitor"
 )
 
 func main() {
