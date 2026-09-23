@@ -28,9 +28,16 @@ jobs:
 
       - name: Install Nuclei
         run: |
+          set -euo pipefail
           install_dir="$RUNNER_TEMP/nuclei-bin"
           mkdir -p "$install_dir"
-          curl -fsSL https://raw.githubusercontent.com/projectdiscovery/nuclei/main/install.sh | sh -s -- -b "$install_dir"
+          asset_url="$(curl -fsSL https://api.github.com/repos/projectdiscovery/nuclei/releases/latest \
+            | jq -r '.assets[] | select(.name | endswith("_linux_amd64.zip")) | .browser_download_url' \
+            | head -n 1)"
+          test -n "$asset_url"
+          curl -fsSL "$asset_url" -o "$RUNNER_TEMP/nuclei.zip"
+          unzip -q "$RUNNER_TEMP/nuclei.zip" nuclei -d "$install_dir"
+          chmod +x "$install_dir/nuclei"
           test -x "$install_dir/nuclei"
           echo "$install_dir" >> "$GITHUB_PATH"
           "$install_dir/nuclei" -version
