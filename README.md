@@ -50,6 +50,23 @@ GitHub Actions 默认每天北京时间 `11:17` 运行一次，也支持手动�
 
 Workflow：<https://github.com/AMJIYU/NucleiPocGather/actions/workflows/go-monitor.yml>
 
+## 自动发布可执行文件
+
+推送版本标签后，Release Workflow 会自动测试并编译常见平台：
+
+- Windows amd64 / arm64
+- macOS Intel / Apple Silicon（arm64）
+- Linux amd64 / arm64
+
+创建并推送版本标签：
+
+```bash
+git tag v1.0.0
+git push origin v1.0.0
+```
+
+随后可在 [Releases](https://github.com/AMJIYU/NucleiPocGather/releases) 下载对应平台的压缩包和 `SHA256SUMS` 校验文件。也可以在 Actions 中手动运行 `Release Go Nuclei POC Monitor` 并填写版本标签。
+
 ## 目录说明
 
 - `poc/`: 已通过 Nuclei `-validate` 的模板。

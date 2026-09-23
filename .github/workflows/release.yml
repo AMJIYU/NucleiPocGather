@@ -1,0 +1,133 @@
+name: Release Go Nuclei POC Monitor
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Release tag, for example v1.0.0"
+        required: true
+        type: string
+        default: "v1.0.0"
+
+permissions:
+  contents: write
+
+env:
+  GO_VERSION: "1.22.x"
+  RELEASE_TAG: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.ref_name }}
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: ${{ env.GO_VERSION }}
+
+      - name: Test
+        run: go test -race ./...
+
+      - name: Vet
+        run: go vet ./...
+
+  build:
+    name: Build ${{ matrix.goos }}/${{ matrix.goarch }}
+    needs: test
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - goos: windows
+            goarch: amd64
+            extension: .exe
+          - goos: windows
+            goarch: arm64
+            extension: .exe
+          - goos: darwin
+            goarch: arm64
+            extension: ""
+          - goos: darwin
+            goarch: amd64
+            extension: ""
+          - goos: linux
+            goarch: amd64
+            extension: ""
+          - goos: linux
+            goarch: arm64
+            extension: ""
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: ${{ env.GO_VERSION }}
+
+      - name: Build and package
+        env:
+          GOOS: ${{ matrix.goos }}
+          GOARCH: ${{ matrix.goarch }}
+          BINARY_EXTENSION: ${{ matrix.extension }}
+        run: |
+          set -euo pipefail
+          version="${RELEASE_TAG#v}"
+          package_name="nuclei-poc-monitor_${version}_${GOOS}_${GOARCH}"
+          package_dir="$RUNNER_TEMP/$package_name"
+          mkdir -p "$package_dir" dist
+          binary="$package_dir/nuclei-poc-monitor${BINARY_EXTENSION}"
+
+          CGO_ENABLED=0 GOOS="$GOOS" GOARCH="$GOARCH" \
+            go build -trimpath -ldflags "-s -w" -o "$binary" ./cmd/nuclei-poc-monitor
+
+          if [ "$GOOS" = "windows" ]; then
+            zip -j "$(pwd)/dist/${package_name}.zip" "$binary"
+          else
+            tar -czf "$(pwd)/dist/${package_name}.tar.gz" \
+              -C "$package_dir" "nuclei-poc-monitor"
+          fi
+
+      - name: Upload package
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-${{ matrix.goos }}-${{ matrix.goarch }}
+          path: dist/*
+          if-no-files-found: error
+          retention-days: 7
+
+  release:
+    name: Publish GitHub Release
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download packages
+        uses: actions/download-artifact@v4
+        with:
+          pattern: release-*
+          path: release-assets
+          merge-multiple: true
+
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          case "$RELEASE_TAG" in
+            v*) ;;
+            *) echo "Release tag must start with v: $RELEASE_TAG"; exit 1 ;;
+          esac
+          cd release-assets
+          sha256sum * > SHA256SUMS
+          gh release create "$RELEASE_TAG" * \
+            --repo "$GITHUB_REPOSITORY" \
+            --title "Nuclei POC Monitor $RELEASE_TAG" \
+            --generate-notes
