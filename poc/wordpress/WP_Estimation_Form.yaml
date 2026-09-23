@@ -1,24 +1,24 @@
-id: WP_Estimation_Form
+id: wp_estimation_form
 
 info:
-  name: "WP Cost Estimation <= 9.642 - Missing Authorization to Arbitrary File Upload/Delete"
+  name: >
+    WP Cost Estimation < 9.660 - Upload Directory Traversal
   author: topscoder
-  severity: critical
-  description: "The WP Cost Estimation plugin for WordPress is vulnerable to arbitrary file uploads and deletion due to missing file type validation in the lfb_upload_form and lfb_removeFile AJAX actions in versions up to, and including, 9.642. This makes it possible for unauthenticated attackers to upload arbitrary files on the affected sites server which may make remote code execution possible. Additionally, the attacker can also delete files on the server such as database configuration files, subsequently uploading their own database files."
+  severity: medium
+  description: >
+    The WP Cost Estimation plugin for WordPress is vulnerable to Upload Directory Traversal in versions before 9.660 via the uploadFormFiles function. This allows attackers to overwrite any file with a whitelisted type on an affected site.
   reference:
-    - https://www.wordfence.com/blog/2019/02/vulnerabilities-patched-in-wp-cost-estimation-plugin/
-    - https://www.zdnet.com/article/another-wordpress-commercial-plugin-gets-exploited-in-the-wild/
-    - https://wpscan.com/vulnerability/9219
-    - https://www.acunetix.com/vulnerabilities/web/wordpress-plugin-wp-cost-estimation-payment-forms-builder-multiple-vulnerabilities-9-642/
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/65a9e877-e870-4e36-985d-c0629abe3f78?source=api-prod
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
-    cvss-score: 9.8
-    cve-id:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L
+    cvss-score: 6.5
+    cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/WP_Estimation_Form/"
     google-query: inurl:"/wp-content/plugins/WP_Estimation_Form/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,WP_Estimation_Form,critical
+  tags: cve,wordpress,wp-plugin,WP_Estimation_Form,medium
 
 http:
   - method: GET
@@ -56,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 9.644')
+          - compare_versions(version, '< 9.660')

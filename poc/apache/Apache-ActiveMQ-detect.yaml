@@ -1,25 +1,28 @@
-http:
-- matchers:
-  - type: word
-    words:
-    - <title>Apache ActiveMQ</title>
-    - <h2>Welcome to the Apache ActiveMQ!</h2>
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}'
-  stop-at-first-match: true
-id: Apache-ActiveMQ-detect
+id: apache-activemq-detect
+
 info:
-  author: rix4uni
-  metadata:
-    fofa-query:
-    - http.title:"Apache ActiveMQ"
-    shodan-query:
-    - title:"Apache ActiveMQ"
-  name: Apache ActiveMQ Detect
+  name: Apache ActiveMQ Detection
+  author: pussycat0x
   severity: info
-  tags: tech,Apache,ActiveMQ
+  description: |
+    Apache ActiveMQ is an open source message broker written in Java together with a full Java Message Service client. It provides "Enterprise Features" which in this case means fostering the communication from more than one client or server.
+  metadata:
+    max-request: 2
+    verified: true
+    shodan-query: 'product:"Apache ActiveMQ"'
+  tags: network,activemq,oss,detect
+
+tcp:
+  - inputs:
+      - data: "HELP\n\n\u0000"
+
+    host:
+      - "{{Hostname}}"
+    port: 61613
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "Unknown STOMP action"
+          - "norg.apache.activemq.transport.stomp"

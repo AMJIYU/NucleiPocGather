@@ -1,23 +1,24 @@
-id: Spring Detect
+id: spring-detect
 info:
-  author: Rahul Nakum
-  name: Spring Detect
+  name: Java Spring Detection
+  author: Adam Crosser
   severity: info
+  reference:
+    - https://mkyong.com/spring-boot/spring-rest-error-handling-example/
+  tags: tech,java,spring
 requests:
-- attack: sniper
-  matchers:
-  - status:
-    - 200
-    type: status
-  matchers-condition: and
-  max-redirects: 1
-  payloads:
-    themeSlug: /home/hanonymous371/custom/spring.txt
-  raw:
-  - 'GET /{{themeSlug}} HTTP/1.1
-
-    Host: {{Hostname}}
-
-    '
-  redirects: true
-  threads: 50
+  - method: GET
+    path:
+      - "{{BaseURL}}/error"
+    redirects: true
+    max-redirects: 2
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - '"status":999'
+        case-insensitive: true
+      - type: status
+        status:
+          - 500

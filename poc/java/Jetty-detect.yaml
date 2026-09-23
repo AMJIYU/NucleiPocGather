@@ -1,23 +1,16 @@
-id: Jetty-detect
+id: jetty-detect
 
 info:
   name: Jetty Detect
-  author: rix4uni
+  author: glatisant
   severity: info
-  metadata:
-    shodan-query:
-      - "Server: Jetty"
-    fofa-query:
-      - "Server: Jetty"
-  tags: tech,Jetty
 
 http:
   - method: GET
     path:
-      - "{{BaseURL}}"
-
-    extractors:
-      - type: regex
-        part: header
-        regex:
-          - "Server: Jetty\\([0-9]+\\.[0-9]+\\.[0-9a-zA-Z.]+\\)|Server: Jetty\\([0-9]+\\.[0-9]+\\.[0-9]+\\.[a-zA-Z0-9]+\\)|Server: Jetty"
+      - "{{BaseURL}}/"
+      
+    matchers:
+      - type: word
+        words:
+          - "Powered by Jetty"

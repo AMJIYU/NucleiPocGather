@@ -1,137 +1,38 @@
-id: OR
+id: open-redirect
 info:
-  author: the_shadow_0
-  description: detect all url
-  name: OR
-  severity: medium
-http:
-- matchers:
-  - part: header
-    type: word
-    words:
-    - 'Location: https://bing.com'
-  - status:
-    - 301
-    - 302
-    - 303
-    - 307
-    - 308
-    type: status
-  matchers-condition: and
-  method: GET
-  path:
-  - '{{BaseURL}}/https://bing.com/'
-  - '{{BaseURL}}/http://bing.com/'
-  - '{{BaseURL}}//https://bing.com/'
-  - '{{BaseURL}}/%09/https://bing.com/'
-  - '{{BaseURL}}/%5cbing.com/'
-  - '{{BaseURL}}/%2F/bing.com/'
-  - '{{BaseURL}}//bing%E3%80%82com'
-  - '{{BaseURL}}/%0Dbing.com'
-  - '{{BaseURL}}//bing.com/%2f%2e%2e'
-  - '{{BaseURL}}//bing.com/%2e%2e'
-  - '{{BaseURL}}//bing.com/%2f..'
-  - '{{BaseURL}}/login?to=https://bing.com/'
-  - '{{BaseURL}}/?view=https://bing.com/'
-  - '{{BaseURL}}/out?/https://bing.com/'
-  - '{{BaseURL}}/out/https://bing.com/'
-  - '{{BaseURL}}/cgi-bin/redirect.cgi?https://bing.com/'
-  - '{{BaseURL}}/redirect/https://bing.com/'
-  - '{{BaseURL}}/?target=https://bing.com/'
-  - '{{BaseURL}}/out?/https://bing.com/'
-  - '{{BaseURL}}/?rurl=https://bing.com/'
-  - '{{BaseURL}}/?dest=https://bing.com/'
-  - '{{BaseURL}}/?destination=https://bing.com/'
-  - '{{BaseURL}}/?image_url=https://bing.com/'
-  - '{{BaseURL}}/?go=https://bing.com/'
-  - '{{BaseURL}}/success=https://bing.com/'
-  - '{{BaseURL}}/logout=https://bing.com/'
-  - '{{BaseURL}}/login=https://bing.com/'
-  - '{{BaseURL}}/?clickurl=https://bing.com/'
-  - '{{BaseURL}}/forward_url=https://bing.com/'
-  - '{{BaseURL}}/jump_url=https://bing.com/'
-  - '{{BaseURL}}/click?u=https://bing.com/'
-  - '{{BaseURL}}/originUrl=https://bing.com/'
-  - '{{BaseURL}}/page=https://bing.com/'
-  - '{{BaseURL}}/action_url=https://bing.com/'
-  - '{{BaseURL}}/src=https://bing.com/'
-  - '{{BaseURL}}/linkAddress=https://bing.com/'
-  - '{{BaseURL}}/location=https://bing.com/'
-  - '{{BaseURL}}/request=https://bing.com/'
-  - '{{BaseURL}}/backurl=https://bing.com/'
-  - '{{BaseURL}}/ReturnUrl=https://bing.com/'
-  - '{{BaseURL}}/silentsignin?returnUrl=https://bing.com/'
-  - '{{BaseURL}}/redirect?url=https://bing.com/'
-  - '{{BaseURL}}/login?ReturnURL=https://bing.com/'
-  - '{{BaseURL}}/api/v2/redirect?url=https://bing.com/'
-  - '{{BaseURL}}/api/v1/redirect?url=https://bing.com/'
-  - '{{BaseURL}}/form-complete?return=https://bing.com/'
-  - '{{BaseURL}}/p/redirect.html?url=https://bing.com/'
-  - '{{BaseURL}}/redirect.html?url=https://bing.com/'
-  - '{{BaseURL}}/?r_url=https://bing.com/'
-  - '{{BaseURL}}/bridge?url=https://bing.com/'
-  - '{{BaseURL}}/Go/?url=https://bing.com/'
-  - '{{BaseURL}}/redirect.php?url=https://bing.com/'
-  - '{{BaseURL}}/open-external-link?url=https://bing.com/'
-  - '{{BaseURL}}/search/url?url=https://bing.com/'
-  - '{{BaseURL}}/logout?backUrl=https://bing.com/'
-  - '{{BaseURL}}/auth.php?redirect_uri=https://bing.com/'
-  - '{{BaseURL}}/go_link.php?url=https://bing.com/'
-  - '{{BaseURL}}/redirect-to/?redirect=https://bing.com/'
-  - '{{BaseURL}}/proxy.php?url=https://bing.com/'
-  - '{{BaseURL}}/redirect.php?goto=https://bing.com/'
-  - '{{BaseURL}}/visit?url=https://bing.com/'
-  - '{{BaseURL}}/goto.asp?Url=https://bing.com/'
-  - '{{BaseURL}}/go.php?url=https://bing.com/'
-  - '{{BaseURL}}/?targetOrigin=https://bing.com/'
-  - '{{BaseURL}}/?fallback=https://bing.com/'
-  - '{{BaseURL}}/?query=https://bing.com/'
-  - '{{BaseURL}}/?redirection_url=https://bing.com/'
-  - '{{BaseURL}}/?next=https://bing.com/'
-  - '{{BaseURL}}/?ref_url=https://bing.com/'
-  - '{{BaseURL}}/?state=https://bing.com/'
-  - '{{BaseURL}}/?1=https://bing.com/'
-  - '{{BaseURL}}/redirect.html?link=https://bing.com/'
-  - '{{BaseURL}}/redirect/?g=https://bing.com/'
-  - '{{BaseURL}}/partner?url=https://bing.com/'
-  - '{{BaseURL}}/?redirect_uri=https://bing.com/'
-  - '{{BaseURL}}/?forum_reg=https://bing.com/'
-  - '{{BaseURL}}/?return_to=https://bing.com/'
-  - '{{BaseURL}}/?redirect_url=https://bing.com/'
-  - '{{BaseURL}}/?return_url=https://bing.com/'
-  - '{{BaseURL}}/?host=https://bing.com/'
-  - '{{BaseURL}}/?url=https://bing.com/'
-  - '{{BaseURL}}/?redirectto=https://bing.com/'
-  - '{{BaseURL}}/?return=https://bing.com/'
-  - '{{BaseURL}}/?prejoin_data=https://bing.com/'
-  - '{{BaseURL}}/?callback_url=https://bing.com/'
-  - '{{BaseURL}}/?path=https://bing.com/'
-  - '{{BaseURL}}/?authorize_callback=https://bing.com/'
-  - '{{BaseURL}}/?email=https://bing.com/'
-  - '{{BaseURL}}/visit?ref=https://bing.com/'
-  - '{{BaseURL}}/?origin=https://bing.com/'
-  - '{{BaseURL}}/?continue=https://bing.com/'
-  - '{{BaseURL}}/?domain_name=https://bing.com/'
-  - '{{BaseURL}}/?redir=https://bing.com/'
-  - '{{BaseURL}}/?wp_http_referer=https://bing.com/'
-  - '{{BaseURL}}/?endpoint=https://bing.com/'
-  - '{{BaseURL}}/?shop=https://bing.com/'
-  - '{{BaseURL}}/?qpt_question_url=https://bing.com/'
-  - '{{BaseURL}}/?checkout_url=https://bing.com/'
-  - '{{BaseURL}}/?ref_url=https://bing.com/'
-  - '{{BaseURL}}/?redirect_to=https://bing.com/'
-  - '{{BaseURL}}/?succUrl=https://bing.com/'
-  - '{{BaseURL}}/?file=https://bing.com/'
-  - '{{BaseURL}}/?link=https://bing.com/'
-  - '{{BaseURL}}/?referrer=https://bing.com/'
-  - '{{BaseURL}}/?recipient=https://bing.com/'
-  - '{{BaseURL}}/?redirect=https://bing.com/'
-  - '{{BaseURL}}/?u=https://bing.com/'
-  - '{{BaseURL}}/?hostname=https://bing.com/'
-  - '{{BaseURL}}/?returnTo=https://bing.com/'
-  - '{{BaseURL}}/?return_path=https://bing.com/'
-  - '{{BaseURL}}/?image=https://bing.com/'
-  - '{{BaseURL}}/?requestTokenAndRedirect=https://bing.com/'
-  - '{{BaseURL}}/?retURL=https://bing.com/'
-  - '{{BaseURL}}/?next_url=https://bing.com/'
-  redirects: false
+  name: Open URL redirect detection
+  author: afaq & @melbadry9 & @Elmahdi & @pxmme1337 & @Regala_ & @andirrahmani1 & @geeknik
+  severity: low
+  description: A user-controlled input redirect users to an external website.
+  tags: redirect
+requests:
+  - method: GET
+    path:
+      - '{{BaseURL}}/example.com/'
+      - '{{BaseURL}}/example.com//'
+      - '{{BaseURL}}///;@example.com'
+      - '{{BaseURL}}///example.com/%2F..'
+      - '{{BaseURL}}/////example.com'
+      - '{{BaseURL}}//example.com/%2F..'
+      - '{{BaseURL}}//example.com/..;/css'
+      - '{{BaseURL}}/example%E3%80%82com'
+      - '{{BaseURL}}/%5Cexample.com'
+      - '{{BaseURL}}/example.com'
+      - '{{BaseURL}}//example.com/'
+      - '{{BaseURL}}/%00/example.com/'
+      - '{{BaseURL}}/%09/example.com/'
+      - '{{BaseURL}}/%0a/example.com/'
+      - '{{BaseURL}}/%0d/example.com/'
+      - '{{BaseURL}}////example.com/%2f%2e%2e'
+      - '{{BaseURL}}/%5cexample.com/%2f%2e%2e'
+      - '{{BaseURL}}@example.com'
+      - '{{BaseURL}}/{{BaseURL}}example.com'
+      - '{{BaseURL}}//{{BaseURL}}example.com/'
+      - '{{BaseURL}}////{{BaseURL}}example.com/%2f%2e%2e'
+      - '{{BaseURL}}/%5c{{BaseURL}}example.com/%2f%2e%2e'
+      - '{{BaseURL}}/?page=example.com&_url=example.com&callback=example.com&checkout_url=example.com&content=example.com&continue=example.com&continueTo=example.com&counturl=example.com&data=example.com&dest=example.com&dest_url=example.com&diexample.com&document=example.com&domain=example.com&done=example.com&download=example.com&feed=example.com&file=example.com&host=example.com&html=example.com&http=example.com&https=example.com&image=example.com&image_src=example.com&image_url=example.com&imageurl=example.com&include=example.com&langTo=example.com&media=example.com&navigation=example.com&next=example.com&open=example.com&out=example.com&page=example.com&page_url=example.com&pageurl=example.com&path=example.com&picture=example.com&port=example.com&proxy=example.com&redir=example.com&redirect=example.com&redirectUri=example.com&redirectUrl=example.com&reference=example.com&referrer=example.com&req=example.com&request=example.com&retUrl=example.com&return=example.com&returnTo=example.com&return_path=example.com&return_to=example.com&rurl=example.com&show=example.com&site=example.com&source=example.com&src=example.com&target=example.com&to=example.com&uri=example.com&url=example.com&val=example.com&validate=example.com&view=example.com&window=example.com&redirect_to=example.com&ret=example.com&r2=example.com&img=example.com&u=example.com&r=example.com&URL=example.com&AuthState=example.com'
+    matchers:
+      - type: regex
+        regex:
+          - '(?m)^(?:Location\s*?:\s*?)(?:https?://|//)?(?:[a-zA-Z0-9\-_\.@]*)example\.com.*$'
+        part: header

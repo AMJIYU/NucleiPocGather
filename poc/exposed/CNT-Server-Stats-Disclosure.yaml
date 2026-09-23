@@ -1,24 +1,19 @@
-id: CNT-Server-Stats-Disclosure
-
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - CNT_ACTIVE_DEVICES
+    - STAT_CPU
+    - HEALTH_SCEP_WIFI3
+  method: GET
+  path:
+  - '{{BaseURL}}/stats'
+  stop-at-first-match: true
+id: cnt-server-stats-disclosure
 info:
-  name: CNT Server Stats Disclosure
   author: SirBugs
+  name: CNT Server Stats Disclosure
   severity: medium
-  description: |
-    This template checks disclosing public information about the CNT server
-    Twitter@SirBagoza Github@SirBugs
-  tags: information-disclosure
-
-requests:
-  - method: GET
-    path:
-      - '{{BaseURL}}/stats'
-    stop-at-first-match: true
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - 'CNT_ACTIVE_DEVICES'
-          - 'STAT_CPU'
-          - 'HEALTH_SCEP_WIFI3'
+  tags: generic

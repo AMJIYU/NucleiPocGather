@@ -1,16 +1,18 @@
-id: RedSteel
+id: redsteel
 
 info:
-  name: "RedSteel (All Versions) - File Disclosure"
+  name: >
+    RedSteel (All Versions) - File Disclosure
   author: topscoder
   severity: high
-  description: "The RedSteel theme for WordPress is vulnerable to Sensitive Data Exposure via the 'file' parameter in the 'download.php' file. This can allow unauthenticated attackers to extract sensitive data that can be used to perform future attacks."
+  description: >
+    The RedSteel theme for WordPress is vulnerable to Sensitive Data Exposure via the 'file' parameter in the 'download.php' file. This can allow unauthenticated attackers to extract sensitive data that can be used to perform future attacks.
   reference:
-    - https://packetstormsecurity.com/files/130108/
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/6a216505-7ab3-4ec7-bb11-e1c6ceaa2aed?source=api-prod
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5
-    cve-id:
+    cve-id: 
   metadata:
     fofa-query: "wp-content/themes/RedSteel/"
     google-query: inurl:"/wp-content/themes/RedSteel/"
@@ -53,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '>0')
+          - compare_versions(version, '<= *')
