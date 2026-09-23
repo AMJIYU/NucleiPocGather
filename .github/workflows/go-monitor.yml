@@ -1,0 +1,46 @@
+name: Go Nuclei POC Monitor
+
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "Maximum templates to validate (0 means all)"
+        required: false
+        default: "0"
+  schedule:
+    - cron: "17 3 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.22.x"
+
+      - name: Install Nuclei
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/projectdiscovery/nuclei/main/install.sh | sh -s -- -b "$HOME/.local/bin"
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+          nuclei -version
+
+      - name: Run Go monitor
+        run: |
+          limit="${{ github.event.inputs.limit || '0' }}"
+          go run ./cmd/nuclei-poc-monitor --limit "$limit" --workers 4
+
+      - name: Commit generated results
+        run: |
+          git config user.name "GitHub Action"
+          git config user.email "action@github.com"
+          git add poc-go incompatible-go metadata-go
+          git diff --cached --quiet || git commit -m "chore: update Go nuclei POC collection"
+          git push
