@@ -19,6 +19,10 @@ func Run(parent context.Context, cfg Config) (runErr error) {
 	if err != nil {
 		return err
 	}
+	cfg.Workspace, err = filepath.Abs(cfg.Workspace)
+	if err != nil {
+		return gerror.Wrap(err, "resolve source workspace path")
+	}
 
 	writer, err := newOutputWriter(cfg)
 	if err != nil {
