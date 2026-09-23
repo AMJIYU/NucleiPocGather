@@ -167,20 +167,16 @@ func Run(parent context.Context, cfg Config) (runErr error) {
 		}
 	}
 
-	duplicates := 0
 	for _, item := range changedItems {
 		key := recordKey(item.Source.URL, item.Record.RelativePath)
 		if item.Record.Status == "compatible" {
 			categories := categoriesFor(item.Record.RelativePath, item.Meta)
-			paths, duplicate, writeErr := writer.writeCompatible(item, categories)
+			paths, _, writeErr := writer.writeCompatible(item, categories)
 			if writeErr != nil {
 				return writeErr
 			}
 			item.Record.Categories = categories
 			item.Record.OutputPaths = paths
-			if duplicate {
-				duplicates++
-			}
 		} else {
 			path, writeErr := writer.writeIncompatible(item, item.Record.Reason)
 			if writeErr != nil {
@@ -196,7 +192,7 @@ func Run(parent context.Context, cfg Config) (runErr error) {
 			return err
 		}
 	}
-	summary := summarizeRecords(records, duplicates)
+	summary := summarizeRecords(records)
 	if err := writeSummary(cfg.MetadataDir, summary); err != nil {
 		return err
 	}
@@ -407,14 +403,14 @@ func removeRecordOutputs(cfg Config, record Record, protected map[string]struct{
 	return nil
 }
 
-func summarizeRecords(records map[string]Record, duplicates int) Summary {
+func summarizeRecords(records map[string]Record) Summary {
 	summary := Summary{
 		GeneratedAt:    now(),
-		Duplicates:     duplicates,
 		Categories:     make(map[string]int),
 		IncompatibleBy: make(map[string]int),
 		Severities:     make(map[string]int),
 	}
+	seen := make(map[string]struct{})
 	for _, record := range records {
 		summary.Total++
 		if record.Status == "compatible" {
@@ -427,6 +423,14 @@ func summarizeRecords(records map[string]Record, duplicates int) Summary {
 				severity = "unknown"
 			}
 			summary.Severities[severity]++
+			for _, category := range record.Categories {
+				key := category + "\x00" + record.SHA256
+				if _, exists := seen[key]; exists {
+					summary.Duplicates++
+					break
+				}
+				seen[key] = struct{}{}
+			}
 			continue
 		}
 		summary.Incompatible++

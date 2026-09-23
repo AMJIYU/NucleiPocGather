@@ -189,6 +189,30 @@ func TestOutputWriterReusesDuplicateOutput(t *testing.T) {
 	}
 }
 
+func TestSummarizeRecordsCountsCurrentDuplicates(t *testing.T) {
+	records := map[string]Record{
+		"first": {
+			Status:     "compatible",
+			SHA256:     "same",
+			Categories: []string{"http"},
+		},
+		"second": {
+			Status:     "compatible",
+			SHA256:     "same",
+			Categories: []string{"http"},
+		},
+		"third": {
+			Status:     "compatible",
+			SHA256:     "different",
+			Categories: []string{"http"},
+		},
+	}
+	summary := summarizeRecords(records)
+	if summary.Duplicates != 1 {
+		t.Fatalf("summarizeRecords() duplicates = %d, want 1", summary.Duplicates)
+	}
+}
+
 func contains(values []string, wanted string) bool {
 	for _, value := range values {
 		if value == wanted {
