@@ -6,6 +6,6 @@ info:
   description: A simple workflow that runs all liferay related nuclei templates on a given target.
 
 workflows:
-  - template: technologies/liferay-portal-detect.yaml
+  - template: detect/liferay-portal-detect.yaml
     subtemplates:
-      - template: cves/2020/CVE-2020-7961.yaml
+      - template: cve/CVE-2020-7961_5.yaml

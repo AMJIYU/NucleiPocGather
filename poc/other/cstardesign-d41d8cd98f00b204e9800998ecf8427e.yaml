@@ -4,7 +4,7 @@ info:
   name: "CStar Design WordPress Theme <= 4.9 - SQL Injection"
   author: topscoder
   severity: critical
-  description: "The "CStar Design WordPress Theme" theme for WordPress is vulnerable to SQL Injection via the ‘id’ parameter in versions up to, and including 4.9 due to insufficient escaping on the user supplied parameter and lack of sufficient preparation on the existing SQL query.  This makes it possible for attackers to append additional SQL queries into already existing queries that can be used to extract sensitive information from the database."
+  description: "The \"CStar Design WordPress Theme\" theme for WordPress is vulnerable to SQL Injection via the ‘id’ parameter in versions up to, and including 4.9 due to insufficient escaping on the user supplied parameter and lack of sufficient preparation on the existing SQL query.  This makes it possible for attackers to append additional SQL queries into already existing queries that can be used to extract sensitive information from the database."
   reference:
 
   classification:

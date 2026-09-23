@@ -8,8 +8,8 @@ workflows:
 - matchers:
   - name: forbidden
     subtemplates:
-    - template: thelabda/403_bypass_workflow/403-bypass_xheaders.yaml
-    - template: thelabda/403_bypass_workflow/403-bypass_method.yaml
-    - template: thelabda/403_bypass_workflow/403-bypass_xrewriteurl.yaml
-    - template: thelabda/403_bypass_workflow/403-bypass_slash.yaml
-  template: thelabda/403_bypass_workflow/403-finder.yaml
+    - template: header/Labda_403Bypass_xheaders.yaml
+    - template: other/Labda_403Bypass_method.yaml
+    - template: other/Labda_403Bypass_xrewriteurl.yaml
+    - template: other/Labda_403Bypass_slash.yaml
+  template: other/Labda_403_Finder.yaml

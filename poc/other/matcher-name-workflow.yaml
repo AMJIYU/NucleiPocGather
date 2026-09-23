@@ -7,5 +7,5 @@ workflows:
 - matchers:
   - name: test-matcher
     subtemplates:
-    - template: workflow/match-1.yaml
-  template: workflow/match-2.yaml
+    - template: other/basic-get-another.yaml
+  template: other/match-2.yaml

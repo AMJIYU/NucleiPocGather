@@ -14,7 +14,7 @@ file:
     matchers:
       - type: regex
         regex:
-          - "gasleft\("
-          - "require\("
+          - 'gasleft\('
+          - 'require\('
           - "loop "
         condition: and

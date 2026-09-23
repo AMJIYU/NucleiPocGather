@@ -7,7 +7,7 @@ info:
   description: Environment variables and HTTP requests can be found in the HPROF
   tags: springboot,disclosure
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/heapdump"
@@ -41,4 +41,3 @@ requests:
           - "len(body) >= 100000"
           - "content_length >= 100000"
         condition: or
-        part: header

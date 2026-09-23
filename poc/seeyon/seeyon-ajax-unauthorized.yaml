@@ -1,0 +1,23 @@
+id: seeyon-ajax-unauthorized
+
+info:
+  name: Seeyon ajax Unauthorized Access
+  author: local
+  severity: high
+  description: Detects the Seeyon ajax path normalization issue without uploading a file.
+  tags: seeyon,zhiyuan,unauthorized,active
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/seeyon/thirdpartyController.do.css/..;/ajax.do"
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        part: body
+        words:
+          - 'java.lang.NullPointerException'
+

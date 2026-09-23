@@ -11,7 +11,7 @@ info:
 requests:
   - payloads:
       user: helpers/wordlists/user-list.txt
-    attack: sniper
+    attack: batteringram
     threads: 50
 
     raw:

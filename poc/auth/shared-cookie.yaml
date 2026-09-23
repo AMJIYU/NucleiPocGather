@@ -7,9 +7,9 @@ info:
 
 workflows:
   # store cookies to standard http client cookie-jar
-  - template: workflow/http-1.yaml
-  - template: workflow/http-2.yaml
+  - template: http/http1.yaml
+  - template: http/http-2_2.yaml
   # store cookie in native browser context
-  - template: workflow/headless-1.yaml
+  - template: other/headless-1.yaml
   # retrieve 2 standard library cookies + headless cookie
-  - template: workflow/http-3.yaml
+  - template: http/http-3.yaml

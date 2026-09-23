@@ -7,17 +7,17 @@ info:
   description: Workflow to test a complex scenario, e.g. race conditions when evaluating the results of the templates
 
 workflows:
-  - template: workflow/match-1.yaml
+  - template: other/basic-get.yaml
     subtemplates:
-      - template: workflow/nomatch-1.yaml
+      - template: other/nomatch-1.yaml
         subtemplates:
-          - template: workflow/match-2.yaml
-  - template: workflow/match-3.yaml
-  - template: workflow/match-2.yaml
+          - template: other/match-2.yaml
+  - template: other/match-3.yaml
+  - template: other/match-2.yaml
     matchers: 
       - name: test-matcher
         subtemplates:
-          - template: workflow/nomatch-1.yaml
+          - template: other/nomatch-1.yaml
             subtemplates:
-              - template: workflow/match-1.yaml
-  - template: workflow/match-3.yaml
+              - template: other/basic-get.yaml
+  - template: other/match-3.yaml

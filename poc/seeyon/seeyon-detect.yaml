@@ -1,0 +1,45 @@
+id: seeyon-detect
+
+info:
+  name: Seeyon Zhiyuan OA Detection
+  author: local
+  severity: info
+  description: Detects common Seeyon/Zhiyuan OA fingerprints.
+  tags: seeyon,zhiyuan,fingerprint
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/"
+      - "{{BaseURL}}/seeyon"
+      - "{{BaseURL}}/yyoa"
+    stop-at-first-match: true
+    host-redirects: true
+    max-redirects: 2
+    matchers-condition: or
+    matchers:
+      - type: word
+        part: body
+        words:
+          - 'href="/seeyon/common'
+          - 'src="/seeyon/common'
+          - '/seeyon/USER-DATA/IMAGES/LOGIN/login.gif'
+          - '/seeyon/main.do?method=main'
+          - 'seeyonProductId'
+        condition: or
+        case-insensitive: true
+      - type: word
+        part: body
+        words:
+          - 'seeyonoa/common'
+          - '/yyoa/seeyonoa/common'
+        condition: or
+        case-insensitive: true
+      - type: word
+        part: header
+        words:
+          - 'path=/yyoa'
+          - 'SY8044'
+        condition: or
+        case-insensitive: true
+

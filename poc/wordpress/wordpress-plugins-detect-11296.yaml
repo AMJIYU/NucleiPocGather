@@ -7,7 +7,7 @@ info:
 requests:
   - payloads:
       pluginSlug: helpers/wordlists/wordpress-plugins.txt
-    attack: sniper
+    attack: batteringram
     threads: 50
     raw:
       - |

@@ -8,7 +8,7 @@ info:
 
 workflows:
 
-  - template: technologies/sap-nw-abap-icm.yaml
+  - template: sap/sap-nw-abap-icm.yaml
     subtemplates:
-      - template: technologies/sap-nw-abap-webgui.yaml
-      - template: vulnerabilities/sap-nw-abap-info-leakyaml.yaml
+      - template: http/technologies/sap/sap-netweaver-webgui.yaml
+      - template: sap/sap-nw-abap-info-leak.yaml

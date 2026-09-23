@@ -8,7 +8,7 @@ info:
 requests:
   - payloads:
       uid: helpers/wordlists/numbers.txt
-    attack: sniper
+    attack: batteringram
     threads: 50
     raw:
       - |

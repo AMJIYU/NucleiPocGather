@@ -11,7 +11,7 @@ info:
 
 workflows:
 
-  - template: exposed-panels/grafana-detect.yaml
+  - template: http/exposed-panels/grafana-detect.yaml
 
     subtemplates:
-      - template: default-logins/grafana/grafana-default-credential.yaml
+      - template: http/default-logins/grafana/grafana-default-login.yaml

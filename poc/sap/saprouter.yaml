@@ -8,6 +8,6 @@ info:
 
 workflows:
 
-  - template: network/saprouter-detect.yaml
+  - template: sap/saprouter-detect.yaml
     subtemplates:
-      - template: vulnerabilities/saprouter-information-leak.yaml
+      - template: sap/saprouter-information-leak.yaml

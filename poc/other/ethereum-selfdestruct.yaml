@@ -14,7 +14,7 @@ file:
     matchers:
       - type: regex
         regex:
-          - "selfdestruct\("
-          - "address\("
-          - "payable\("
+          - 'selfdestruct\('
+          - 'address\('
+          - 'payable\('
         condition: and

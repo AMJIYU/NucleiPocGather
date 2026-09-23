@@ -7,8 +7,8 @@ info:
 
 workflows:
   - template: cnvd/CNVD-2021-17369.yaml
-  - template: vulnerabilities/other/ruijie-networks-lfi.yaml
-  - template: vulnerabilities/other/ruijie-networks-rce.yaml
-  - template: exposures/configs/ruijie-information-disclosure.yaml
-  - template: cnvd/CNVD-2020-56167.yaml
-  - template: exposures/configs/ruijie-phpinfo.yaml
+  - template: local_file_inclusion/ruijie-networks-lfi.yaml
+  - template: remote_code_execution/ruijie-networks-rce-9943.yaml
+  - template: exposed/ruijie-information-disclosure.yaml
+  - template: cnvd/CNVD-2020-56167_2.yaml
+  - template: php/ruijie-phpinfo.yaml

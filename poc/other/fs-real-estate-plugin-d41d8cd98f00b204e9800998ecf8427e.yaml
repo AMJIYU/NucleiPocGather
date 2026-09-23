@@ -4,7 +4,7 @@ info:
   name: "FireStorm Professional Real Estate Plugin <= 2.06.03 - SQL Injections"
   author: topscoder
   severity: critical
-  description: "The "FireStorm Professional Real Estate Plugin" plugin for WordPress is vulnerable to SQL Injection via the 'id' parameter in versions up to, and including, 2.06.03 due to insufficient escaping on the user supplied parameter and lack of sufficient preparation on the existing SQL query. This makes it possible for unauthenticated attackers to append additional SQL queries into already existing queries that can be used to extract sensitive information from the database."
+  description: "The \"FireStorm Professional Real Estate Plugin\" plugin for WordPress is vulnerable to SQL Injection via the 'id' parameter in versions up to, and including, 2.06.03 due to insufficient escaping on the user supplied parameter and lack of sufficient preparation on the existing SQL query. This makes it possible for unauthenticated attackers to append additional SQL queries into already existing queries that can be used to extract sensitive information from the database."
   reference:
 
   classification:

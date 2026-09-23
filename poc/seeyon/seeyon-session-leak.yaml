@@ -1,0 +1,25 @@
+id: seeyon-session-leak
+
+info:
+  name: Seeyon Zhiyuan OA Session Disclosure
+  author: local
+  severity: high
+  description: Detects unauthenticated exposure of active Seeyon session identifiers.
+  tags: seeyon,zhiyuan,session,disclosure
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/yyoa/ext/https/getSessionList.jsp?cmd=getAll"
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        part: body
+        words:
+          - '<usrID>'
+          - '<sessionID>'
+        condition: and
+

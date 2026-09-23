@@ -15,6 +15,6 @@ file:
       - type: regex
         regex:
           - "SafeMath"
-          - "unchecked \{"
+          - 'unchecked \{'
           - "uint256"
         condition: and

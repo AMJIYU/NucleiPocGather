@@ -1,0 +1,25 @@
+id: seeyon-downexcel-disclosure
+
+info:
+  name: Seeyon A6 DownExcelBeanServlet Information Disclosure
+  author: local
+  severity: medium
+  description: Detects the Seeyon endpoint that exposes user data as a downloadable file.
+  tags: seeyon,zhiyuan,a6,disclosure
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/yyoa/DownExcelBeanServlet?contenttype=username&contentvalue=&state=1&per_id=0"
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        part: header
+        words:
+          - 'attachment'
+          - 'application/x-msdownload'
+        condition: and
+

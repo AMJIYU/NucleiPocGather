@@ -6,6 +6,6 @@ info:
   severity: info
 
 workflows:
-  - template: workflow/nomatch-1.yaml
+  - template: other/nomatch-1.yaml
     subtemplates:
-      - template: workflow/match-2.yaml
+      - template: other/match-2.yaml

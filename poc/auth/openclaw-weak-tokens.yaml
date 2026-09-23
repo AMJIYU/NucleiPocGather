@@ -22,7 +22,7 @@ http:
       Content-Type: application/json
       Authorization: "Bearer §token§"
     body: '{"model":"probe","messages":[]}'
-    attack: sniper
+    attack: batteringram
     payloads:
       token:
         - change-me-to-a-long-random-token

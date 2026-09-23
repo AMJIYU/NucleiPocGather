@@ -16,7 +16,7 @@ requests:
   - payloads:
       path: helpers/wordlists/adminer-paths.txt
 
-    attack: sniper
+    attack: batteringram
     threads: 50
 
     raw:

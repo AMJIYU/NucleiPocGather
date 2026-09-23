@@ -1,0 +1,25 @@
+id: seeyon-config-disclosure
+
+info:
+  name: Seeyon A6 Configuration Disclosure
+  author: local
+  severity: high
+  description: Detects unauthenticated access to the Seeyon A6 fax configuration page.
+  tags: seeyon,zhiyuan,a6,config,disclosure
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/yyoa/ext/trafaxserver/SystemManage/config.jsp"
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        part: body
+        words:
+          - 'DatabaseName='
+          - '登录密码'
+        condition: and
+

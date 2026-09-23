@@ -1,21 +1,42 @@
 id: jira-detect
 
 info:
-  name: Detect Jira Issue Management Software
-  author: pdteam
+  name: Atlassian Jira Detection
+  author: pdteam,philippedelteil
   severity: info
-  tags: panel
+  description: Detects an Atlassian Jira login or dashboard endpoint.
+  metadata:
+    vendor: atlassian
+    product: jira
+    max-request: 3
+  tags: tech,panel,jira,atlassian
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/secure/Dashboard.jspa"
       - "{{BaseURL}}/jira/secure/Dashboard.jspa"
       - "{{BaseURL}}/login.jsp"
-
-    redirects: true
+    stop-at-first-match: true
+    host-redirects: true
     max-redirects: 2
+    matchers-condition: or
     matchers:
       - type: word
+        part: body
         words:
           - "Project Management Software"
+          - "com.atlassian.jira"
+        condition: or
+        case-insensitive: true
+      - type: word
+        part: header
+        words:
+          - "atlassian"
+        case-insensitive: true
+    extractors:
+      - type: regex
+        part: body
+        group: 1
+        regex:
+          - 'title="JiraVersion" value="([0-9.]+)'

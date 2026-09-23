@@ -6,6 +6,6 @@ info:
   severity: info
 
 workflows:
-  - template: workflow/http-value-share-template-1.yaml
+  - template: http/http-value-share-template-1.yaml
     subtemplates:
-      - template: workflow/multiprotocol-value-share-template.yaml
+      - template: other/multiprotocol-value-share-template.yaml

@@ -1,16 +1,26 @@
 id: jira-serverinfo
 
 info:
-  name: Jira Rest API Server Information
-  author: pdteam
+  name: Jira REST API Server Information Exposure
+  author: pdteam,0x_Akoko
   severity: info
-  tags: jira,tech
+  description: Detects an unauthenticated Jira serverInfo endpoint.
+  reference:
+    - https://developer.atlassian.com/cloud/jira/platform/rest/v2/api-group-server-info/
+  classification:
+    cwe-id: CWE-200
+  metadata:
+    vendor: atlassian
+    product: jira
+    max-request: 2
+  tags: jira,tech,discovery,misconfig
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/rest/api/latest/serverInfo"
-
+      - "{{BaseURL}}/rest/api/2/serverInfo"
+    stop-at-first-match: true
     matchers-condition: and
     matchers:
       - type: word
@@ -19,13 +29,12 @@ requests:
           - '"baseUrl"'
           - '"deploymentType"'
         condition: and
-
       - type: status
         status:
           - 200
-
     extractors:
       - type: json
+        part: body
         json:
           - ".baseUrl"
           - ".version"

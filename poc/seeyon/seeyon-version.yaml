@@ -1,0 +1,31 @@
+id: seeyon-version
+
+info:
+  name: Seeyon Zhiyuan OA Version Disclosure
+  author: local
+  severity: low
+  description: Detects the Seeyon About page and extracts its displayed build version.
+  tags: seeyon,zhiyuan,version,disclosure
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/seeyon/main.do?method=showAbout"
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        part: body
+        words:
+          - '>Build Id:</td>'
+          - '>注册数:</td>'
+        condition: and
+    extractors:
+      - type: regex
+        part: body
+        group: 1
+        regex:
+          - '<td width="75%">&nbsp;(.*?)</td>'
+

@@ -1,26 +1,31 @@
 id: jira-plugin-sqli
+
 info:
-  name: Jira Plugin SQL Injection Check
+  name: Jira Plugin SQL Injection Error Detection
   author: lopseg
   severity: high
-  description: Verifica se o servidor do plugin Jira está vulnerável a ataques de Injeção SQL.
-requests:
+  description: Detects SQL error responses from the Jira OAuth users icon endpoint.
+  tags: jira,atlassian,sqli,active
+
+http:
   - method: GET
     path:
-      - "{{BaseURL}}/plugins/servlet/oauth/users/icon-uri?consumerUri={{SQLI}}"
+      - "{{BaseURL}}/plugins/servlet/oauth/users/icon-uri?consumerUri=%27"
     matchers-condition: and
     matchers:
       - type: word
+        part: body
         words:
-          - "You have an error in your SQL syntax"
           - "SQLSyntaxErrorException"
           - "MySQLSyntaxErrorException"
+          - "You have an error in your SQL syntax"
+        condition: or
       - type: status
         status:
-          - "500"
-          - "503"
-          - "504"
-          - "400"
-          - "401"
-          - "403"
-          - "404"
+          - 400
+          - 401
+          - 403
+          - 404
+          - 500
+          - 503
+          - 504

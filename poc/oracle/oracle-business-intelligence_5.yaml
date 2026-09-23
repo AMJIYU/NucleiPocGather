@@ -21,7 +21,7 @@ info:
       - http.title:"oracle business intelligence sign in"
     fofa-query: title="oracle business intelligence sign in"
     google-query: intitle:"oracle business intelligence sign in"
-  tags: panel,oracle,login,detect
+  tags: panel,oracle,login,detect,discovery
 
 http:
   - method: GET
@@ -46,4 +46,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402200554930d0b27e4e36510268caffbb0b5a2b1123fbdfb8580ea0bb7bfd5245d55022045acab34c0d999920beaaee8269994e47099f774821e34f781b3cd9fb8e292b2:922c64590222798bb761d5b6d8e72950
+# digest: 490a0046304402201e7e7e60302275ffa08c1f16a961e2da88a7a21ff1d5768c38edb0d2a79dd0da022055429d740179851ca10687177cba0bff3e376371ca32b4236866c1d17aa633d4:922c64590222798bb761d5b6d8e72950

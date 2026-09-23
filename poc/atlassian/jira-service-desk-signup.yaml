@@ -1,22 +1,32 @@
 id: jira-service-desk-signup
 
 info:
-  name: Jira Service Desk Signup
+  name: Jira Service Desk Signup Misconfiguration
   author: TechbrunchFR
   severity: medium
+  description: Detects an exposed Jira Service Desk customer signup endpoint.
+  reference:
+    - https://www.acunetix.com/vulnerabilities/web/atlassian-jira-servicedesk-misconfiguration/
+  classification:
+    cvss-score: 6.1
+    cwe-id: CWE-287
+  metadata:
+    vendor: atlassian
+    product: jira-service-management
+  tags: atlassian,jira,servicedesk,misconfig,active
 
-requests:
-  - method: POST
+http:
+  - method: GET
     path:
       - "{{BaseURL}}/servicedesk/customer/user/signup"
-    headers:
-      Content-Type: application/json
-    body: '{"email":"invalid","signUpContext":{},"secondaryEmail":"","usingNewUi":true}'
     matchers-condition: and
     matchers:
-      - type: word
-        words:
-          - "signup.validation.errors"
       - type: status
         status:
-          - 400
+          - 200
+      - type: word
+        part: body
+        words:
+          - "Service Desk"
+          - "public.signup"
+        condition: and

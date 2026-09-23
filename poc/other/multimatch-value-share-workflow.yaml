@@ -7,15 +7,15 @@ info:
   description: Workflow to test value sharing when multiple matches occur in the extractor template
 
 workflows:
-  - template: workflow/multimatch-value-share-template.yaml
+  - template: other/multimatch-value-share-template_3.yaml
     subtemplates:
-      - template: workflow/match-1.yaml
+      - template: other/basic-get-another.yaml
         subtemplates:
-          - template: workflow/http-value-share-template-2.yaml
-  - template: workflow/multimatch-value-share-template.yaml
+          - template: http/http-value-share-template-2.yaml
+  - template: other/multimatch-value-share-template_3.yaml
     matchers:
       - name: test-matcher
         subtemplates:
-          - template: workflow/match-1.yaml
+          - template: other/basic-get-another.yaml
             subtemplates:
-              - template: workflow/http-value-share-template-2.yaml
+              - template: http/http-value-share-template-2.yaml

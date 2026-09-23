@@ -17,7 +17,7 @@ info:
   tags: workflow,cve2025,react,nextjs,rce
 
 workflows:
-  - template: nextjs-version-detect.yaml
+  - template: javascript/nextjs-version-detect.yaml
     subtemplates:
       - tags: cve2025,react,safe-detection
         subtemplates:

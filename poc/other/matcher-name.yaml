@@ -6,8 +6,8 @@ info:
   severity: info
 
 workflows:
-  - template: workflow/match-2.yaml
+  - template: other/match-2.yaml
     matchers: 
       - name: test-matcher
         subtemplates:
-          - template: workflow/match-1.yaml
+          - template: other/basic-get-another.yaml

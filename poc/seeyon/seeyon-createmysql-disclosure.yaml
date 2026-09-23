@@ -1,0 +1,28 @@
+id: seeyon-createmysql-disclosure
+
+info:
+  name: Seeyon A6 createMysql Database Disclosure
+  author: local
+  severity: medium
+  description: Detects exposed database connection details in createMysql.jsp.
+  tags: seeyon,zhiyuan,a6,disclosure
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/yyoa/createMysql.jsp"
+      - "{{BaseURL}}/yyoa/ext/createMysql.jsp"
+    stop-at-first-match: true
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        part: body
+        words:
+          - 'localhost'
+          - 'root'
+          - 'debugger'
+        condition: and
+

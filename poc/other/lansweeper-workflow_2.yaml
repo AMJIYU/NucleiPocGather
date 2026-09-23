@@ -6,6 +6,6 @@ info:
   description: A simple workflow that runs all Lansweeper related nuclei templates on a given target.
 
 workflows:
-  - template: exposed-panels/lansweeper-login.yaml
+  - template: auth/lansweeper-login_6.yaml
     subtemplates:
       - tags: lansweeper

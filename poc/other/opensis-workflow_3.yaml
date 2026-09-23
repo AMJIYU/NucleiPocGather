@@ -5,6 +5,6 @@ info:
   author: daffainfo
   description: A simple workflow that runs all OpenSIS related nuclei templates on a given target.
 workflows:
-  - template: http/exposed-panels/opensis-panel.yaml
+  - template: other/opensis-panel.yaml
     subtemplates:
       - tags: opensis

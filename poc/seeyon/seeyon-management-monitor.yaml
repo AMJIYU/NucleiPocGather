@@ -1,0 +1,24 @@
+id: seeyon-management-monitor
+
+info:
+  name: Seeyon A8 Management Monitor Exposure
+  author: local
+  severity: info
+  description: Detects the exposed Seeyon A8 management monitor endpoint.
+  tags: seeyon,zhiyuan,a8,fingerprint
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/seeyon/management/index.jsp"
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        part: body
+        words:
+          - '<title>A8 Management Monitor</title>'
+        case-insensitive: true
+

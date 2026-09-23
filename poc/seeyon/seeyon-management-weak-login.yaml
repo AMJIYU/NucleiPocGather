@@ -1,0 +1,33 @@
+id: seeyon-management-weak-login
+
+info:
+  name: Seeyon A8 Management Monitor Default Password
+  author: local
+  severity: high
+  description: Checks the documented Seeyon A8 management monitor default password.
+  tags: seeyon,zhiyuan,a8,credentials,active
+
+http:
+  - method: POST
+    path:
+      - "{{BaseURL}}/seeyon/management/index.jsp"
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: 'password=WLCCYBD%40SEEYON'
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+          - 302
+      - type: word
+        part: body
+        words:
+          - 'Connection Pooling'
+          - 'A8 Management Monitor'
+        condition: or
+      - type: word
+        part: header
+        words:
+          - '/seeyon/management/status.jsp'
+

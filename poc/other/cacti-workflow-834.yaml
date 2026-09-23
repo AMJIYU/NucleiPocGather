@@ -7,7 +7,7 @@ info:
 
 workflows:
 
-  - template: technologies/cacti-detect.yaml
+  - template: http/exposed-panels/cacti-panel.yaml
 
     subtemplates:
-      - template: vulnerabilities/other/cacti-weathermap-file-write.yaml
+      - template: http/vulnerabilities/other/cacti-weathermap-file-write.yaml

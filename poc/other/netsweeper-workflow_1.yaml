@@ -11,7 +11,7 @@ info:
 
 workflows:
 
-  - template: technologies/netsweeper-webadmin-detect.yaml
+  - template: web/netsweeper-webadmin-detect.yaml
 
     subtemplates:
-      - template: cves/2020/CVE-2020-13167.yaml
+      - template: cve/CVE-2020-13167_6.yaml

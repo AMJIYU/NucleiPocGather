@@ -7,5 +7,5 @@ info:
 
 workflows:
   - template: default-logins/UCMDB/
-  - template: cves/2020/CVE-2020-11853.yaml
-  - template: cves/2020/CVE-2020-11854.yaml
+  - template: cve/CVE-2020-11853_9.yaml
+  - template: cve/CVE-2020-11854_1_1.yaml

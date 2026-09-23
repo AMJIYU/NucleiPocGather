@@ -1,0 +1,38 @@
+id: seeyon-management-info-disclosure
+
+info:
+  name: Seeyon A8 Management Information Disclosure
+  author: local
+  severity: medium
+  description: Detects exposed Seeyon management status or application logs.
+  tags: seeyon,zhiyuan,a8,disclosure
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/seeyon/management/status.jsp"
+      - "{{BaseURL}}/seeyon/logs/login.log"
+      - "{{BaseURL}}/seeyon/logs/v3x.log"
+    stop-at-first-match: true
+    matchers-condition: or
+    matchers:
+      - type: word
+        part: body
+        words:
+          - 'Server'
+          - 'JVM'
+          - 'http-80'
+        condition: and
+      - type: word
+        part: body
+        words:
+          - '[Access URL]'
+          - '==>'
+        condition: and
+      - type: word
+        part: body
+        words:
+          - '[QuartzScheduler_Worker-1]'
+          - 'AccountDaoBean'
+        condition: and
+

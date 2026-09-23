@@ -1,0 +1,25 @@
+id: seeyon-initdata-disclosure
+
+info:
+  name: Seeyon A6 initDataAssess Information Disclosure
+  author: local
+  severity: medium
+  description: Detects unauthenticated exposure of user data from initDataAssess.jsp.
+  tags: seeyon,zhiyuan,a6,disclosure
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/yyoa/assess/js/initDataAssess.jsp"
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        part: body
+        words:
+          - 'personList'
+          - 'personHash.Add'
+        condition: and
+

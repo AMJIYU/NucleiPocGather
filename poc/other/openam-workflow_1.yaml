@@ -5,6 +5,6 @@ info:
   author: daffainfo
   description: A simple workflow that runs all OpenAM related nuclei templates on a given target.
 workflows:
-  - template: http/exposed-panels/openam-panel.yaml
+  - template: other/openam-panel.yaml
     subtemplates:
       - tags: openam

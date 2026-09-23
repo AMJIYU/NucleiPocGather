@@ -1,0 +1,26 @@
+id: seeyon-htmloffice-surface
+
+info:
+  name: Seeyon htmlofficeservlet Exposure
+  author: local
+  severity: medium
+  description: Detects the Seeyon htmlofficeservlet endpoint used by the historical file-write POC. This probe does not upload data.
+  tags: seeyon,zhiyuan,upload-surface,active
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/seeyon/htmlofficeservlet"
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+          - 500
+      - type: word
+        part: body
+        words:
+          - 'DBSTEP'
+          - 'operate err'
+        condition: or
+

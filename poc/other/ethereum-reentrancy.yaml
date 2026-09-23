@@ -15,6 +15,6 @@ file:
       - type: regex
         regex:
           - "msg.sender.call{value:"
-          - "balances\[msg.sender\] -= "
-          - "require\(success\)"
+          - 'balances\[msg.sender\] -= '
+          - 'require\(success\)'
         condition: and
