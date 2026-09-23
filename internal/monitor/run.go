@@ -186,6 +186,9 @@ func Run(parent context.Context, cfg Config) (runErr error) {
 		}
 		records[key] = item.Record
 	}
+	if _, err := deduplicateCompatibleOutput(cfg.CompatibleDir, records); err != nil {
+		return err
+	}
 
 	for _, key := range sortedRecordKeys(records) {
 		if err := writer.writeRecord(records[key]); err != nil {
@@ -437,4 +440,56 @@ func summarizeRecords(records map[string]Record) Summary {
 		summary.IncompatibleBy[record.Reason]++
 	}
 	return summary
+}
+
+func deduplicateCompatibleOutput(root string, records map[string]Record) (int, error) {
+	paths, err := templateFiles(root)
+	if err != nil {
+		return 0, err
+	}
+	canonical := make(map[string]string)
+	replacements := make(map[string]string)
+	removed := 0
+	for _, path := range paths {
+		relative := relativePath(root, path)
+		hash, hashErr := hashFile(path)
+		if hashErr != nil {
+			return removed, hashErr
+		}
+		if original, exists := canonical[hash]; exists {
+			if removeErr := os.Remove(path); removeErr != nil {
+				return removed, gerror.Wrapf(removeErr, "remove duplicate template %q", path)
+			}
+			replacements[relative] = original
+			removed++
+			continue
+		}
+		canonical[hash] = relative
+	}
+	for key, record := range records {
+		if record.Status != "compatible" {
+			continue
+		}
+		paths := make([]string, 0, len(record.OutputPaths))
+		for _, relative := range record.OutputPaths {
+			if replacement, exists := replacements[relative]; exists {
+				relative = replacement
+			}
+			if !containsString(paths, relative) {
+				paths = append(paths, relative)
+			}
+		}
+		record.OutputPaths = paths
+		records[key] = record
+	}
+	return removed, nil
+}
+
+func containsString(values []string, wanted string) bool {
+	for _, value := range values {
+		if value == wanted {
+			return true
+		}
+	}
+	return false
 }

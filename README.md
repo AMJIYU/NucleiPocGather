@@ -10,7 +10,7 @@
 - **自动校验兼容性**：每个 YAML POC 都会使用 Nuclei 的 `-validate` 进行校验，确保 `poc/` 中的模板可以被 Nuclei 加载。
 - **无需本地下载和校验**：校验工作在 GitHub Actions 中完成，使用者不需要在本地下载来源仓库、安装 Go 或重新验证 POC。
 - **下载即可使用**：本地只需要获取 `poc/` 目录，就可以直接交给 Nuclei 执行授权范围内的扫描。
-- **自动分类和去重**：POC 按漏洞类型、产品和协议分类，相同内容在同一分类中只保留一份。
+- **自动分类和去重**：POC 按漏洞类型、产品和协议记录分类信息；最终 `poc/` 中相同内容全局只保留一份。
 - **不兼容模板单独隔离**：解析失败或 Nuclei 校验失败的模板会原样放入 `incompatible/`，不会混入可用 POC。
 - **增量监控**：首次运行建立完整清单；后续先比较来源仓库 HEAD，只同步发生变化的仓库，并只校验新增或内容变化的模板。
 - **持续可追溯**：`metadata/` 保存来源、SHA-256、校验状态、失败原因和统计信息。
@@ -59,7 +59,7 @@ GitHub Actions 默认每天北京时间 `11:17` 运行一次，也支持手动�
 4. 将不兼容模板放入 `incompatible/`。
 5. 写入校验清单和统计信息，并自动提交变更。
 
-首次运行或使用 `--clean-output` 时会重新建立完整结果。增量状态保存在 `metadata/manifest.jsonl` 和 `metadata/sources.json` 中；删除来源或模板时，对应的旧结果也会清理。
+首次运行或使用 `--clean-output` 时会重新建立完整结果。每次运行结束都会扫描最终 `poc/` 并清理重复内容。增量状态保存在 `metadata/manifest.jsonl` 和 `metadata/sources.json` 中；删除来源或模板时，对应的旧结果也会清理。
 
 Workflow：<https://github.com/AMJIYU/NucleiPocGather/actions/workflows/go-monitor.yml>
 

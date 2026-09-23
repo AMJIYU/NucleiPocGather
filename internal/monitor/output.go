@@ -18,8 +18,7 @@ type outputWriter struct {
 	incompatibleDir string
 	manifest        *os.File
 	manifestWriter  *bufio.Writer
-	seen            map[string]map[string]struct{}
-	paths           map[string]map[string]string
+	globalPaths     map[string]string
 	mu              sync.Mutex
 }
 
@@ -31,22 +30,13 @@ func (writer *outputWriter) seed(records map[string]Record) {
 		if record.Status != "compatible" || record.SHA256 == "" {
 			continue
 		}
-		for index, category := range record.Categories {
-			if index >= len(record.OutputPaths) {
-				continue
-			}
-			relative := record.OutputPaths[index]
+		for _, relative := range record.OutputPaths {
 			if _, err := os.Stat(filepath.Join(writer.compatibleDir, filepath.FromSlash(relative))); err != nil {
 				continue
 			}
-			if writer.seen[category] == nil {
-				writer.seen[category] = make(map[string]struct{})
+			if current, exists := writer.globalPaths[record.SHA256]; !exists || relative < current {
+				writer.globalPaths[record.SHA256] = relative
 			}
-			if writer.paths[category] == nil {
-				writer.paths[category] = make(map[string]string)
-			}
-			writer.seen[category][record.SHA256] = struct{}{}
-			writer.paths[category][record.SHA256] = relative
 		}
 	}
 }
@@ -74,8 +64,7 @@ func newOutputWriter(cfg Config) (*outputWriter, error) {
 		incompatibleDir: cfg.IncompatibleDir,
 		manifest:        manifest,
 		manifestWriter:  bufio.NewWriter(manifest),
-		seen:            make(map[string]map[string]struct{}),
-		paths:           make(map[string]map[string]string),
+		globalPaths:     make(map[string]string),
 	}, nil
 }
 
@@ -93,34 +82,23 @@ func (writer *outputWriter) close() error {
 func (writer *outputWriter) writeCompatible(item evaluated, categories []string) (paths []string, duplicate bool, err error) {
 	writer.mu.Lock()
 	defer writer.mu.Unlock()
-	for _, category := range categories {
-		if writer.seen[category] == nil {
-			writer.seen[category] = make(map[string]struct{})
-		}
-		if writer.paths[category] == nil {
-			writer.paths[category] = make(map[string]string)
-		}
-		if _, exists := writer.seen[category][item.Hash]; exists {
-			duplicate = true
-			if relative, ok := writer.paths[category][item.Hash]; ok {
-				paths = append(paths, relative)
-			}
-			continue
-		}
-		destinationDir := filepath.Join(writer.compatibleDir, category)
-		if err := os.MkdirAll(destinationDir, 0o755); err != nil {
-			return nil, false, gerror.Wrapf(err, "create category directory %q", destinationDir)
-		}
-		destination := uniqueDestination(destinationDir, filepath.Base(item.Path), item.Hash)
-		if err := copyFile(item.Path, destination); err != nil {
-			return nil, false, err
-		}
-		writer.seen[category][item.Hash] = struct{}{}
-		relative := filepath.ToSlash(filepath.Join(category, filepath.Base(destination)))
-		writer.paths[category][item.Hash] = relative
-		paths = append(paths, relative)
+	if relative, exists := writer.globalPaths[item.Hash]; exists {
+		return []string{relative}, true, nil
 	}
-	return paths, duplicate, nil
+	if len(categories) == 0 {
+		categories = []string{"other"}
+	}
+	destinationDir := filepath.Join(writer.compatibleDir, categories[0])
+	if err := os.MkdirAll(destinationDir, 0o755); err != nil {
+		return nil, false, gerror.Wrapf(err, "create category directory %q", destinationDir)
+	}
+	destination := uniqueDestination(destinationDir, filepath.Base(item.Path), item.Hash)
+	if err := copyFile(item.Path, destination); err != nil {
+		return nil, false, err
+	}
+	relative := filepath.ToSlash(filepath.Join(categories[0], filepath.Base(destination)))
+	writer.globalPaths[item.Hash] = relative
+	return []string{relative}, false, nil
 }
 
 func (writer *outputWriter) writeIncompatible(item evaluated, reason string) (string, error) {

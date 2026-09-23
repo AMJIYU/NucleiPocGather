@@ -189,6 +189,46 @@ func TestOutputWriterReusesDuplicateOutput(t *testing.T) {
 	}
 }
 
+func TestDeduplicateCompatibleOutput(t *testing.T) {
+	root := t.TempDir()
+	first := filepath.Join(root, "cve", "first.yaml")
+	second := filepath.Join(root, "ssrf", "second.yaml")
+	unique := filepath.Join(root, "other", "unique.yaml")
+	for _, path := range []string{first, second, unique} {
+		if err := os.MkdirAll(filepath.Dir(path), 0o755); err != nil {
+			t.Fatal(err)
+		}
+	}
+	if err := os.WriteFile(first, []byte("id: duplicate\n"), 0o644); err != nil {
+		t.Fatal(err)
+	}
+	if err := os.WriteFile(second, []byte("id: duplicate\n"), 0o644); err != nil {
+		t.Fatal(err)
+	}
+	if err := os.WriteFile(unique, []byte("id: unique\n"), 0o644); err != nil {
+		t.Fatal(err)
+	}
+	records := map[string]Record{
+		"duplicate": {
+			Status:      "compatible",
+			OutputPaths: []string{"ssrf/second.yaml"},
+		},
+	}
+	removed, err := deduplicateCompatibleOutput(root, records)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if removed != 1 {
+		t.Fatalf("deduplicateCompatibleOutput() removed %d files, want 1", removed)
+	}
+	if _, err := os.Stat(second); !os.IsNotExist(err) {
+		t.Fatalf("duplicate output still exists, stat error = %v", err)
+	}
+	if got := records["duplicate"].OutputPaths; len(got) != 1 || got[0] != "cve/first.yaml" {
+		t.Fatalf("manifest output path = %v, want [cve/first.yaml]", got)
+	}
+}
+
 func TestSummarizeRecordsCountsCurrentDuplicates(t *testing.T) {
 	records := map[string]Record{
 		"first": {
