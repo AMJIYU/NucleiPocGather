@@ -28,9 +28,12 @@ jobs:
 
       - name: Install Nuclei
         run: |
-          curl -fsSL https://raw.githubusercontent.com/projectdiscovery/nuclei/main/install.sh | sh -s -- -b "$HOME/.local/bin"
-          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
-          nuclei -version
+          install_dir="$RUNNER_TEMP/nuclei-bin"
+          mkdir -p "$install_dir"
+          curl -fsSL https://raw.githubusercontent.com/projectdiscovery/nuclei/main/install.sh | sh -s -- -b "$install_dir"
+          test -x "$install_dir/nuclei"
+          echo "$install_dir" >> "$GITHUB_PATH"
+          "$install_dir/nuclei" -version
 
       - name: Build Go monitor
         run: |
