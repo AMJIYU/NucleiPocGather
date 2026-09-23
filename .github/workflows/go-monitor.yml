@@ -41,6 +41,6 @@ jobs:
         run: |
           git config user.name "GitHub Action"
           git config user.email "action@github.com"
-          git add poc-go incompatible-go metadata-go
+          git add poc incompatible metadata
           git diff --cached --quiet || git commit -m "chore: update Go nuclei POC collection"
           git push

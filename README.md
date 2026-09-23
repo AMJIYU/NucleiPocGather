@@ -1,109 +1,29 @@
-# Nuclei Poc 全网收集
-NucleiPocGather，每日更新
+# Nuclei POC Gather
 
-这个项目是一个 Python 脚本，用于批量克隆 GitHub 项目，获取 Nuclei POC，并将 POC 按类别分类存放到文件夹中。同时，使用 GitHub Action 每日自动运行脚本。
-<!-- BEGIN_POC_STATS -->
+这是一个纯 Go 版本的 Nuclei POC 收集器。它从 [`repo.txt`](repo.txt) 监控多个 Git 仓库，使用本地 Nuclei 引擎验证模板，并将结果分类保存。
 
-## 📊 POC 详情统计
+## 目录
 
-| 指标 | 数值 |
-|:-----|:----:|
-| **更新时间** | `2026-07-14 16:43` |
-| **POC 总数** | 151,780 |
-| **分类数量** | 85 |
+- `poc/`: 通过 Nuclei `-validate` 的模板，按漏洞类型和产品分类。
+- `incompatible/`: YAML 结构错误或 Nuclei 校验失败的模板，原样保留并按原因隔离。
+- `metadata/`: 每次运行的来源、SHA-256、状态和统计信息。
+- `cmd/nuclei-poc-monitor/`: Go CLI 入口。
+- `internal/monitor/`: Git 同步、解析、验证、分类、去重和输出逻辑。
 
-### 🏷️ 标签 Top 10
+## 使用
 
-| 排名 | 标签 | 数量 |
-|:---:|:-----|:----:|
-| 1 | `cve` | 100,457 |
-| 2 | `wordpress` | 94,128 |
-| 3 | `wp-plugin` | 86,169 |
-| 4 | `candidate` | 33,459 |
-| 5 | `low` | 33,027 |
-| 6 | `medium` | 32,683 |
-| 7 | `tech` | 18,223 |
-| 8 | `detect` | 17,369 |
-| 9 | `high` | 16,248 |
-| 10 | `service` | 13,835 |
-
-### 📂 分类 Top 10
-
-| 排名 | 分类 | 数量 |
-|:---:|:-----|:----:|
-| 1 | `other` | 56,118 |
-| 2 | `cve` | 53,722 |
-| 3 | `sql` | 10,273 |
-| 4 | `wordpress` | 7,241 |
-| 5 | `auth` | 4,319 |
-| 6 | `detect` | 1,854 |
-| 7 | `remote_code_execution` | 1,592 |
-| 8 | `microsoft` | 1,402 |
-| 9 | `web` | 1,356 |
-| 10 | `api` | 1,097 |
-
-### ⚠️ 严重性分布
-
-| 严重性 | 数量 |
-|:------|:----:|
-| Critical | 15,855 |
-| High | 27,232 |
-| Medium | 41,576 |
-| Low | 35,240 |
-| Info | 27,342 |
-| Unknown | 133 |
-| Hight | 15 |
-| Ciritical | 1 |
-| Informative | 19 |
-| Highx | 1 |
-| Cretical | 4 |
-| Meduim | 18 |
-| Criticall | 1 |
-| __cve_severity__ | 1 |
-| Severe | 1 |
-| None | 1 |
-
-<!-- END_POC_STATS -->
-
-## 如何使用
-
-### 克隆项目
-
-克隆这个项目到本地：
+环境要求：Go 1.20+、Git、Nuclei 3.x。
 
 ```bash
-git clone https://github.com/lianqingsec/NucleiPocGather.git
+go run ./cmd/nuclei-poc-monitor --workers 4
 ```
 
-进入项目目录：
+小规模验证：
 
 ```bash
-cd NucleiPocGather
+go run ./cmd/nuclei-poc-monitor --limit 20 --workers 2
 ```
 
-### 配置
+完整说明见 [`GO-MONITOR.md`](GO-MONITOR.md)。GitHub Actions 会每日自动运行 Go 收集器。
 
-在 `repo.txt` 文件中配置监控 GitHub 项目信息。
-
-### 运行脚本
-
-运行 Python 脚本：
-
-```bash
-python NucleiPocGather.py
-```
-
-### GitHub Action
-
-在 GitHub 仓库中设置 Action，以便每日自动运行脚本。
-
-> 需要配置`Workflow permissions`为`Read and write`权限
-
-## 文件结构
-
-- `NucleiPocGather.py`: 收集全网 Nuclei POC 的脚本文件。
-- `DeWeight.py`: 对现有的 Nuclei POC 进行进一步去重的脚本文件。
-- `WirteREADME.py`: 统计 POC 并更新 README.md 文件。
-- `repo.txt`: Nuclei POC 仓库列表。
-- `poc.txt`: 已存档 POC 列表。
-- `poc/`: 存放分类后的 Nuclei POC 文件夹。
+仅在明确授权的资产范围内使用 Nuclei 执行实际扫描。收集器的 `-validate` 阶段只校验模板，不会向目标发起扫描请求。

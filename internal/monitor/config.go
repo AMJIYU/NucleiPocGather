@@ -20,9 +20,9 @@ func DefaultConfig() Config {
 	return Config{
 		SourcesFile:     "repo.txt",
 		Workspace:       ".cache/nuclei-poc-sources",
-		CompatibleDir:   "poc-go",
-		IncompatibleDir: "incompatible-go",
-		MetadataDir:     "metadata-go",
+		CompatibleDir:   "poc",
+		IncompatibleDir: "incompatible",
+		MetadataDir:     "metadata",
 		NucleiBin:       "nuclei",
 		Workers:         4,
 		CommandTimeout:  2 * time.Minute,
