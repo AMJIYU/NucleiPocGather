@@ -5,8 +5,8 @@ import (
 	"flag"
 	"log"
 
-	"github.com/gogf/gf/v2/errors/gerror"
 	"github.com/AMJIYU/NucleiPocGather/internal/monitor"
+	"github.com/gogf/gf/v2/errors/gerror"
 )
 
 func main() {

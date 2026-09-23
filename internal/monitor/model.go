@@ -7,6 +7,13 @@ type Source struct {
 	Name string
 }
 
+type SourceState struct {
+	URL       string    `json:"url"`
+	Name      string    `json:"name"`
+	Revision  string    `json:"revision"`
+	UpdatedAt time.Time `json:"updated_at"`
+}
+
 type TemplateMeta struct {
 	ID       string
 	Name     string

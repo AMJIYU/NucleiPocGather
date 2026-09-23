@@ -19,7 +19,36 @@ type outputWriter struct {
 	manifest        *os.File
 	manifestWriter  *bufio.Writer
 	seen            map[string]map[string]struct{}
+	paths           map[string]map[string]string
 	mu              sync.Mutex
+}
+
+func (writer *outputWriter) seed(records map[string]Record) {
+	writer.mu.Lock()
+	defer writer.mu.Unlock()
+	for _, key := range sortedRecordKeys(records) {
+		record := records[key]
+		if record.Status != "compatible" || record.SHA256 == "" {
+			continue
+		}
+		for index, category := range record.Categories {
+			if index >= len(record.OutputPaths) {
+				continue
+			}
+			relative := record.OutputPaths[index]
+			if _, err := os.Stat(filepath.Join(writer.compatibleDir, filepath.FromSlash(relative))); err != nil {
+				continue
+			}
+			if writer.seen[category] == nil {
+				writer.seen[category] = make(map[string]struct{})
+			}
+			if writer.paths[category] == nil {
+				writer.paths[category] = make(map[string]string)
+			}
+			writer.seen[category][record.SHA256] = struct{}{}
+			writer.paths[category][record.SHA256] = relative
+		}
+	}
 }
 
 func newOutputWriter(cfg Config) (*outputWriter, error) {
@@ -46,6 +75,7 @@ func newOutputWriter(cfg Config) (*outputWriter, error) {
 		manifest:        manifest,
 		manifestWriter:  bufio.NewWriter(manifest),
 		seen:            make(map[string]map[string]struct{}),
+		paths:           make(map[string]map[string]string),
 	}, nil
 }
 
@@ -67,8 +97,14 @@ func (writer *outputWriter) writeCompatible(item evaluated, categories []string)
 		if writer.seen[category] == nil {
 			writer.seen[category] = make(map[string]struct{})
 		}
+		if writer.paths[category] == nil {
+			writer.paths[category] = make(map[string]string)
+		}
 		if _, exists := writer.seen[category][item.Hash]; exists {
 			duplicate = true
+			if relative, ok := writer.paths[category][item.Hash]; ok {
+				paths = append(paths, relative)
+			}
 			continue
 		}
 		destinationDir := filepath.Join(writer.compatibleDir, category)
@@ -80,7 +116,9 @@ func (writer *outputWriter) writeCompatible(item evaluated, categories []string)
 			return nil, false, err
 		}
 		writer.seen[category][item.Hash] = struct{}{}
-		paths = append(paths, filepath.ToSlash(filepath.Join(category, filepath.Base(destination))))
+		relative := filepath.ToSlash(filepath.Join(category, filepath.Base(destination)))
+		writer.paths[category][item.Hash] = relative
+		paths = append(paths, relative)
 	}
 	return paths, duplicate, nil
 }

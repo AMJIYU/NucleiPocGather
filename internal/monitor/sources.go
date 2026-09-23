@@ -13,6 +13,18 @@ import (
 	"github.com/gogf/gf/v2/errors/gerror"
 )
 
+func sourceRevision(parent context.Context, source Source, timeout time.Duration) (string, error) {
+	output, err := runCommandOutput(parent, timeout, "", "git", "ls-remote", source.URL, "HEAD")
+	if err != nil {
+		return "", gerror.Wrapf(err, "read revision for source %q", source.URL)
+	}
+	fields := strings.Fields(output)
+	if len(fields) == 0 {
+		return "", gerror.Newf("source %q returned no HEAD revision", source.URL)
+	}
+	return fields[0], nil
+}
+
 func readSources(path string) ([]Source, error) {
 	file, err := os.Open(path)
 	if err != nil {
@@ -79,19 +91,26 @@ func syncSource(parent context.Context, source Source, workspace string, timeout
 }
 
 func runCommand(parent context.Context, timeout time.Duration, dir string, name string, args ...string) error {
+	_, err := runCommandOutput(parent, timeout, dir, name, args...)
+	return err
+}
+
+func runCommandOutput(parent context.Context, timeout time.Duration, dir string, name string, args ...string) (string, error) {
 	ctx, cancel := context.WithTimeout(parent, timeout)
 	defer cancel()
 	cmd := exec.CommandContext(ctx, name, args...)
-	cmd.Dir = dir
+	if dir != "" {
+		cmd.Dir = dir
+	}
 	output, err := cmd.CombinedOutput()
 	if err != nil {
 		message := strings.TrimSpace(string(output))
 		if message == "" {
 			message = err.Error()
 		}
-		return gerror.Newf("%s %s: %s", name, strings.Join(args, " "), truncate(message, 800))
+		return "", gerror.Newf("%s %s: %s", name, strings.Join(args, " "), truncate(message, 800))
 	}
-	return nil
+	return string(output), nil
 }
 
 func safeName(value string) string {

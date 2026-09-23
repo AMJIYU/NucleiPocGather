@@ -12,7 +12,18 @@
 - **下载即可使用**：本地只需要获取 `poc/` 目录，就可以直接交给 Nuclei 执行授权范围内的扫描。
 - **自动分类和去重**：POC 按漏洞类型、产品和协议分类，相同内容在同一分类中只保留一份。
 - **不兼容模板单独隔离**：解析失败或 Nuclei 校验失败的模板会原样放入 `incompatible/`，不会混入可用 POC。
+- **增量监控**：首次运行建立完整清单；后续先比较来源仓库 HEAD，只同步发生变化的仓库，并只校验新增或内容变化的模板。
 - **持续可追溯**：`metadata/` 保存来源、SHA-256、校验状态、失败原因和统计信息。
+
+## 当前兼容性状态
+
+仓库已使用 Nuclei `v3.11.1` 对 `poc/` 做全量校验：
+
+```bash
+nuclei -validate -t ./poc
+```
+
+当前命令返回码为 `0`。校验失败的模板已原样移到 `incompatible/`，并按 `validation-failed/`、`compile-failed/` 和 `missing-dependency/` 保存原始目录层级。`poc/` 中仍可能看到重复模板 ID warning，这是多个来源提供相同 ID 的可加载模板，不会导致 Nuclei 校验失败；相同内容会在自动收集时去重。
 
 ## 直接使用 POC
 
@@ -42,11 +53,13 @@ nuclei -t ./poc/wordpress -l targets.txt
 
 GitHub Actions 默认每天北京时间 `11:17` 运行一次，也支持手动触发。每次运行会：
 
-1. 同步 `repo.txt` 中的公开 POC 来源。
-2. 使用 Nuclei 官方引擎验证所有发现的 YAML 模板。
+1. 查询 `repo.txt` 中来源的最新提交；没有变化的来源直接跳过。
+2. 对发生变化的来源只校验新增或 SHA-256 已变化的 YAML 模板。
 3. 将兼容模板分类、去重并更新 `poc/`。
 4. 将不兼容模板放入 `incompatible/`。
 5. 写入校验清单和统计信息，并自动提交变更。
+
+首次运行或使用 `--clean-output` 时会重新建立完整结果。增量状态保存在 `metadata/manifest.jsonl` 和 `metadata/sources.json` 中；删除来源或模板时，对应的旧结果也会清理。
 
 Workflow：<https://github.com/AMJIYU/NucleiPocGather/actions/workflows/go-monitor.yml>
 

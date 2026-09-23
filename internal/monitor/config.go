@@ -26,6 +26,6 @@ func DefaultConfig() Config {
 		NucleiBin:       "nuclei",
 		Workers:         4,
 		CommandTimeout:  2 * time.Minute,
-		CleanOutput:     true,
+		CleanOutput:     false,
 	}
 }
