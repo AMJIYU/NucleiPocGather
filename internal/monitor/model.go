@@ -58,3 +58,7 @@ type evaluated struct {
 	Hash   string
 	Record Record
 }
+
+type validationGroup struct {
+	Members []*evaluated
+}

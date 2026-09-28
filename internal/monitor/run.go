@@ -213,6 +213,9 @@ func validateConfig(cfg Config) error {
 	if cfg.Workers < 1 {
 		return gerror.New("workers must be greater than zero")
 	}
+	if cfg.ValidationBatchSize < 1 {
+		return gerror.New("validation batch size must be greater than zero")
+	}
 	if cfg.CommandTimeout <= 0 {
 		return gerror.New("command timeout must be greater than zero")
 	}
@@ -225,25 +228,46 @@ func validateConfig(cfg Config) error {
 }
 
 func evaluateTemplates(parent context.Context, cfg Config, items []evaluated) error {
+	if err := prepareTemplates(parent, cfg, items); err != nil {
+		return err
+	}
+	groups := make([]*validationGroup, 0)
+	byHash := make(map[string]*validationGroup)
+	for index := range items {
+		item := &items[index]
+		if item.Record.Status != "pending" {
+			continue
+		}
+		group, exists := byHash[item.Hash]
+		if !exists {
+			group = &validationGroup{}
+			byHash[item.Hash] = group
+			groups = append(groups, group)
+		}
+		group.Members = append(group.Members, item)
+	}
+	if len(groups) == 0 {
+		return nil
+	}
+	log.Printf("[INFO] validation candidates=%d unique=%d batch-size=%d", len(items), len(groups), cfg.ValidationBatchSize)
+	return validateGroups(parent, cfg, groups)
+}
+
+func prepareTemplates(parent context.Context, cfg Config, items []evaluated) error {
 	jobs := make(chan *evaluated)
 	workerErrors := make(chan error, 1)
-	var processed atomic.Int64
 	var workers sync.WaitGroup
 	for index := 0; index < cfg.Workers; index++ {
 		workers.Add(1)
 		go func() {
 			defer workers.Done()
 			for item := range jobs {
-				if err := evaluateOne(parent, cfg, item); err != nil {
+				if err := prepareItem(cfg, item); err != nil {
 					select {
 					case workerErrors <- err:
 					default:
 					}
 					continue
-				}
-				count := processed.Add(1)
-				if count%100 == 0 {
-					log.Printf("[INFO] validated=%d/%d", count, len(items))
 				}
 			}
 		}()
@@ -271,8 +295,100 @@ func evaluateTemplates(parent context.Context, cfg Config, items []evaluated) er
 	}
 }
 
-func evaluateOne(parent context.Context, cfg Config, item *evaluated) error {
-	hash, err := hashFile(item.Path)
+func validateGroups(parent context.Context, cfg Config, groups []*validationGroup) error {
+	jobs := make(chan []*validationGroup)
+	workerErrors := make(chan error, 1)
+	var processed atomic.Int64
+	var workers sync.WaitGroup
+	total := 0
+	for _, group := range groups {
+		total += len(group.Members)
+	}
+	for index := 0; index < cfg.Workers; index++ {
+		workers.Add(1)
+		go func() {
+			defer workers.Done()
+			for batch := range jobs {
+				if err := validateGroupBatch(parent, cfg, batch, &processed, total); err != nil {
+					select {
+					case workerErrors <- err:
+					default:
+					}
+				}
+			}
+		}()
+	}
+	for start := 0; start < len(groups); start += cfg.ValidationBatchSize {
+		end := start + cfg.ValidationBatchSize
+		if end > len(groups) {
+			end = len(groups)
+		}
+		select {
+		case jobs <- groups[start:end]:
+		case err := <-workerErrors:
+			close(jobs)
+			workers.Wait()
+			return err
+		case <-parent.Done():
+			close(jobs)
+			workers.Wait()
+			return gerror.Wrap(parent.Err(), "template evaluation cancelled")
+		}
+	}
+	close(jobs)
+	workers.Wait()
+	select {
+	case err := <-workerErrors:
+		return err
+	default:
+		return nil
+	}
+}
+
+func validateGroupBatch(parent context.Context, cfg Config, groups []*validationGroup, processed *atomic.Int64, total int) error {
+	if len(groups) == 0 {
+		return nil
+	}
+	if err := parent.Err(); err != nil {
+		return gerror.Wrap(err, "template evaluation cancelled")
+	}
+	paths := make([]string, 0, len(groups))
+	for _, group := range groups {
+		paths = append(paths, group.Members[0].Path)
+	}
+	failed, validationErr := validateBatchWithNuclei(parent, cfg, paths)
+	if !failed {
+		if validationErr != nil {
+			return validationErr
+		}
+		for _, group := range groups {
+			markGroup(group, "compatible", "", "")
+		}
+		logValidationProgress(processed.Add(int64(groupSize(groups))), total)
+		return nil
+	}
+	if len(groups) == 1 {
+		message := "nuclei validation failed"
+		if validationErr != nil {
+			message = truncate(validationErr.Error(), 800)
+		}
+		markGroup(groups[0], "incompatible", "nuclei_validation", message)
+		logValidationProgress(processed.Add(int64(groupSize(groups))), total)
+		return nil
+	}
+	middle := len(groups) / 2
+	if err := validateGroupBatch(parent, cfg, groups[:middle], processed, total); err != nil {
+		return err
+	}
+	return validateGroupBatch(parent, cfg, groups[middle:], processed, total)
+}
+
+func prepareItem(cfg Config, item *evaluated) error {
+	hash := item.Hash
+	var err error
+	if hash == "" {
+		hash, err = hashFile(item.Path)
+	}
 	if err != nil {
 		return err
 	}
@@ -290,20 +406,52 @@ func evaluateOne(parent context.Context, cfg Config, item *evaluated) error {
 		Protocol:     meta.Protocol,
 		SHA256:       item.Hash,
 		ProcessedAt:  now(),
-		Status:       "incompatible",
+		Status:       "pending",
 	}
 	if err != nil {
+		item.Record.Status = "incompatible"
 		item.Record.Reason = "yaml_or_structure"
 		item.Record.Message = truncate(err.Error(), 800)
 		return nil
 	}
+	return nil
+}
+
+func evaluateOne(parent context.Context, cfg Config, item *evaluated) error {
+	if err := prepareItem(cfg, item); err != nil {
+		return err
+	}
+	if item.Record.Status != "pending" {
+		return nil
+	}
 	if err := validateWithNuclei(parent, cfg, item.Path); err != nil {
-		item.Record.Reason = "nuclei_validation"
-		item.Record.Message = truncate(err.Error(), 800)
+		markGroup(&validationGroup{Members: []*evaluated{item}}, "incompatible", "nuclei_validation", truncate(err.Error(), 800))
 		return nil
 	}
 	item.Record.Status = "compatible"
 	return nil
+}
+
+func markGroup(group *validationGroup, status, reason, message string) {
+	for _, item := range group.Members {
+		item.Record.Status = status
+		item.Record.Reason = reason
+		item.Record.Message = message
+	}
+}
+
+func groupSize(groups []*validationGroup) int {
+	size := 0
+	for _, group := range groups {
+		size += len(group.Members)
+	}
+	return size
+}
+
+func logValidationProgress(processed int64, total int) {
+	if processed >= int64(total) || processed%10000 < 1000 {
+		log.Printf("[INFO] validated=%d/%d", processed, total)
+	}
 }
 
 func cloneRecords(input map[string]Record) map[string]Record {

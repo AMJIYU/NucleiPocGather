@@ -18,6 +18,7 @@ func main() {
 	flag.StringVar(&cfg.MetadataDir, "metadata-dir", cfg.MetadataDir, "output directory for manifests and reports")
 	flag.StringVar(&cfg.NucleiBin, "nuclei", cfg.NucleiBin, "Nuclei executable path")
 	flag.IntVar(&cfg.Workers, "workers", cfg.Workers, "number of concurrent validation workers")
+	flag.IntVar(&cfg.ValidationBatchSize, "validation-batch-size", cfg.ValidationBatchSize, "number of templates to validate per Nuclei process")
 	flag.IntVar(&cfg.Limit, "limit", cfg.Limit, "maximum templates to process per run; 0 means unlimited")
 	flag.DurationVar(&cfg.CommandTimeout, "timeout", cfg.CommandTimeout, "timeout for each git or Nuclei command")
 	flag.BoolVar(&cfg.CleanOutput, "clean-output", cfg.CleanOutput, "remove generated output directories before writing")
