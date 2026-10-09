@@ -4,19 +4,24 @@ on:
   workflow_dispatch:
     inputs:
       limit:
-        description: "Maximum templates to validate (0 means all)"
+        description: "Maximum changed templates per run (0 means all)"
         required: false
-        default: "0"
+        default: "10000"
   schedule:
     - cron: "17 3 * * *"
 
 permissions:
   contents: write
+  actions: write
+
+concurrency:
+  group: go-monitor
+  cancel-in-progress: false
 
 jobs:
   collect:
     runs-on: ubuntu-latest
-    timeout-minutes: 720
+    timeout-minutes: 360
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -50,13 +55,28 @@ jobs:
 
       - name: Run Go monitor
         run: |
-          limit="${{ github.event.inputs.limit || '0' }}"
+          limit="${{ github.event.inputs.limit || '10000' }}"
           "$RUNNER_TEMP/nuclei-poc-monitor" --limit "$limit" --workers 4
 
       - name: Commit generated results
         run: |
+          set -euo pipefail
           git config user.name "GitHub Action"
           git config user.email "action@github.com"
           git add poc incompatible metadata
           git diff --cached --quiet || git commit -m "chore: update Go nuclei POC collection"
           git push
+
+      - name: Continue unfinished collection
+        if: ${{ success() }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          if [[ "$(jq -r '.more_work' metadata/progress.json)" == "true" ]]; then
+            curl --fail-with-body -sS -X POST \
+              -H "Authorization: Bearer $GH_TOKEN" \
+              -H "Accept: application/vnd.github+json" \
+              "https://api.github.com/repos/${{ github.repository }}/actions/workflows/go-monitor.yml/dispatches" \
+              -d '{"ref":"main"}'
+          fi

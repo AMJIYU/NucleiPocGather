@@ -74,8 +74,11 @@ func syncSource(parent context.Context, source Source, workspace string, timeout
 		return "", gerror.Wrapf(err, "create source workspace %q", workspace)
 	}
 	if _, err := os.Stat(filepath.Join(target, ".git")); err == nil {
-		if err := runCommand(parent, timeout, workspace, "git", "-C", target, "pull", "--ff-only", "--depth=1"); err != nil {
+		if err := runCommand(parent, timeout, workspace, "git", "-C", target, "fetch", "--depth=1", "origin", "HEAD"); err != nil {
 			return "", gerror.Wrapf(err, "update source %q", source.URL)
+		}
+		if err := runCommand(parent, timeout, workspace, "git", "-C", target, "switch", "--detach", "FETCH_HEAD"); err != nil {
+			return "", gerror.Wrapf(err, "check out source %q", source.URL)
 		}
 		return target, nil
 	}

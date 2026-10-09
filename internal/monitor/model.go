@@ -11,6 +11,8 @@ type SourceState struct {
 	URL       string    `json:"url"`
 	Name      string    `json:"name"`
 	Revision  string    `json:"revision"`
+	Cursor    string    `json:"cursor,omitempty"`
+	Complete  bool      `json:"complete"`
 	UpdatedAt time.Time `json:"updated_at"`
 }
 

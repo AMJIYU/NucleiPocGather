@@ -60,7 +60,7 @@ GitHub Actions 默认每天北京时间 `11:17` 运行一次，也支持手动�
 4. 将不兼容模板放入 `incompatible/`。
 5. 写入校验清单和统计信息，并自动提交变更。
 
-首次运行或使用 `--clean-output` 时会重新建立完整结果。每次运行结束都会扫描最终 `poc/` 并清理重复内容。增量状态保存在 `metadata/manifest.jsonl` 和 `metadata/sources.json` 中；删除来源或模板时，对应的旧结果也会清理。
+首次运行会按每轮最多 10000 个待校验模板分段处理，提交已完成结果并自动启动下一轮；单轮运行约 4 小时后会提前保存进度，为 GitHub Actions 的 6 小时上限留出提交时间。`metadata/progress.json` 记录是否仍有待处理模板。每次运行结束都会扫描最终 `poc/` 并清理重复内容。增量状态保存在 `metadata/manifest.jsonl` 和 `metadata/sources.json` 中；删除来源或模板时，对应的旧结果也会清理。使用 `--clean-output` 可强制从头重建。
 
 Workflow：<https://github.com/AMJIYU/NucleiPocGather/actions/workflows/go-monitor.yml>
 

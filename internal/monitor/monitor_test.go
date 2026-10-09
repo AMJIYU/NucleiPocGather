@@ -1,9 +1,12 @@
 package monitor
 
 import (
+	"context"
 	"encoding/json"
 	"os"
+	"os/exec"
 	"path/filepath"
+	"strings"
 	"testing"
 	"time"
 )
@@ -250,6 +253,120 @@ func TestSummarizeRecordsCountsCurrentDuplicates(t *testing.T) {
 	summary := summarizeRecords(records)
 	if summary.Duplicates != 1 {
 		t.Fatalf("summarizeRecords() duplicates = %d, want 1", summary.Duplicates)
+	}
+}
+
+func TestRunResumesLimitedSource(t *testing.T) {
+	root := t.TempDir()
+	sourceRoot := filepath.Join(root, "upstream")
+	if err := os.MkdirAll(sourceRoot, 0o755); err != nil {
+		t.Fatal(err)
+	}
+	for _, args := range [][]string{{"init", "-b", "main"}, {"config", "user.name", "Test"}, {"config", "user.email", "test@example.com"}} {
+		cmd := exec.Command("git", append([]string{"-C", sourceRoot}, args...)...)
+		if output, err := cmd.CombinedOutput(); err != nil {
+			t.Fatalf("git %v: %s: %v", args, output, err)
+		}
+	}
+	for _, name := range []string{"a.yaml", "b.yaml", "c.yaml"} {
+		content := []byte("id: " + strings.TrimSuffix(name, ".yaml") + "\ninfo:\n  name: test\n  severity: info\nhttp:\n  - method: GET\n    path:\n      - '{{BaseURL}}/'\n")
+		if err := os.WriteFile(filepath.Join(sourceRoot, name), content, 0o644); err != nil {
+			t.Fatal(err)
+		}
+	}
+	for _, args := range [][]string{{"add", "."}, {"commit", "-m", "initial"}} {
+		cmd := exec.Command("git", append([]string{"-C", sourceRoot}, args...)...)
+		if output, err := cmd.CombinedOutput(); err != nil {
+			t.Fatalf("git %v: %s: %v", args, output, err)
+		}
+	}
+	remoteURL := "https://example.invalid/repo"
+	t.Setenv("GIT_CONFIG_COUNT", "1")
+	t.Setenv("GIT_CONFIG_KEY_0", "url.file://"+sourceRoot+".insteadOf")
+	t.Setenv("GIT_CONFIG_VALUE_0", remoteURL)
+	sourcesFile := filepath.Join(root, "sources.txt")
+	if err := os.WriteFile(sourcesFile, []byte(remoteURL+"\n"), 0o644); err != nil {
+		t.Fatal(err)
+	}
+	nucleiBin := filepath.Join(root, "nuclei")
+	if err := os.WriteFile(nucleiBin, []byte("#!/bin/sh\nexit 0\n"), 0o755); err != nil {
+		t.Fatal(err)
+	}
+	cfg := DefaultConfig()
+	cfg.SourcesFile = sourcesFile
+	cfg.Workspace = filepath.Join(root, "cache")
+	cfg.CompatibleDir = filepath.Join(root, "poc")
+	cfg.IncompatibleDir = filepath.Join(root, "incompatible")
+	cfg.MetadataDir = filepath.Join(root, "metadata")
+	cfg.NucleiBin = nucleiBin
+	cfg.Limit = 1
+
+	for run := 1; run <= 3; run++ {
+		if err := Run(context.Background(), cfg); err != nil {
+			t.Fatalf("Run() #%d: %v", run, err)
+		}
+		records, states, hasManifest, err := loadState(cfg.MetadataDir)
+		if err != nil {
+			t.Fatal(err)
+		}
+		if !hasManifest || len(records) != run {
+			t.Fatalf("run %d saved %d records, want %d", run, len(records), run)
+		}
+		if states[remoteURL].Complete != (run == 3) {
+			t.Fatalf("run %d complete=%v", run, states[remoteURL].Complete)
+		}
+		encoded, err := os.ReadFile(filepath.Join(cfg.MetadataDir, "progress.json"))
+		if err != nil {
+			t.Fatal(err)
+		}
+		var progress struct {
+			MoreWork bool `json:"more_work"`
+		}
+		if err := json.Unmarshal(encoded, &progress); err != nil {
+			t.Fatal(err)
+		}
+		if progress.MoreWork != (run < 3) {
+			t.Fatalf("run %d more_work=%v", run, progress.MoreWork)
+		}
+	}
+	updated := []byte("id: c\ninfo:\n  name: updated\n  severity: info\nhttp:\n  - method: GET\n    path:\n      - '{{BaseURL}}/'\n")
+	if err := os.WriteFile(filepath.Join(sourceRoot, "c.yaml"), updated, 0o644); err != nil {
+		t.Fatal(err)
+	}
+	cmd := exec.Command("git", "-C", sourceRoot, "commit", "-am", "update")
+	if output, err := cmd.CombinedOutput(); err != nil {
+		t.Fatalf("git commit update: %s: %v", output, err)
+	}
+	if err := Run(context.Background(), cfg); err != nil {
+		t.Fatalf("Run() after source update: %v", err)
+	}
+	records, states, _, err := loadState(cfg.MetadataDir)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(records) != 3 || !states[remoteURL].Complete || records[recordKey(remoteURL, "c.yaml")].Name != "updated" {
+		t.Fatalf("updated source state: records=%v state=%+v", records, states[remoteURL])
+	}
+}
+
+func TestCompletedItemsRestoresUnfinishedTemplate(t *testing.T) {
+	sourceURL := "https://example.invalid/repo"
+	key := recordKey(sourceURL, "old.yaml")
+	old := Record{SourceURL: sourceURL, RelativePath: "old.yaml", Status: "compatible", SHA256: "old"}
+	previous := map[string]Record{key: old}
+	records := map[string]Record{}
+	removed := map[string]Record{key: old}
+	states := map[string]SourceState{sourceURL: {URL: sourceURL, Revision: "abc", Cursor: "old.yaml", Complete: true}}
+	items := []evaluated{
+		{Record: Record{SourceURL: sourceURL, RelativePath: "new.yaml", Status: "compatible"}},
+		{Source: Source{URL: sourceURL}, Record: Record{SourceURL: sourceURL, RelativePath: "old.yaml", Status: "pending"}},
+	}
+	completed := completedItems(items, previous, records, removed, states)
+	if len(completed) != 1 || records[key].SHA256 != "old" || len(removed) != 0 {
+		t.Fatalf("unfinished output was not preserved: completed=%v records=%v removed=%v", completed, records, removed)
+	}
+	if states[sourceURL].Complete || states[sourceURL].Cursor != "" {
+		t.Fatalf("source was not reset for retry: %+v", states[sourceURL])
 	}
 }
 

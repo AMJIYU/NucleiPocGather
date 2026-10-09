@@ -21,6 +21,7 @@ func main() {
 	flag.IntVar(&cfg.ValidationBatchSize, "validation-batch-size", cfg.ValidationBatchSize, "number of templates to validate per Nuclei process")
 	flag.IntVar(&cfg.Limit, "limit", cfg.Limit, "maximum templates to process per run; 0 means unlimited")
 	flag.DurationVar(&cfg.CommandTimeout, "timeout", cfg.CommandTimeout, "timeout for each git or Nuclei command")
+	flag.DurationVar(&cfg.MaxRunDuration, "max-run-duration", cfg.MaxRunDuration, "time budget before saving progress and continuing in another run")
 	flag.BoolVar(&cfg.CleanOutput, "clean-output", cfg.CleanOutput, "remove generated output directories before writing")
 	flag.Parse()
 

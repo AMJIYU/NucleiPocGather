@@ -72,6 +72,21 @@ func writeState(metadataDir string, sources map[string]SourceState) error {
 	return nil
 }
 
+func writeProgress(metadataDir string, moreWork bool, processed int) error {
+	progress := struct {
+		MoreWork  bool `json:"more_work"`
+		Processed int  `json:"processed"`
+	}{MoreWork: moreWork, Processed: processed}
+	encoded, err := json.MarshalIndent(progress, "", "  ")
+	if err != nil {
+		return gerror.Wrap(err, "encode run progress")
+	}
+	if err := os.WriteFile(filepath.Join(metadataDir, "progress.json"), append(encoded, '\n'), 0o644); err != nil {
+		return gerror.Wrap(err, "write run progress")
+	}
+	return nil
+}
+
 func recordKey(sourceURL, relativePath string) string {
 	return sourceURL + "\x00" + relativePath
 }

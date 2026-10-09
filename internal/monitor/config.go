@@ -14,6 +14,7 @@ type Config struct {
 	ValidationBatchSize int
 	Limit               int
 	CommandTimeout      time.Duration
+	MaxRunDuration      time.Duration
 	CleanOutput         bool
 }
 
@@ -27,7 +28,9 @@ func DefaultConfig() Config {
 		NucleiBin:           "nuclei",
 		Workers:             4,
 		ValidationBatchSize: 256,
+		Limit:               10000,
 		CommandTimeout:      2 * time.Minute,
+		MaxRunDuration:      4 * time.Hour,
 		CleanOutput:         false,
 	}
 }

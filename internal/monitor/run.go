@@ -2,6 +2,7 @@ package monitor
 
 import (
 	"context"
+	"errors"
 	"log"
 	"os"
 	"path/filepath"
@@ -9,11 +10,13 @@ import (
 	"strings"
 	"sync"
 	"sync/atomic"
+	"time"
 
 	"github.com/gogf/gf/v2/errors/gerror"
 )
 
 func Run(parent context.Context, cfg Config) (runErr error) {
+	deadline := time.Now().Add(cfg.MaxRunDuration)
 	if err := validateConfig(cfg); err != nil {
 		return err
 	}
@@ -58,9 +61,11 @@ func Run(parent context.Context, cfg Config) (runErr error) {
 		}
 	}
 
-	selectedTotal := 0
-	for _, source := range sources {
-		if cfg.Limit > 0 && selectedTotal >= cfg.Limit {
+	moreWork := false
+	for sourceIndex, source := range sources {
+		if cfg.Limit > 0 && len(changedItems) >= cfg.Limit {
+			moreWork = true
+			log.Printf("[INFO] limit=%d reached before source=%s", cfg.Limit, source.Name)
 			break
 		}
 		revision, revisionErr := sourceRevision(parent, source, cfg.CommandTimeout)
@@ -68,7 +73,9 @@ func Run(parent context.Context, cfg Config) (runErr error) {
 			log.Printf("[WARN] %s", revisionErr)
 			continue
 		}
-		if previousState, ok := sourceStates[source.URL]; ok && previousState.Revision == revision && !fullRebuild && sourceOutputsExist(cfg, previous, source.URL) {
+		previousState := sourceStates[source.URL]
+		outputsExist := sourceOutputsExist(cfg, previous, source.URL)
+		if previousState.Revision == revision && previousState.Complete && !fullRebuild && outputsExist {
 			log.Printf("[SKIP] source=%s revision=%s unchanged", source.Name, shortRevision(revision))
 			continue
 		}
@@ -84,17 +91,22 @@ func Run(parent context.Context, cfg Config) (runErr error) {
 			continue
 		}
 
-		previousSource := recordsForSource(previous, source.URL)
-		currentSource := make(map[string]Record)
+		previousSource := recordsForSource(records, source.URL)
+		currentPaths := make(map[string]struct{}, len(paths))
+		for _, path := range paths {
+			currentPaths[recordKey(source.URL, relativePath(root, path))] = struct{}{}
+		}
+		cursor := ""
+		if previousState.Revision == revision && !previousState.Complete && outputsExist && !fullRebuild {
+			cursor = previousState.Cursor
+		}
 		limited := false
 		sourceChanged := 0
-		for _, path := range paths {
-			if cfg.Limit > 0 && selectedTotal >= cfg.Limit {
-				limited = true
-				break
-			}
-			selectedTotal++
+		for pathIndex, path := range paths {
 			relative := relativePath(root, path)
+			if cursor != "" && relative <= cursor {
+				continue
+			}
 			key := recordKey(source.URL, relative)
 			hash, hashErr := hashFile(path)
 			if hashErr != nil {
@@ -102,52 +114,62 @@ func Run(parent context.Context, cfg Config) (runErr error) {
 			}
 			old, exists := previousSource[key]
 			if exists && old.SHA256 == hash && recordOutputsExist(cfg, old) && !fullRebuild {
-				currentSource[key] = old
 				continue
 			}
 			if exists {
 				removedRecords[key] = old
+				delete(records, key)
 			}
-			changedItems = append(changedItems, evaluated{Path: path, Source: source})
+			changedItems = append(changedItems, evaluated{Path: path, Source: source, Hash: hash})
 			sourceChanged++
+			if cfg.Limit > 0 && len(changedItems) >= cfg.Limit && pathIndex+1 < len(paths) {
+				nextSourceStates[source.URL] = SourceState{URL: source.URL, Name: source.Name, Revision: revision, Cursor: relative, UpdatedAt: now()}
+				limited = true
+				moreWork = true
+				break
+			}
 		}
 		if limited {
-			for key, record := range currentSource {
-				records[key] = record
-			}
-			log.Printf("[INFO] limit=%d reached; source state is not advanced", cfg.Limit)
+			log.Printf("[INFO] source=%s paused at %s; changed=%d", source.Name, nextSourceStates[source.URL].Cursor, sourceChanged)
 			break
 		}
 		for key, old := range previousSource {
-			if _, exists := currentSource[key]; !exists {
+			if _, exists := currentPaths[key]; !exists {
 				removedRecords[key] = old
+				delete(records, key)
 			}
-		}
-		for key := range previousSource {
-			delete(records, key)
-		}
-		for key, record := range currentSource {
-			records[key] = record
 		}
 		nextSourceStates[source.URL] = SourceState{
 			URL:       source.URL,
 			Name:      source.Name,
 			Revision:  revision,
+			Complete:  true,
 			UpdatedAt: now(),
 		}
 		log.Printf("[INFO] source=%s revision=%s templates=%d changed=%d", source.Name, shortRevision(revision), len(paths), sourceChanged)
+		if cfg.Limit > 0 && len(changedItems) >= cfg.Limit && sourceIndex+1 < len(sources) {
+			moreWork = true
+			break
+		}
 	}
 
 	if len(changedItems) > 0 {
-		if err := evaluateTemplates(parent, cfg, changedItems); err != nil {
-			return err
+		validationContext, cancel := context.WithDeadline(parent, deadline)
+		evaluationErr := evaluateTemplates(parent, validationContext, cfg, changedItems)
+		cancel()
+		if evaluationErr != nil {
+			if !errors.Is(evaluationErr, context.DeadlineExceeded) || parent.Err() != nil {
+				return evaluationErr
+			}
+			moreWork = true
+			log.Printf("[INFO] run time budget reached; saving completed validation results")
 		}
+		changedItems = completedItems(changedItems, previous, records, removedRecords, nextSourceStates)
 	}
 	if len(records) == 0 && len(changedItems) == 0 {
 		return gerror.New("no YAML templates available from configured sources")
 	}
 
-	cfg.CleanOutput = fullRebuild
 	writer, err := newOutputWriter(cfg)
 	if err != nil {
 		return err
@@ -202,6 +224,9 @@ func Run(parent context.Context, cfg Config) (runErr error) {
 	if err := writeState(cfg.MetadataDir, nextSourceStates); err != nil {
 		return err
 	}
+	if err := writeProgress(cfg.MetadataDir, moreWork, len(changedItems)); err != nil {
+		return err
+	}
 	log.Printf("[INFO] total=%d compatible=%d incompatible=%d changed=%d skipped=%d", summary.Total, summary.Compatible, summary.Incompatible, len(changedItems), summary.Total-len(changedItems))
 	return nil
 }
@@ -219,6 +244,9 @@ func validateConfig(cfg Config) error {
 	if cfg.CommandTimeout <= 0 {
 		return gerror.New("command timeout must be greater than zero")
 	}
+	if cfg.MaxRunDuration <= 0 {
+		return gerror.New("max run duration must be greater than zero")
+	}
 	for _, path := range []string{cfg.CompatibleDir, cfg.IncompatibleDir, cfg.MetadataDir} {
 		if strings.TrimSpace(path) == "" {
 			return gerror.New("output paths cannot be empty")
@@ -227,7 +255,31 @@ func validateConfig(cfg Config) error {
 	return nil
 }
 
-func evaluateTemplates(parent context.Context, cfg Config, items []evaluated) error {
+func completedItems(items []evaluated, previous, records, removed map[string]Record, states map[string]SourceState) []evaluated {
+	completed := make([]evaluated, 0, len(items))
+	for _, item := range items {
+		if item.Record.Status == "compatible" || item.Record.Status == "incompatible" {
+			completed = append(completed, item)
+			continue
+		}
+		relative := item.Record.RelativePath
+		if relative == "" {
+			continue
+		}
+		key := recordKey(item.Source.URL, relative)
+		if old, exists := previous[key]; exists {
+			records[key] = old
+			delete(removed, key)
+		}
+		state := states[item.Source.URL]
+		state.Cursor = ""
+		state.Complete = false
+		states[item.Source.URL] = state
+	}
+	return completed
+}
+
+func evaluateTemplates(parent, validationContext context.Context, cfg Config, items []evaluated) error {
 	if err := prepareTemplates(parent, cfg, items); err != nil {
 		return err
 	}
@@ -250,7 +302,7 @@ func evaluateTemplates(parent context.Context, cfg Config, items []evaluated) er
 		return nil
 	}
 	log.Printf("[INFO] validation candidates=%d unique=%d batch-size=%d", len(items), len(groups), cfg.ValidationBatchSize)
-	return validateGroups(parent, cfg, groups)
+	return validateGroups(validationContext, cfg, groups)
 }
 
 func prepareTemplates(parent context.Context, cfg Config, items []evaluated) error {
@@ -357,6 +409,18 @@ func validateGroupBatch(parent context.Context, cfg Config, groups []*validation
 		paths = append(paths, group.Members[0].Path)
 	}
 	failed, validationErr := validateBatchWithNuclei(parent, cfg, paths)
+	if validationErr != nil && errors.Is(validationErr, context.DeadlineExceeded) && parent.Err() == nil {
+		if len(groups) == 1 {
+			markGroup(groups[0], "incompatible", "nuclei_validation_timeout", truncate(validationErr.Error(), 800))
+			logValidationProgress(processed.Add(int64(groupSize(groups))), total)
+			return nil
+		}
+		middle := len(groups) / 2
+		if err := validateGroupBatch(parent, cfg, groups[:middle], processed, total); err != nil {
+			return err
+		}
+		return validateGroupBatch(parent, cfg, groups[middle:], processed, total)
+	}
 	if !failed {
 		if validationErr != nil {
 			return validationErr
