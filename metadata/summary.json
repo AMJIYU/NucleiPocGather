@@ -1,0 +1,41 @@
+{
+  "generated_at": "2026-10-09T10:31:26.565972516Z",
+  "total": 10000,
+  "compatible": 9998,
+  "incompatible": 2,
+  "duplicates": 0,
+  "categories": {
+    "api": 394,
+    "auth": 3440,
+    "cloud": 868,
+    "cnvd": 45,
+    "container": 135,
+    "cve": 4419,
+    "detect": 2202,
+    "exposure": 3795,
+    "fuzz": 34,
+    "java": 181,
+    "lfi": 717,
+    "microsoft": 375,
+    "network": 364,
+    "other": 294,
+    "rce": 1051,
+    "sqli": 510,
+    "ssrf": 184,
+    "upload": 203,
+    "wordpress": 1294,
+    "xss": 1245,
+    "xxe": 42
+  },
+  "incompatible_by_reason": {
+    "yaml_or_structure": 2
+  },
+  "severities": {
+    "critical": 1676,
+    "high": 2457,
+    "info": 2704,
+    "low": 455,
+    "medium": 2648,
+    "unknown": 58
+  }
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "url": "https://github.com/projectdiscovery/nuclei-templates",
+    "name": "projectdiscovery__nuclei-templates",
+    "revision": "c8664a14c6078ae9da2d19dbb4c479981454cf65",
+    "cursor": "http/osint/phishing/goat-phish.yaml",
+    "complete": false,
+    "updated_at": "2026-10-09T10:30:15.668922169Z"
+  }
+]
