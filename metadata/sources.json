@@ -108,9 +108,9 @@
     "url": "https://github.com/adampielak/nuclei-templates",
     "name": "adampielak__nuclei-templates",
     "revision": "f6f8cbdc84c8a98f3732725d9435dfafb3fa4d0f",
-    "cursor": "http/cves/2024/CVE-2024-49757_1.yaml",
+    "cursor": "http/cves/2024/CVE-2024-9589.yaml",
     "complete": false,
-    "updated_at": "2026-10-09T12:59:57.470029742Z"
+    "updated_at": "2026-10-10T09:48:36.435513208Z"
   },
   {
     "url": "https://github.com/alexrydzak/rydzak-nuclei-templates",
@@ -276,9 +276,9 @@
   {
     "url": "https://github.com/projectdiscovery/nuclei-templates",
     "name": "projectdiscovery__nuclei-templates",
-    "revision": "c8664a14c6078ae9da2d19dbb4c479981454cf65",
+    "revision": "883c2a69abe7560f469e737260322bd05888e887",
     "complete": true,
-    "updated_at": "2026-10-09T10:32:25.436955956Z"
+    "updated_at": "2026-10-10T09:47:50.267392204Z"
   },
   {
     "url": "https://github.com/rafaelcaria/Nuclei-Templates",
