@@ -108,9 +108,9 @@
     "url": "https://github.com/adampielak/nuclei-templates",
     "name": "adampielak__nuclei-templates",
     "revision": "f6f8cbdc84c8a98f3732725d9435dfafb3fa4d0f",
-    "cursor": "http/cves/2024/CVE-2024-9589.yaml",
+    "cursor": "http/cves/2025/CVE-2025-26899-recapture_for_woocommerce-7917c9c1-fb94-411f-85c7-b1d1c2224c5e.yaml",
     "complete": false,
-    "updated_at": "2026-10-10T09:48:36.435513208Z"
+    "updated_at": "2026-10-12T10:45:46.515082527Z"
   },
   {
     "url": "https://github.com/alexrydzak/rydzak-nuclei-templates",
@@ -150,9 +150,9 @@
   {
     "url": "https://github.com/daffainfo/my-nuclei-templates",
     "name": "daffainfo__my-nuclei-templates",
-    "revision": "08445a007120f4d01edcf01787b352c042065531",
+    "revision": "093ab6eae545367852e9b234c233531bf4319788",
     "complete": true,
-    "updated_at": "2026-10-09T10:43:20.066420679Z"
+    "updated_at": "2026-10-12T10:45:10.733645687Z"
   },
   {
     "url": "https://github.com/esetal/nuclei-bb-templates",
@@ -276,9 +276,9 @@
   {
     "url": "https://github.com/projectdiscovery/nuclei-templates",
     "name": "projectdiscovery__nuclei-templates",
-    "revision": "883c2a69abe7560f469e737260322bd05888e887",
+    "revision": "6dd47bf6b9bfe2ff36bb23439876363c5c8c6b2f",
     "complete": true,
-    "updated_at": "2026-10-10T09:47:50.267392204Z"
+    "updated_at": "2026-10-12T10:45:02.318006729Z"
   },
   {
     "url": "https://github.com/rafaelcaria/Nuclei-Templates",
