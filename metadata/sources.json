@@ -108,9 +108,9 @@
     "url": "https://github.com/adampielak/nuclei-templates",
     "name": "adampielak__nuclei-templates",
     "revision": "f6f8cbdc84c8a98f3732725d9435dfafb3fa4d0f",
-    "cursor": "http/cves/2025/CVE-2025-26899-recapture_for_woocommerce-7917c9c1-fb94-411f-85c7-b1d1c2224c5e.yaml",
+    "cursor": "http/cves/2025/CVE-2025-6742.yaml",
     "complete": false,
-    "updated_at": "2026-10-12T10:45:46.515082527Z"
+    "updated_at": "2026-10-12T10:49:29.999770241Z"
   },
   {
     "url": "https://github.com/alexrydzak/rydzak-nuclei-templates",
