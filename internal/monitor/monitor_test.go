@@ -3,6 +3,7 @@ package monitor
 import (
 	"context"
 	"encoding/json"
+	"fmt"
 	"os"
 	"os/exec"
 	"path/filepath"
@@ -163,10 +164,6 @@ func TestOutputWriterReusesDuplicateOutput(t *testing.T) {
 	if duplicate || len(paths) != 1 {
 		t.Fatalf("initial write returned duplicate=%v paths=%v", duplicate, paths)
 	}
-	if err := writer.close(); err != nil {
-		t.Fatal(err)
-	}
-
 	cfg.CleanOutput = false
 	writer, err = newOutputWriter(cfg)
 	if err != nil {
@@ -187,9 +184,120 @@ func TestOutputWriterReusesDuplicateOutput(t *testing.T) {
 	if !duplicate || len(reused) != 1 || reused[0] != paths[0] {
 		t.Fatalf("duplicate write did not reuse output: duplicate=%v reused=%v original=%v", duplicate, reused, paths)
 	}
-	if err := writer.close(); err != nil {
+}
+
+func TestManifestMigrationAndSharding(t *testing.T) {
+	metadataDir := t.TempDir()
+	legacy := Record{SourceURL: "https://example.invalid/legacy", RelativePath: "old.yaml", Status: "compatible"}
+	encoded, err := json.Marshal(legacy)
+	if err != nil {
 		t.Fatal(err)
 	}
+	legacyPath := filepath.Join(metadataDir, "manifest.jsonl")
+	if err := os.WriteFile(legacyPath, append(encoded, '\n'), 0o644); err != nil {
+		t.Fatal(err)
+	}
+	loaded, hasManifest, err := loadManifest(metadataDir)
+	if err != nil || !hasManifest || len(loaded) != 1 {
+		t.Fatalf("legacy manifest: records=%d present=%v err=%v", len(loaded), hasManifest, err)
+	}
+
+	records := make(map[string]Record)
+	for index := 0; index < 512; index++ {
+		record := Record{
+			SourceURL:    "https://example.invalid/source",
+			RelativePath: fmt.Sprintf("templates/%04d.yaml", index),
+			Status:       "compatible",
+			SHA256:       strings.Repeat("a", 64),
+		}
+		records[recordKey(record.SourceURL, record.RelativePath)] = record
+	}
+	const shardSize = 1024
+	if err := writeManifestWithShardSize(metadataDir, records, shardSize); err != nil {
+		t.Fatal(err)
+	}
+	if _, err := os.Stat(legacyPath); !os.IsNotExist(err) {
+		t.Fatalf("legacy manifest was not removed: %v", err)
+	}
+	entries, err := os.ReadDir(filepath.Join(metadataDir, "manifest"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(entries) <= manifestBuckets {
+		t.Fatalf("expected split buckets, got %d shards", len(entries))
+	}
+	for _, entry := range entries {
+		info, err := entry.Info()
+		if err != nil {
+			t.Fatal(err)
+		}
+		if info.Size() > shardSize {
+			t.Fatalf("shard %q is %d bytes", entry.Name(), info.Size())
+		}
+	}
+	loaded, hasManifest, err = loadManifest(metadataDir)
+	if err != nil || !hasManifest || len(loaded) != len(records) {
+		t.Fatalf("sharded manifest: records=%d present=%v err=%v", len(loaded), hasManifest, err)
+	}
+	if err := writeManifestWithShardSize(metadataDir, map[string]Record{recordKey(legacy.SourceURL, legacy.RelativePath): legacy}, shardSize); err != nil {
+		t.Fatal(err)
+	}
+	loaded, _, err = loadManifest(metadataDir)
+	if err != nil || len(loaded) != 1 || loaded[recordKey(legacy.SourceURL, legacy.RelativePath)].RelativePath != legacy.RelativePath {
+		t.Fatalf("stale shards remained: records=%d err=%v", len(loaded), err)
+	}
+}
+
+func TestManifestWriteFailurePreservesLegacy(t *testing.T) {
+	metadataDir := t.TempDir()
+	legacyPath := filepath.Join(metadataDir, "manifest.jsonl")
+	if err := os.WriteFile(legacyPath, []byte("{\"source_url\":\"old\",\"relative_path\":\"old.yaml\"}\n"), 0o644); err != nil {
+		t.Fatal(err)
+	}
+	record := Record{SourceURL: "new", RelativePath: "new.yaml", Message: strings.Repeat("x", 1024)}
+	if err := writeManifestWithShardSize(metadataDir, map[string]Record{recordKey(record.SourceURL, record.RelativePath): record}, 512); err == nil {
+		t.Fatal("expected oversized record error")
+	}
+	loaded, _, err := loadManifest(metadataDir)
+	if err != nil || len(loaded) != 1 || loaded[recordKey("old", "old.yaml")].RelativePath != "old.yaml" {
+		t.Fatalf("legacy state was lost: records=%v err=%v", loaded, err)
+	}
+}
+
+func TestMigrateRepositoryManifest(t *testing.T) {
+	if os.Getenv("NUCLEI_TEST_FULL_MANIFEST") != "1" {
+		t.Skip("set NUCLEI_TEST_FULL_MANIFEST=1 to check the checked-out manifest")
+	}
+	repositoryMetadata := filepath.Join("..", "..", "metadata")
+	if _, err := os.Stat(repositoryMetadata); os.IsNotExist(err) {
+		t.Skip("repository manifest is not checked out")
+	}
+	records, present, err := loadManifest(repositoryMetadata)
+	if err != nil || !present {
+		t.Fatalf("load repository manifest: present=%v err=%v", present, err)
+	}
+	metadataDir := t.TempDir()
+	if err := writeManifest(metadataDir, records); err != nil {
+		t.Fatal(err)
+	}
+	entries, err := os.ReadDir(filepath.Join(metadataDir, "manifest"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	for _, entry := range entries {
+		info, err := entry.Info()
+		if err != nil {
+			t.Fatal(err)
+		}
+		if info.Size() > manifestShardSize {
+			t.Fatalf("shard %q is %d bytes", entry.Name(), info.Size())
+		}
+	}
+	migrated, _, err := loadManifest(metadataDir)
+	if err != nil || len(migrated) != len(records) {
+		t.Fatalf("migrated records=%d, want %d: %v", len(migrated), len(records), err)
+	}
+	t.Logf("migrated %d records into %d shards", len(records), len(entries))
 }
 
 func TestDeduplicateCompatibleOutput(t *testing.T) {

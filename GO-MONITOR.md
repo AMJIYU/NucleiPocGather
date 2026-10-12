@@ -8,7 +8,7 @@
 2. 对 YAML 做 Nuclei 基础结构检查，再调用 `nuclei -validate -t <file> -silent`。
 3. 兼容模板按漏洞类型、产品和协议分类到 `poc/<category>/`。
 4. YAML 解析失败、结构不完整或 Nuclei 校验失败的模板原样保存到 `incompatible/<reason>/`，不会被删除。
-5. 生成 `metadata/manifest.jsonl` 和 `metadata/summary.json`，记录来源、哈希、状态、失败原因和输出路径。
+5. 生成 `metadata/manifest/` 分片和 `metadata/summary.json`，记录来源、哈希、状态、失败原因和输出路径；旧版单文件清单会自动迁移。
 
 分类是基于 `id`、文件路径、名称和 tags 的可解释规则；一个模板可以出现在多个类别，但同一类别内相同 SHA-256 内容只保存一次。
 

@@ -1,7 +1,6 @@
 package monitor
 
 import (
-	"bufio"
 	"encoding/json"
 	"os"
 	"path/filepath"
@@ -11,35 +10,19 @@ import (
 )
 
 func loadState(metadataDir string) (map[string]Record, map[string]SourceState, bool, error) {
-	records := make(map[string]Record)
 	sources := make(map[string]SourceState)
-	manifestPath := filepath.Join(metadataDir, "manifest.jsonl")
-	manifest, err := os.Open(manifestPath)
-	if os.IsNotExist(err) {
-		return records, sources, false, nil
-	}
+	records, hasManifest, err := loadManifest(metadataDir)
 	if err != nil {
-		return nil, nil, false, gerror.Wrapf(err, "open previous manifest %q", manifestPath)
+		return nil, nil, false, err
 	}
-	defer manifest.Close()
-
-	scanner := bufio.NewScanner(manifest)
-	scanner.Buffer(make([]byte, 64*1024), 4*1024*1024)
-	for scanner.Scan() {
-		var record Record
-		if err := json.Unmarshal(scanner.Bytes(), &record); err != nil {
-			return nil, nil, false, gerror.Wrap(err, "decode previous manifest record")
-		}
-		records[recordKey(record.SourceURL, record.RelativePath)] = record
-	}
-	if err := scanner.Err(); err != nil {
-		return nil, nil, false, gerror.Wrap(err, "read previous manifest")
+	if !hasManifest {
+		return records, sources, false, nil
 	}
 
 	sourcesPath := filepath.Join(metadataDir, "sources.json")
 	encoded, err := os.ReadFile(sourcesPath)
 	if os.IsNotExist(err) {
-		return records, sources, true, nil
+		return records, sources, hasManifest, nil
 	}
 	if err != nil {
 		return nil, nil, false, gerror.Wrapf(err, "read source state %q", sourcesPath)
@@ -51,7 +34,7 @@ func loadState(metadataDir string) (map[string]Record, map[string]SourceState, b
 	for _, source := range sourceList {
 		sources[source.URL] = source
 	}
-	return records, sources, true, nil
+	return records, sources, hasManifest, nil
 }
 
 func writeState(metadataDir string, sources map[string]SourceState) error {

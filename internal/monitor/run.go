@@ -15,7 +15,7 @@ import (
 	"github.com/gogf/gf/v2/errors/gerror"
 )
 
-func Run(parent context.Context, cfg Config) (runErr error) {
+func Run(parent context.Context, cfg Config) error {
 	deadline := time.Now().Add(cfg.MaxRunDuration)
 	if err := validateConfig(cfg); err != nil {
 		return err
@@ -174,11 +174,6 @@ func Run(parent context.Context, cfg Config) (runErr error) {
 	if err != nil {
 		return err
 	}
-	defer func() {
-		if closeErr := writer.close(); runErr == nil && closeErr != nil {
-			runErr = closeErr
-		}
-	}()
 	writer.seed(records)
 	if !fullRebuild {
 		protected := protectedOutputPaths(records)
@@ -212,10 +207,8 @@ func Run(parent context.Context, cfg Config) (runErr error) {
 		return err
 	}
 
-	for _, key := range sortedRecordKeys(records) {
-		if err := writer.writeRecord(records[key]); err != nil {
-			return err
-		}
+	if err := writeManifest(cfg.MetadataDir, records); err != nil {
+		return err
 	}
 	summary := summarizeRecords(records)
 	if err := writeSummary(cfg.MetadataDir, summary); err != nil {

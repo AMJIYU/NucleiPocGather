@@ -1,7 +1,6 @@
 package monitor
 
 import (
-	"bufio"
 	"encoding/json"
 	"os"
 	"path/filepath"
@@ -16,8 +15,6 @@ import (
 type outputWriter struct {
 	compatibleDir   string
 	incompatibleDir string
-	manifest        *os.File
-	manifestWriter  *bufio.Writer
 	globalPaths     map[string]string
 	mu              sync.Mutex
 }
@@ -54,29 +51,11 @@ func newOutputWriter(cfg Config) (*outputWriter, error) {
 			return nil, gerror.Wrapf(err, "create generated directory %q", path)
 		}
 	}
-	manifestPath := filepath.Join(cfg.MetadataDir, "manifest.jsonl")
-	manifest, err := os.Create(manifestPath)
-	if err != nil {
-		return nil, gerror.Wrapf(err, "create manifest %q", manifestPath)
-	}
 	return &outputWriter{
 		compatibleDir:   cfg.CompatibleDir,
 		incompatibleDir: cfg.IncompatibleDir,
-		manifest:        manifest,
-		manifestWriter:  bufio.NewWriter(manifest),
 		globalPaths:     make(map[string]string),
 	}, nil
-}
-
-func (writer *outputWriter) close() error {
-	if err := writer.manifestWriter.Flush(); err != nil {
-		_ = writer.manifest.Close()
-		return gerror.Wrap(err, "flush manifest")
-	}
-	if err := writer.manifest.Close(); err != nil {
-		return gerror.Wrap(err, "close manifest")
-	}
-	return nil
 }
 
 func (writer *outputWriter) writeCompatible(item evaluated, categories []string) (paths []string, duplicate bool, err error) {
@@ -111,19 +90,6 @@ func (writer *outputWriter) writeIncompatible(item evaluated, reason string) (st
 		return "", err
 	}
 	return filepath.ToSlash(filepath.Join(safeName(reason), filepath.Base(destination))), nil
-}
-
-func (writer *outputWriter) writeRecord(record Record) error {
-	writer.mu.Lock()
-	defer writer.mu.Unlock()
-	encoded, err := json.Marshal(record)
-	if err != nil {
-		return gerror.Wrap(err, "encode manifest record")
-	}
-	if _, err := writer.manifestWriter.Write(append(encoded, '\n')); err != nil {
-		return gerror.Wrap(err, "write manifest record")
-	}
-	return nil
 }
 
 func copyFile(source, destination string) error {
