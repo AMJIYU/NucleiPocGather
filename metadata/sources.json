@@ -108,9 +108,9 @@
     "url": "https://github.com/adampielak/nuclei-templates",
     "name": "adampielak__nuclei-templates",
     "revision": "f6f8cbdc84c8a98f3732725d9435dfafb3fa4d0f",
-    "cursor": "http/vulnerabilities/wordpress/brilliance-a9e4e989-8e55-4ea7-8f42-9f67cfab1168.yaml",
+    "cursor": "http/vulnerabilities/wordpress/defender-security-4d85a5bbb31ecfce11e6583d52cf04ab.yaml",
     "complete": false,
-    "updated_at": "2026-10-12T12:54:54.54211461Z"
+    "updated_at": "2026-10-12T12:58:51.39369246Z"
   },
   {
     "url": "https://github.com/alexrydzak/rydzak-nuclei-templates",
