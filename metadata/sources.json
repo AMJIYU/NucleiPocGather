@@ -301,6 +301,14 @@
     "updated_at": "2026-10-12T10:45:10.733645687Z"
   },
   {
+    "url": "https://github.com/damon-sec/Nuclei-templates-Collection",
+    "name": "damon-sec__Nuclei-templates-Collection",
+    "revision": "8c1dd2ad0f132a5b15201f77c5fe0073d2ee9bc9",
+    "cursor": "git-mailmap.yaml",
+    "complete": false,
+    "updated_at": "2026-10-13T15:11:42.050196483Z"
+  },
+  {
     "url": "https://github.com/dk4trin/templates-nuclei",
     "name": "dk4trin__templates-nuclei",
     "revision": "f2d5fe48921683f165dc0ce549aedebca6315717",
@@ -313,6 +321,13 @@
     "revision": "677de20c7d9df0c411d5130007067e2b3e94f789",
     "complete": true,
     "updated_at": "2026-10-13T13:33:05.136601487Z"
+  },
+  {
+    "url": "https://github.com/erickfernandox/nuclei-templates",
+    "name": "erickfernandox__nuclei-templates",
+    "revision": "0db9813362091be34dc30b4988b7bb76b2a2b421",
+    "complete": true,
+    "updated_at": "2026-10-13T15:11:41.171004843Z"
   },
   {
     "url": "https://github.com/esetal/nuclei-bb-templates",
@@ -605,9 +620,8 @@
     "url": "https://github.com/topscoder/nuclei-wordfence-cve",
     "name": "topscoder__nuclei-wordfence-cve",
     "revision": "1dcd9123e84d2fb756c1a0e127d6d498aecda782",
-    "cursor": "nuclei-templates/cve-less/plugins/wp_content_copy_protector-c062d60b-eda8-4039-8655-64f32e70839a.yaml",
-    "complete": false,
-    "updated_at": "2026-10-13T15:06:57.923776682Z"
+    "complete": true,
+    "updated_at": "2026-10-13T15:11:40.518919519Z"
   },
   {
     "url": "https://github.com/toramanemre/apache-solr-log4j-CVE-2021-44228",
