@@ -49,6 +49,13 @@
     "updated_at": "2026-10-09T10:43:28.659808609Z"
   },
   {
+    "url": "https://github.com/Arvinthksrct/alltemplate",
+    "name": "Arvinthksrct__alltemplate",
+    "revision": "5adaa637d1857a1875ee444eb8141e64489386cb",
+    "complete": true,
+    "updated_at": "2026-10-13T15:22:42.016040761Z"
+  },
+  {
     "url": "https://github.com/AshiqurEmon/nuclei_templates",
     "name": "AshiqurEmon__nuclei_templates",
     "revision": "8f3a5f222a09fe8cb12789089281d3ee6da3e765",
@@ -61,6 +68,13 @@
     "revision": "6418cf9ac43a7d4121d979ae9afb12f54511729e",
     "complete": true,
     "updated_at": "2026-10-09T10:43:13.699961818Z"
+  },
+  {
+    "url": "https://github.com/DoubleTakes/nuclei-templates",
+    "name": "DoubleTakes__nuclei-templates",
+    "revision": "049d612a45d4838830fd918bd83a75fe3993f00b",
+    "complete": true,
+    "updated_at": "2026-10-13T15:22:38.918219065Z"
   },
   {
     "url": "https://github.com/Elsfa7-110/mynuclei-templates",
@@ -304,9 +318,8 @@
     "url": "https://github.com/damon-sec/Nuclei-templates-Collection",
     "name": "damon-sec__Nuclei-templates-Collection",
     "revision": "8c1dd2ad0f132a5b15201f77c5fe0073d2ee9bc9",
-    "cursor": "git-mailmap.yaml",
-    "complete": false,
-    "updated_at": "2026-10-13T15:11:42.050196483Z"
+    "complete": true,
+    "updated_at": "2026-10-13T15:22:38.060336482Z"
   },
   {
     "url": "https://github.com/dk4trin/templates-nuclei",
@@ -484,6 +497,13 @@
     "updated_at": "2026-10-13T13:11:44.076474892Z"
   },
   {
+    "url": "https://github.com/ptyspawnbinbash/template-enhancer",
+    "name": "ptyspawnbinbash__template-enhancer",
+    "revision": "0a94180d625a5ceabcc5541bb78f2dfc2ca4ed9e",
+    "complete": true,
+    "updated_at": "2026-10-13T15:22:39.815100961Z"
+  },
+  {
     "url": "https://github.com/rafaelcaria/Nuclei-Templates",
     "name": "rafaelcaria__Nuclei-Templates",
     "revision": "203067974422248c65caec2b6f3223d6782e93ba",
@@ -573,6 +593,14 @@
     "revision": "a47e1b162e25d99745ad3b81a195f6dbac45bcf5",
     "complete": true,
     "updated_at": "2026-10-13T14:08:46.774439712Z"
+  },
+  {
+    "url": "https://github.com/srkgupta/cent-nuclei-templates",
+    "name": "srkgupta__cent-nuclei-templates",
+    "revision": "7994d13b8b8c437c9cd4ba33b0e0a63676a91ddd",
+    "cursor": "templates/CVE-2022-39322.yaml",
+    "complete": false,
+    "updated_at": "2026-10-13T15:22:45.904495109Z"
   },
   {
     "url": "https://github.com/tamimhasan404/Open-Source-Nuclei-Templates-Downloader",
