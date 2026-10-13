@@ -675,9 +675,9 @@
     "url": "https://github.com/madisec/nuclei-templates",
     "name": "madisec__nuclei-templates",
     "revision": "18a2e7e4ef8270b53976ade35bce923dbfca05bc",
-    "cursor": "templates/cent-1/CVE-2023-52142.yaml",
+    "cursor": "templates/cent-1/cve-2018-17254-3417.yaml",
     "complete": false,
-    "updated_at": "2026-10-13T19:55:43.103837082Z"
+    "updated_at": "2026-10-13T20:03:04.227021648Z"
   },
   {
     "url": "https://github.com/mastersir-lab/nuclei-yaml-poc",
