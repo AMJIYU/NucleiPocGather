@@ -17,9 +17,8 @@
     "url": "https://github.com/0xmaximus/final_freaking_nuclei_templates",
     "name": "0xmaximus__final_freaking_nuclei_templates",
     "revision": "fa0a415abd48c69e792e41d49b7a117d193a1a14",
-    "cursor": "error-logs-26.yaml",
-    "complete": false,
-    "updated_at": "2026-10-13T14:00:44.365739386Z"
+    "complete": true,
+    "updated_at": "2026-10-13T14:08:35.889591091Z"
   },
   {
     "url": "https://github.com/1in9e/my-nuclei-templates",
@@ -78,11 +77,40 @@
     "updated_at": "2026-10-09T10:43:27.09370782Z"
   },
   {
+    "url": "https://github.com/Hunt2behunter/nuclei-templates",
+    "name": "Hunt2behunter__nuclei-templates",
+    "revision": "ace35b06e2804c56700bfafabdbb6e914a853089",
+    "cursor": "cves/CVE-2022-24124.yaml",
+    "complete": false,
+    "updated_at": "2026-10-13T14:08:56.408130374Z"
+  },
+  {
+    "url": "https://github.com/Jagomeiister/nuclei-templates",
+    "name": "Jagomeiister__nuclei-templates",
+    "revision": "ddf3345c80f0a1d4c8fa9be9f46cd349f2719741",
+    "complete": true,
+    "updated_at": "2026-10-13T14:08:36.746951127Z"
+  },
+  {
+    "url": "https://github.com/JoshMorrison99/url-based-nuclei-templates",
+    "name": "JoshMorrison99__url-based-nuclei-templates",
+    "revision": "6ec770d58ce70beb38efa1de58d10e382a1729e8",
+    "complete": true,
+    "updated_at": "2026-10-13T14:08:44.941009497Z"
+  },
+  {
     "url": "https://github.com/KeepHowling/all_freaking_nuclei_templates",
     "name": "KeepHowling__all_freaking_nuclei_templates",
     "revision": "b374318732b6922f72d327c57451a7d30973c0c6",
     "complete": true,
     "updated_at": "2026-10-13T13:54:32.02139099Z"
+  },
+  {
+    "url": "https://github.com/Lopseg/nuclei-c-templates",
+    "name": "Lopseg__nuclei-c-templates",
+    "revision": "f00b24d32acdda7ab39d9fa54f198909172ade66",
+    "complete": true,
+    "updated_at": "2026-10-13T14:08:38.904602315Z"
   },
   {
     "url": "https://github.com/MR-pentestGuy/nuclei-templates",
@@ -113,6 +141,13 @@
     "updated_at": "2026-10-13T13:54:32.561606154Z"
   },
   {
+    "url": "https://github.com/PedroFerreira97/nuclei_templates",
+    "name": "PedroFerreira97__nuclei_templates",
+    "revision": "7399a62723d05863ea3f5c2d96b8fe71a1f0ced0",
+    "complete": true,
+    "updated_at": "2026-10-13T14:08:54.827671172Z"
+  },
+  {
     "url": "https://github.com/R-s0n/Custom_Vuln_Scan_Templates",
     "name": "R-s0n__Custom_Vuln_Scan_Templates",
     "revision": "2e982727c5109a2f609d23c8639065449f37b853",
@@ -139,6 +174,13 @@
     "revision": "1f07eff2e7f72000d72fb1d99b4744454d241115",
     "complete": true,
     "updated_at": "2026-10-09T10:43:33.039390648Z"
+  },
+  {
+    "url": "https://github.com/SumedhDawadi/Custom-Nuclei-Template",
+    "name": "SumedhDawadi__Custom-Nuclei-Template",
+    "revision": "b12c0e0a3f63102a9c3c75a9a6379b8df9346326",
+    "complete": true,
+    "updated_at": "2026-10-13T14:08:50.177233583Z"
   },
   {
     "url": "https://github.com/System00-Security/backflow",
@@ -169,11 +211,25 @@
     "updated_at": "2026-10-09T10:43:38.239014887Z"
   },
   {
+    "url": "https://github.com/ayadim/Nuclei-bug-hunter",
+    "name": "ayadim__Nuclei-bug-hunter",
+    "revision": "0f1b672ef1bf56975e881c68ea4385fe7c84780f",
+    "complete": true,
+    "updated_at": "2026-10-13T14:08:45.878370207Z"
+  },
+  {
     "url": "https://github.com/badboy-sft/badboy_17-Nuclei-Templates-Collection",
     "name": "badboy-sft__badboy_17-Nuclei-Templates-Collection",
     "revision": "021781b0fd3403a91b279113f3c23732ef2a3c52",
     "complete": true,
     "updated_at": "2026-10-13T13:54:34.104496623Z"
+  },
+  {
+    "url": "https://github.com/binod235/nuclei-templates-and-reports",
+    "name": "binod235__nuclei-templates-and-reports",
+    "revision": "09108f002769436a4526e364eb061db18b75d522",
+    "complete": true,
+    "updated_at": "2026-10-13T14:08:52.047157563Z"
   },
   {
     "url": "https://github.com/blazeinfosec/nuclei-templates",
@@ -197,11 +253,25 @@
     "updated_at": "2026-10-09T10:43:34.220467471Z"
   },
   {
+    "url": "https://github.com/cipher387/juicyinfo-nuclei-templates",
+    "name": "cipher387__juicyinfo-nuclei-templates",
+    "revision": "4bef89cfd50f9e60ea5a8b8a32636c95ca2168ad",
+    "complete": true,
+    "updated_at": "2026-10-13T14:08:43.855968353Z"
+  },
+  {
     "url": "https://github.com/clarkvoss/Nuclei-Templates",
     "name": "clarkvoss__Nuclei-Templates",
     "revision": "a49bbf37e9e4f8dbfa0031437dc2dc92bc1a8eb2",
     "complete": true,
     "updated_at": "2026-10-09T10:32:31.970242512Z"
+  },
+  {
+    "url": "https://github.com/coldrainh/nuclei-ByMyself",
+    "name": "coldrainh__nuclei-ByMyself",
+    "revision": "c11e8650ea4e3714113a1a064f7888df1e5934d0",
+    "complete": true,
+    "updated_at": "2026-10-13T14:08:51.052487924Z"
   },
   {
     "url": "https://github.com/d3sca/Nuclei_Templates",
@@ -300,6 +370,13 @@
     "revision": "968cb4c7de7db689c9b4598ca359d31b13a54eda",
     "complete": true,
     "updated_at": "2026-10-09T10:43:37.464258062Z"
+  },
+  {
+    "url": "https://github.com/luck-ying/Library-YAML-POC",
+    "name": "luck-ying__Library-YAML-POC",
+    "revision": "cfabd0f7bea9c13f881bed7bcd673ab72473ad4d",
+    "complete": true,
+    "updated_at": "2026-10-13T14:08:53.151342269Z"
   },
   {
     "url": "https://github.com/medbsq/ncl",
@@ -407,6 +484,13 @@
     "updated_at": "2026-10-09T10:32:34.06996335Z"
   },
   {
+    "url": "https://github.com/ricardomaia/nuclei-template-generator-for-wordpress-plugins",
+    "name": "ricardomaia__nuclei-template-generator-for-wordpress-plugins",
+    "revision": "f8cf9eaf3ed81d0323072143e78315b894052909",
+    "complete": true,
+    "updated_at": "2026-10-13T14:08:37.900683404Z"
+  },
+  {
     "url": "https://github.com/sadnansakin/my-nuclei-templates",
     "name": "sadnansakin__my-nuclei-templates",
     "revision": "72fc404ef843f6a78fe72c986860c5b309842c9c",
@@ -435,11 +519,25 @@
     "updated_at": "2026-10-09T10:43:19.098387685Z"
   },
   {
+    "url": "https://github.com/sl4x0/NC-Templates",
+    "name": "sl4x0__NC-Templates",
+    "revision": "987e1641d07fe25626adec57f687bc1c92324fd0",
+    "complete": true,
+    "updated_at": "2026-10-13T14:08:39.797055837Z"
+  },
+  {
     "url": "https://github.com/smaranchand/nuclei-templates",
     "name": "smaranchand__nuclei-templates",
     "revision": "4ee444967714d61e78e22426d37a040452c32f88",
     "complete": true,
     "updated_at": "2026-10-09T10:43:16.117926001Z"
+  },
+  {
+    "url": "https://github.com/soumya123raj/Nuclei",
+    "name": "soumya123raj__Nuclei",
+    "revision": "a47e1b162e25d99745ad3b81a195f6dbac45bcf5",
+    "complete": true,
+    "updated_at": "2026-10-13T14:08:46.774439712Z"
   },
   {
     "url": "https://github.com/tamimhasan404/Open-Source-Nuclei-Templates-Downloader",
@@ -468,6 +566,13 @@
     "revision": "28ccf36d996830ed3562ea8aa9c632852c7ae6c5",
     "complete": true,
     "updated_at": "2026-10-09T10:32:33.434363709Z"
+  },
+  {
+    "url": "https://github.com/thecyberneh/nuclei-templatess",
+    "name": "thecyberneh__nuclei-templatess",
+    "revision": "91801da079df83b43016ad35ed182b517e09aa36",
+    "complete": true,
+    "updated_at": "2026-10-13T14:08:40.669373359Z"
   },
   {
     "url": "https://github.com/thelabda/nuclei-templates",
@@ -505,6 +610,13 @@
     "updated_at": "2026-10-13T13:32:59.828942392Z"
   },
   {
+    "url": "https://github.com/yarovit-developer/nuclei-templates",
+    "name": "yarovit-developer__nuclei-templates",
+    "revision": "068d3a34c5a3e556f2b36cd70903b2fb7d0cc7e8",
+    "complete": true,
+    "updated_at": "2026-10-13T14:08:41.577991449Z"
+  },
+  {
     "url": "https://github.com/yavolo/nuclei-templates",
     "name": "yavolo__nuclei-templates",
     "revision": "1a9e2332a7bb8547c70f3c8e93b7011a2bad2921",
@@ -517,5 +629,12 @@
     "revision": "a0ef427b78571c9fef2fe5c41f015ee932fa9524",
     "complete": true,
     "updated_at": "2026-10-09T10:32:32.650560808Z"
+  },
+  {
+    "url": "https://github.com/zer0yu/Open-PoC",
+    "name": "zer0yu__Open-PoC",
+    "revision": "77ac1c78ea064f533371afede20979192c7ee5f0",
+    "complete": true,
+    "updated_at": "2026-10-13T14:08:48.47032039Z"
   }
 ]
