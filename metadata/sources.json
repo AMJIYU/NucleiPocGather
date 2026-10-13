@@ -380,9 +380,10 @@
   {
     "url": "https://github.com/adampielak/nuclei-templates",
     "name": "adampielak__nuclei-templates",
-    "revision": "f6f8cbdc84c8a98f3732725d9435dfafb3fa4d0f",
-    "complete": true,
-    "updated_at": "2026-10-13T13:12:37.10132423Z"
+    "revision": "05f37aa44cb5213fc568030d73ba50ad233047ce",
+    "cursor": "http/vulnerabilities/wordpress/prolike_button-b7feee88-6853-48a9-b16f-b70cdd376e7a.yaml",
+    "complete": false,
+    "updated_at": "2026-10-13T23:46:14.373992395Z"
   },
   {
     "url": "https://github.com/aels/CVE-2022-37042",
