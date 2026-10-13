@@ -675,9 +675,9 @@
     "url": "https://github.com/madisec/nuclei-templates",
     "name": "madisec__nuclei-templates",
     "revision": "18a2e7e4ef8270b53976ade35bce923dbfca05bc",
-    "cursor": "templates/cent-1/cve-2018-17254-3417.yaml",
+    "cursor": "templates/cent-1/kxmail.yaml",
     "complete": false,
-    "updated_at": "2026-10-13T20:03:04.227021648Z"
+    "updated_at": "2026-10-13T20:29:43.673983929Z"
   },
   {
     "url": "https://github.com/mastersir-lab/nuclei-yaml-poc",
@@ -885,9 +885,9 @@
   {
     "url": "https://github.com/rxerium/CISA-KEV",
     "name": "rxerium__CISA-KEV",
-    "revision": "ac3b006673187199fbbf5ea27afaa1cfa5d56a68",
+    "revision": "dd100e357b76386347770a0f857b1730695332ac",
     "complete": true,
-    "updated_at": "2026-10-13T19:13:12.944007255Z"
+    "updated_at": "2026-10-13T20:29:29.73595342Z"
   },
   {
     "url": "https://github.com/sadnansakin/my-nuclei-templates",
