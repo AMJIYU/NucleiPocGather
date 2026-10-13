@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-10-13T10:55:47.815885035Z",
-  "total": 329895,
-  "compatible": 303369,
-  "incompatible": 26526,
+  "generated_at": "2026-10-13T11:26:23.544787268Z",
+  "total": 339894,
+  "compatible": 303370,
+  "incompatible": 36524,
   "duplicates": 25755,
   "categories": {
     "api": 6072,
@@ -10,7 +10,7 @@
     "cloud": 5527,
     "cnvd": 636,
     "container": 727,
-    "cve": 156342,
+    "cve": 156343,
     "detect": 28169,
     "exposure": 28991,
     "fuzz": 437,
@@ -28,12 +28,12 @@
     "xxe": 442
   },
   "incompatible_by_reason": {
-    "nuclei_validation": 24650,
-    "yaml_or_structure": 1876
+    "nuclei_validation": 34622,
+    "yaml_or_structure": 1902
   },
   "severities": {
     "critical": 32560,
-    "high": 63971,
+    "high": 63972,
     "info": 27426,
     "low": 77507,
     "medium": 101592,
