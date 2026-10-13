@@ -17,9 +17,9 @@
     "url": "https://github.com/0xKayala/Custom-Nuclei-Templates",
     "name": "0xKayala__Custom-Nuclei-Templates",
     "revision": "1940dfd29577590f076c89dec5c30d809d68f210",
-    "cursor": "18001-to-19000-templates/CVE-2022-48165.yaml",
+    "cursor": "27001-to-28000-templates/interactive-geo-maps-d41d8cd98f00b204e9800998ecf8427e.yaml",
     "complete": false,
-    "updated_at": "2026-10-13T17:01:02.627507318Z"
+    "updated_at": "2026-10-13T17:22:26.193897932Z"
   },
   {
     "url": "https://github.com/0xPugazh/my-nuclei-templates",
