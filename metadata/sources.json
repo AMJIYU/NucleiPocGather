@@ -605,9 +605,9 @@
     "url": "https://github.com/topscoder/nuclei-wordfence-cve",
     "name": "topscoder__nuclei-wordfence-cve",
     "revision": "1dcd9123e84d2fb756c1a0e127d6d498aecda782",
-    "cursor": "nuclei-templates/2025/CVE-2025-32224-privy_crm_integration-23d7b6fc-0eb7-4bd1-ac48-3797aec08496.yaml",
+    "cursor": "nuclei-templates/2026/CVE-2026-39603-grandphotography-36c377cc-4169-4f9d-960f-518f7c4191d7.yaml",
     "complete": false,
-    "updated_at": "2026-10-13T14:44:03.198714195Z"
+    "updated_at": "2026-10-13T14:48:38.600570143Z"
   },
   {
     "url": "https://github.com/toramanemre/apache-solr-log4j-CVE-2021-44228",
