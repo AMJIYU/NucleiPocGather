@@ -56,6 +56,14 @@
     "updated_at": "2026-10-13T13:12:38.779264064Z"
   },
   {
+    "url": "https://github.com/ExpLangcn/NucleiTP",
+    "name": "ExpLangcn__NucleiTP",
+    "revision": "2b7ecb9031a6eda4f272793045f29b339d8e0cce",
+    "cursor": "high/open-proxy-portscan.yaml",
+    "complete": false,
+    "updated_at": "2026-10-13T13:54:36.354543317Z"
+  },
+  {
     "url": "https://github.com/Harish4948/Nuclei-Templates",
     "name": "Harish4948__Nuclei-Templates",
     "revision": "8c185d959b84985714d068b2cbbd7b90741dfaf6",
@@ -66,9 +74,8 @@
     "url": "https://github.com/KeepHowling/all_freaking_nuclei_templates",
     "name": "KeepHowling__all_freaking_nuclei_templates",
     "revision": "b374318732b6922f72d327c57451a7d30973c0c6",
-    "cursor": "wordpress-wordfence-xss.yaml",
-    "complete": false,
-    "updated_at": "2026-10-13T13:33:06.069256522Z"
+    "complete": true,
+    "updated_at": "2026-10-13T13:54:32.02139099Z"
   },
   {
     "url": "https://github.com/MR-pentestGuy/nuclei-templates",
@@ -78,11 +85,25 @@
     "updated_at": "2026-10-09T10:43:24.468904464Z"
   },
   {
+    "url": "https://github.com/NightRang3r/misc_nuclei_templates",
+    "name": "NightRang3r__misc_nuclei_templates",
+    "revision": "802fbde1f106fede2d00d6db98ce1a8721bc8d27",
+    "complete": true,
+    "updated_at": "2026-10-13T13:54:34.728547411Z"
+  },
+  {
     "url": "https://github.com/NitinYadav00/My-Nuclei-Templates",
     "name": "NitinYadav00__My-Nuclei-Templates",
     "revision": "49703439a2a67e4a6fe30713524fde95ba70eb5f",
     "complete": true,
     "updated_at": "2026-10-09T10:43:22.547928751Z"
+  },
+  {
+    "url": "https://github.com/Odayex/Random-Nuclei-Templates",
+    "name": "Odayex__Random-Nuclei-Templates",
+    "revision": "b9472a33c07bce1c24bb02f0390659bcfe41860e",
+    "complete": true,
+    "updated_at": "2026-10-13T13:54:32.561606154Z"
   },
   {
     "url": "https://github.com/R-s0n/Custom_Vuln_Scan_Templates",
@@ -127,11 +148,25 @@
     "updated_at": "2026-10-13T13:12:37.10132423Z"
   },
   {
+    "url": "https://github.com/aels/CVE-2022-37042",
+    "name": "aels__CVE-2022-37042",
+    "revision": "18c34c27fdf1c2ad5c759853f9e429a1af4e0252",
+    "complete": true,
+    "updated_at": "2026-10-13T13:54:33.01645254Z"
+  },
+  {
     "url": "https://github.com/alexrydzak/rydzak-nuclei-templates",
     "name": "alexrydzak__rydzak-nuclei-templates",
     "revision": "8454cec2756026303126898f7d3f5f1f299c75c9",
     "complete": true,
     "updated_at": "2026-10-09T10:43:38.239014887Z"
+  },
+  {
+    "url": "https://github.com/badboy-sft/badboy_17-Nuclei-Templates-Collection",
+    "name": "badboy-sft__badboy_17-Nuclei-Templates-Collection",
+    "revision": "021781b0fd3403a91b279113f3c23732ef2a3c52",
+    "complete": true,
+    "updated_at": "2026-10-13T13:54:34.104496623Z"
   },
   {
     "url": "https://github.com/blazeinfosec/nuclei-templates",
@@ -398,6 +433,13 @@
     "revision": "4ee444967714d61e78e22426d37a040452c32f88",
     "complete": true,
     "updated_at": "2026-10-09T10:43:16.117926001Z"
+  },
+  {
+    "url": "https://github.com/tamimhasan404/Open-Source-Nuclei-Templates-Downloader",
+    "name": "tamimhasan404__Open-Source-Nuclei-Templates-Downloader",
+    "revision": "eb85e09b7f42222d4c6ae96edd0706ff6d4ff93f",
+    "complete": true,
+    "updated_at": "2026-10-13T13:54:33.46587148Z"
   },
   {
     "url": "https://github.com/test502git/log4j-fuzz-head-poc",
