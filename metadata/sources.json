@@ -14,6 +14,14 @@
     "updated_at": "2026-10-09T10:43:35.692922153Z"
   },
   {
+    "url": "https://github.com/0xmaximus/final_freaking_nuclei_templates",
+    "name": "0xmaximus__final_freaking_nuclei_templates",
+    "revision": "fa0a415abd48c69e792e41d49b7a117d193a1a14",
+    "cursor": "error-logs-26.yaml",
+    "complete": false,
+    "updated_at": "2026-10-13T14:00:44.365739386Z"
+  },
+  {
     "url": "https://github.com/1in9e/my-nuclei-templates",
     "name": "1in9e__my-nuclei-templates",
     "revision": "f1a5d8da08d0c5240569083cba056fe5f11d1bca",
@@ -59,9 +67,8 @@
     "url": "https://github.com/ExpLangcn/NucleiTP",
     "name": "ExpLangcn__NucleiTP",
     "revision": "2b7ecb9031a6eda4f272793045f29b339d8e0cce",
-    "cursor": "high/open-proxy-portscan.yaml",
-    "complete": false,
-    "updated_at": "2026-10-13T13:54:36.354543317Z"
+    "complete": true,
+    "updated_at": "2026-10-13T14:00:42.3609721Z"
   },
   {
     "url": "https://github.com/Harish4948/Nuclei-Templates",
