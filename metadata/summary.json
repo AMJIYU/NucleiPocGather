@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-13T12:00:03.491002407Z",
-  "total": 349894,
-  "compatible": 303370,
-  "incompatible": 46524,
-  "duplicates": 25755,
+  "generated_at": "2026-10-13T13:09:10.560197254Z",
+  "total": 359894,
+  "compatible": 303372,
+  "incompatible": 56522,
+  "duplicates": 25756,
   "categories": {
     "api": 6072,
     "auth": 139158,
@@ -11,13 +11,13 @@
     "cnvd": 636,
     "container": 727,
     "cve": 156343,
-    "detect": 28169,
+    "detect": 28171,
     "exposure": 28991,
     "fuzz": 437,
     "java": 3642,
     "lfi": 17132,
     "microsoft": 1794,
-    "network": 4968,
+    "network": 4970,
     "other": 4648,
     "rce": 25680,
     "sqli": 4478,
@@ -28,13 +28,13 @@
     "xxe": 442
   },
   "incompatible_by_reason": {
-    "nuclei_validation": 44614,
+    "nuclei_validation": 54612,
     "yaml_or_structure": 1910
   },
   "severities": {
     "critical": 32560,
     "high": 63972,
-    "info": 27426,
+    "info": 27428,
     "low": 77507,
     "medium": 101592,
     "unknown": 313
