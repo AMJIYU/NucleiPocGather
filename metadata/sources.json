@@ -605,9 +605,9 @@
     "url": "https://github.com/topscoder/nuclei-wordfence-cve",
     "name": "topscoder__nuclei-wordfence-cve",
     "revision": "1dcd9123e84d2fb756c1a0e127d6d498aecda782",
-    "cursor": "nuclei-templates/2022/CVE-2022-4974-wp_woo_commerce_sync_for_g_sheet-39fb0499-9ab4-4a2f-b0db-ece86bcf4d42.yaml",
+    "cursor": "nuclei-templates/2024/CVE-2024-33696-ad_widget-9604fccc-ed8b-480b-ab56-ffa341631b52.yaml",
     "complete": false,
-    "updated_at": "2026-10-13T14:31:41.068243718Z"
+    "updated_at": "2026-10-13T14:40:09.254462949Z"
   },
   {
     "url": "https://github.com/toramanemre/apache-solr-log4j-CVE-2021-44228",
