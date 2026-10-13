@@ -49,6 +49,13 @@
     "updated_at": "2026-10-09T10:43:13.699961818Z"
   },
   {
+    "url": "https://github.com/Elsfa7-110/mynuclei-templates",
+    "name": "Elsfa7-110__mynuclei-templates",
+    "revision": "3e0ca285b38af2a2491fc6dc3f5eaf80dd78bf0b",
+    "complete": true,
+    "updated_at": "2026-10-13T13:12:38.779264064Z"
+  },
+  {
     "url": "https://github.com/Harish4948/Nuclei-Templates",
     "name": "Harish4948__Nuclei-Templates",
     "revision": "8c185d959b84985714d068b2cbbd7b90741dfaf6",
@@ -108,9 +115,8 @@
     "url": "https://github.com/adampielak/nuclei-templates",
     "name": "adampielak__nuclei-templates",
     "revision": "f6f8cbdc84c8a98f3732725d9435dfafb3fa4d0f",
-    "cursor": "network/detection/699402622_1.yaml",
-    "complete": false,
-    "updated_at": "2026-10-13T12:03:10.101675407Z"
+    "complete": true,
+    "updated_at": "2026-10-13T13:12:37.10132423Z"
   },
   {
     "url": "https://github.com/alexrydzak/rydzak-nuclei-templates",
@@ -153,6 +159,13 @@
     "revision": "093ab6eae545367852e9b234c233531bf4319788",
     "complete": true,
     "updated_at": "2026-10-12T10:45:10.733645687Z"
+  },
+  {
+    "url": "https://github.com/dk4trin/templates-nuclei",
+    "name": "dk4trin__templates-nuclei",
+    "revision": "f2d5fe48921683f165dc0ce549aedebca6315717",
+    "complete": true,
+    "updated_at": "2026-10-13T13:12:37.919085624Z"
   },
   {
     "url": "https://github.com/esetal/nuclei-bb-templates",
@@ -267,6 +280,14 @@
     "updated_at": "2026-10-09T10:32:26.193358853Z"
   },
   {
+    "url": "https://github.com/ping-0day/templates",
+    "name": "ping-0day__templates",
+    "revision": "12b2f24d1b2fc6314ee62dcf992128f0d427778f",
+    "cursor": "wp-finder-xss.yaml",
+    "complete": false,
+    "updated_at": "2026-10-13T13:12:40.45939426Z"
+  },
+  {
     "url": "https://github.com/praetorian-inc/chariot-launch-nuclei-templates",
     "name": "praetorian-inc__chariot-launch-nuclei-templates",
     "revision": "42f2b17b1febf3254a164205be46f794242d21b8",
@@ -276,9 +297,9 @@
   {
     "url": "https://github.com/projectdiscovery/nuclei-templates",
     "name": "projectdiscovery__nuclei-templates",
-    "revision": "07a4ddf8ca62929386dec3b792c60996e46cebc5",
+    "revision": "f1560a6ed48111e620fd3d08cc2a0183b0921f3b",
     "complete": true,
-    "updated_at": "2026-10-13T10:58:03.656560382Z"
+    "updated_at": "2026-10-13T13:11:44.076474892Z"
   },
   {
     "url": "https://github.com/rafaelcaria/Nuclei-Templates",
