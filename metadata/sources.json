@@ -217,6 +217,13 @@
     "updated_at": "2026-10-09T10:32:35.498422315Z"
   },
   {
+    "url": "https://github.com/UltimateSec/ultimaste-nuclei-templates",
+    "name": "UltimateSec__ultimaste-nuclei-templates",
+    "revision": "ddb86832d1d859113eb069cc7e534443daa7abfd",
+    "complete": true,
+    "updated_at": "2026-10-13T15:57:49.203303942Z"
+  },
+  {
     "url": "https://github.com/adampielak/nuclei-templates",
     "name": "adampielak__nuclei-templates",
     "revision": "f6f8cbdc84c8a98f3732725d9435dfafb3fa4d0f",
@@ -492,9 +499,9 @@
   {
     "url": "https://github.com/projectdiscovery/nuclei-templates",
     "name": "projectdiscovery__nuclei-templates",
-    "revision": "f1560a6ed48111e620fd3d08cc2a0183b0921f3b",
+    "revision": "bf9f2b16be45e0f37fc97705ce32b69f17cf0f12",
     "complete": true,
-    "updated_at": "2026-10-13T13:11:44.076474892Z"
+    "updated_at": "2026-10-13T15:57:03.200353362Z"
   },
   {
     "url": "https://github.com/ptyspawnbinbash/template-enhancer",
@@ -598,9 +605,8 @@
     "url": "https://github.com/srkgupta/cent-nuclei-templates",
     "name": "srkgupta__cent-nuclei-templates",
     "revision": "7994d13b8b8c437c9cd4ba33b0e0a63676a91ddd",
-    "cursor": "templates/CVE-2022-39322.yaml",
-    "complete": false,
-    "updated_at": "2026-10-13T15:22:45.904495109Z"
+    "complete": true,
+    "updated_at": "2026-10-13T15:57:48.403044968Z"
   },
   {
     "url": "https://github.com/tamimhasan404/Open-Source-Nuclei-Templates-Downloader",
@@ -678,6 +684,14 @@
     "revision": "72f13a7c348b23406a65e4f28bcb1344980a4526",
     "complete": true,
     "updated_at": "2026-10-13T13:32:59.828942392Z"
+  },
+  {
+    "url": "https://github.com/xinZa1/template",
+    "name": "xinZa1__template",
+    "revision": "0a84b1aa415e7cfc6f825afc1d34ca98cabca35a",
+    "cursor": "lutron-iot-default-login.yaml",
+    "complete": false,
+    "updated_at": "2026-10-13T15:57:50.423266736Z"
   },
   {
     "url": "https://github.com/yarovit-developer/nuclei-templates",
