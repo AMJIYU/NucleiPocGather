@@ -63,6 +63,14 @@
     "updated_at": "2026-10-09T10:43:27.09370782Z"
   },
   {
+    "url": "https://github.com/KeepHowling/all_freaking_nuclei_templates",
+    "name": "KeepHowling__all_freaking_nuclei_templates",
+    "revision": "b374318732b6922f72d327c57451a7d30973c0c6",
+    "cursor": "wordpress-wordfence-xss.yaml",
+    "complete": false,
+    "updated_at": "2026-10-13T13:33:06.069256522Z"
+  },
+  {
     "url": "https://github.com/MR-pentestGuy/nuclei-templates",
     "name": "MR-pentestGuy__nuclei-templates",
     "revision": "2b50cf9bbb94812322c8513c2053a6a6403ecd6d",
@@ -126,6 +134,13 @@
     "updated_at": "2026-10-09T10:43:38.239014887Z"
   },
   {
+    "url": "https://github.com/blazeinfosec/nuclei-templates",
+    "name": "blazeinfosec__nuclei-templates",
+    "revision": "2354a3f19ae68c870c4b7454abc7f5ce18b50e9c",
+    "complete": true,
+    "updated_at": "2026-10-13T13:33:04.475770219Z"
+  },
+  {
     "url": "https://github.com/brinhosa/brinhosa-nuclei-templates",
     "name": "brinhosa__brinhosa-nuclei-templates",
     "revision": "53f8b755245fe0b534085352bf7838e38c75c6f8",
@@ -166,6 +181,13 @@
     "revision": "f2d5fe48921683f165dc0ce549aedebca6315717",
     "complete": true,
     "updated_at": "2026-10-13T13:12:37.919085624Z"
+  },
+  {
+    "url": "https://github.com/ekinsb/Nuclei-Templates",
+    "name": "ekinsb__Nuclei-Templates",
+    "revision": "677de20c7d9df0c411d5130007067e2b3e94f789",
+    "complete": true,
+    "updated_at": "2026-10-13T13:33:05.136601487Z"
   },
   {
     "url": "https://github.com/esetal/nuclei-bb-templates",
@@ -215,6 +237,13 @@
     "revision": "254bfb278a124903407f78fd6f364aba070a5487",
     "complete": true,
     "updated_at": "2026-10-09T10:43:20.640452197Z"
+  },
+  {
+    "url": "https://github.com/justmumu/SpringShell",
+    "name": "justmumu__SpringShell",
+    "revision": "72de19f6af57db2b3a58d07a03ff93f8e5090fe2",
+    "complete": true,
+    "updated_at": "2026-10-13T13:33:01.798747901Z"
   },
   {
     "url": "https://github.com/kabilan1290/templates",
@@ -283,9 +312,8 @@
     "url": "https://github.com/ping-0day/templates",
     "name": "ping-0day__templates",
     "revision": "12b2f24d1b2fc6314ee62dcf992128f0d427778f",
-    "cursor": "wp-finder-xss.yaml",
-    "complete": false,
-    "updated_at": "2026-10-13T13:12:40.45939426Z"
+    "complete": true,
+    "updated_at": "2026-10-13T13:32:59.119969828Z"
   },
   {
     "url": "https://github.com/praetorian-inc/chariot-launch-nuclei-templates",
@@ -379,6 +407,13 @@
     "updated_at": "2026-10-09T10:43:32.326984929Z"
   },
   {
+    "url": "https://github.com/th3r4id/nuclei-templates",
+    "name": "th3r4id__nuclei-templates",
+    "revision": "81a05c3417de895d4d9cd58282e4f029892519cc",
+    "complete": true,
+    "updated_at": "2026-10-13T13:33:01.18022175Z"
+  },
+  {
     "url": "https://github.com/thebrnwal/Content-Injection-Nuclei-Script",
     "name": "thebrnwal__Content-Injection-Nuclei-Script",
     "revision": "28ccf36d996830ed3562ea8aa9c632852c7ae6c5",
@@ -391,6 +426,34 @@
     "revision": "20686e036fbe3d5a42f84f7a31b1735004dd92c1",
     "complete": true,
     "updated_at": "2026-10-09T10:43:25.20730139Z"
+  },
+  {
+    "url": "https://github.com/toramanemre/apache-solr-log4j-CVE-2021-44228",
+    "name": "toramanemre__apache-solr-log4j-CVE-2021-44228",
+    "revision": "927f95bc7cbdeec06ebc6e62e46505cfa95e0e76",
+    "complete": true,
+    "updated_at": "2026-10-13T13:33:03.222614487Z"
+  },
+  {
+    "url": "https://github.com/toramanemre/log4j-rce-detect-waf-bypass",
+    "name": "toramanemre__log4j-rce-detect-waf-bypass",
+    "revision": "3b5071ff65a6366851586e197b01d0824f57e77e",
+    "complete": true,
+    "updated_at": "2026-10-13T13:33:03.793558564Z"
+  },
+  {
+    "url": "https://github.com/trickest/log4j",
+    "name": "trickest__log4j",
+    "revision": "30607e4fd4527b369be2fb8ece8d73e8580142c7",
+    "complete": true,
+    "updated_at": "2026-10-13T13:33:02.635845384Z"
+  },
+  {
+    "url": "https://github.com/wasp76b/nuclei-templates",
+    "name": "wasp76b__nuclei-templates",
+    "revision": "72f13a7c348b23406a65e4f28bcb1344980a4526",
+    "complete": true,
+    "updated_at": "2026-10-13T13:32:59.828942392Z"
   },
   {
     "url": "https://github.com/yavolo/nuclei-templates",
