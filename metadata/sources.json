@@ -14,6 +14,13 @@
     "updated_at": "2026-10-09T10:43:35.692922153Z"
   },
   {
+    "url": "https://github.com/0xPugazh/my-nuclei-templates",
+    "name": "0xPugazh__my-nuclei-templates",
+    "revision": "800d311a2a51fb2ebbe26fe7bfd6c24a8f3934b1",
+    "complete": true,
+    "updated_at": "2026-10-13T14:31:33.930566583Z"
+  },
+  {
     "url": "https://github.com/0xmaximus/final_freaking_nuclei_templates",
     "name": "0xmaximus__final_freaking_nuclei_templates",
     "revision": "fa0a415abd48c69e792e41d49b7a117d193a1a14",
@@ -80,9 +87,8 @@
     "url": "https://github.com/Hunt2behunter/nuclei-templates",
     "name": "Hunt2behunter__nuclei-templates",
     "revision": "ace35b06e2804c56700bfafabdbb6e914a853089",
-    "cursor": "cves/CVE-2022-24124.yaml",
-    "complete": false,
-    "updated_at": "2026-10-13T14:08:56.408130374Z"
+    "complete": true,
+    "updated_at": "2026-10-13T14:31:32.535478072Z"
   },
   {
     "url": "https://github.com/Jagomeiister/nuclei-templates",
@@ -167,6 +173,13 @@
     "revision": "f6ba54c7465991af0793fb70d07e4e10ba1b5c84",
     "complete": true,
     "updated_at": "2026-10-09T10:43:26.47690365Z"
+  },
+  {
+    "url": "https://github.com/SirAppSec/nuclei-template-generator-log4j",
+    "name": "SirAppSec__nuclei-template-generator-log4j",
+    "revision": "8bda293714d48e185e55a76c7237e8111f91cdf5",
+    "complete": true,
+    "updated_at": "2026-10-13T14:31:33.476020158Z"
   },
   {
     "url": "https://github.com/Str1am/my-nuclei-templates",
@@ -379,6 +392,13 @@
     "updated_at": "2026-10-13T14:08:53.151342269Z"
   },
   {
+    "url": "https://github.com/mastersir-lab/nuclei-yaml-poc",
+    "name": "mastersir-lab__nuclei-yaml-poc",
+    "revision": "86b836b7baf6123280b7b94afb642f4b6ad45c87",
+    "complete": true,
+    "updated_at": "2026-10-13T14:31:33.016775617Z"
+  },
+  {
     "url": "https://github.com/medbsq/ncl",
     "name": "medbsq__ncl",
     "revision": "bd57ef5bf75f3c7c2abb290ef055b3abc2975d80",
@@ -580,6 +600,14 @@
     "revision": "20686e036fbe3d5a42f84f7a31b1735004dd92c1",
     "complete": true,
     "updated_at": "2026-10-09T10:43:25.20730139Z"
+  },
+  {
+    "url": "https://github.com/topscoder/nuclei-wordfence-cve",
+    "name": "topscoder__nuclei-wordfence-cve",
+    "revision": "1dcd9123e84d2fb756c1a0e127d6d498aecda782",
+    "cursor": "nuclei-templates/2022/CVE-2022-4974-wp_woo_commerce_sync_for_g_sheet-39fb0499-9ab4-4a2f-b0db-ece86bcf4d42.yaml",
+    "complete": false,
+    "updated_at": "2026-10-13T14:31:41.068243718Z"
   },
   {
     "url": "https://github.com/toramanemre/apache-solr-log4j-CVE-2021-44228",
