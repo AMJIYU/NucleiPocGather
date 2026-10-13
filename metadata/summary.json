@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-10-13T11:26:23.544787268Z",
-  "total": 339894,
+  "generated_at": "2026-10-13T12:00:03.491002407Z",
+  "total": 349894,
   "compatible": 303370,
-  "incompatible": 36524,
+  "incompatible": 46524,
   "duplicates": 25755,
   "categories": {
     "api": 6072,
@@ -28,8 +28,8 @@
     "xxe": 442
   },
   "incompatible_by_reason": {
-    "nuclei_validation": 34622,
-    "yaml_or_structure": 1902
+    "nuclei_validation": 44614,
+    "yaml_or_structure": 1910
   },
   "severities": {
     "critical": 32560,
