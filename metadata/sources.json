@@ -408,9 +408,10 @@
   {
     "url": "https://github.com/adampielak/nuclei-templates",
     "name": "adampielak__nuclei-templates",
-    "revision": "05f37aa44cb5213fc568030d73ba50ad233047ce",
-    "complete": true,
-    "updated_at": "2026-10-13T23:59:23.302226447Z"
+    "revision": "68bfe7a54b4cb779bd375324c8b9ce0a6dec267e",
+    "cursor": "http/vulnerabilities/hashicorp-consul-rce-7890.yaml",
+    "complete": false,
+    "updated_at": "2026-10-14T08:42:46.262258629Z"
   },
   {
     "url": "https://github.com/aels/CVE-2022-37042",
@@ -877,9 +878,9 @@
   {
     "url": "https://github.com/projectdiscovery/nuclei-templates",
     "name": "projectdiscovery__nuclei-templates",
-    "revision": "bf9f2b16be45e0f37fc97705ce32b69f17cf0f12",
+    "revision": "0ed88c1c988d247c772b1949aa133fbe1a0fa9c9",
     "complete": true,
-    "updated_at": "2026-10-13T15:57:03.200353362Z"
+    "updated_at": "2026-10-14T08:41:55.044563267Z"
   },
   {
     "url": "https://github.com/ptyspawnbinbash/template-enhancer",
