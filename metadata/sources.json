@@ -381,9 +381,8 @@
     "url": "https://github.com/adampielak/nuclei-templates",
     "name": "adampielak__nuclei-templates",
     "revision": "05f37aa44cb5213fc568030d73ba50ad233047ce",
-    "cursor": "http/vulnerabilities/wordpress/prolike_button-b7feee88-6853-48a9-b16f-b70cdd376e7a.yaml",
-    "complete": false,
-    "updated_at": "2026-10-13T23:46:14.373992395Z"
+    "complete": true,
+    "updated_at": "2026-10-13T23:59:23.302226447Z"
   },
   {
     "url": "https://github.com/aels/CVE-2022-37042",
@@ -676,9 +675,9 @@
     "url": "https://github.com/madisec/nuclei-templates",
     "name": "madisec__nuclei-templates",
     "revision": "18a2e7e4ef8270b53976ade35bce923dbfca05bc",
-    "cursor": "templates/oscommerce-rce-9406.yaml",
+    "cursor": "templates/wso2-apimanager-detect-11637.yaml",
     "complete": false,
-    "updated_at": "2026-10-13T23:21:46.105555232Z"
+    "updated_at": "2026-10-14T00:00:16.495807099Z"
   },
   {
     "url": "https://github.com/mastersir-lab/nuclei-yaml-poc",
