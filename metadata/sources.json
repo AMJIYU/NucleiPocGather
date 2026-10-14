@@ -105,11 +105,25 @@
     "updated_at": "2026-10-13T19:13:16.100812917Z"
   },
   {
+    "url": "https://github.com/Caddyshack2175/nuclei-custom-templates",
+    "name": "Caddyshack2175__nuclei-custom-templates",
+    "revision": "1a852e2881d7d6f3e842ba131fdcc86996bb7e6d",
+    "complete": true,
+    "updated_at": "2026-10-14T00:24:31.618708627Z"
+  },
+  {
     "url": "https://github.com/CharanRayudu/Custom-Nuclei-Templates",
     "name": "CharanRayudu__Custom-Nuclei-Templates",
     "revision": "6418cf9ac43a7d4121d979ae9afb12f54511729e",
     "complete": true,
     "updated_at": "2026-10-09T10:43:13.699961818Z"
+  },
+  {
+    "url": "https://github.com/Christbowel/CVE-2024-25600_Nuclei-Template",
+    "name": "Christbowel__CVE-2024-25600_Nuclei-Template",
+    "revision": "099b4f9b068778dc979c9b06bddb23e84a628c6f",
+    "complete": true,
+    "updated_at": "2026-10-14T00:24:32.578410603Z"
   },
   {
     "url": "https://github.com/Co5mos/nuclei-tps",
@@ -152,6 +166,13 @@
     "revision": "2b7ecb9031a6eda4f272793045f29b339d8e0cce",
     "complete": true,
     "updated_at": "2026-10-13T14:00:42.3609721Z"
+  },
+  {
+    "url": "https://github.com/GhostTroops/scan4all",
+    "name": "GhostTroops__scan4all",
+    "revision": "fff03b51bf79c8993a46c1da766ec993e1102c47",
+    "complete": true,
+    "updated_at": "2026-10-14T00:24:47.706785883Z"
   },
   {
     "url": "https://github.com/Harish4948/Nuclei-Templates",
@@ -378,6 +399,13 @@
     "updated_at": "2026-10-13T19:12:58.784527529Z"
   },
   {
+    "url": "https://github.com/YuanBenSir/Nuclei_poc_C",
+    "name": "YuanBenSir__Nuclei_poc_C",
+    "revision": "e0c3ddf9e4f69d6985feed45cd596af7ba0e7879",
+    "complete": true,
+    "updated_at": "2026-10-14T00:24:40.269855742Z"
+  },
+  {
     "url": "https://github.com/adampielak/nuclei-templates",
     "name": "adampielak__nuclei-templates",
     "revision": "05f37aa44cb5213fc568030d73ba50ad233047ce",
@@ -404,6 +432,13 @@
     "revision": "8454cec2756026303126898f7d3f5f1f299c75c9",
     "complete": true,
     "updated_at": "2026-10-09T10:43:38.239014887Z"
+  },
+  {
+    "url": "https://github.com/atk7r/Nuclei-Poc",
+    "name": "atk7r__Nuclei-Poc",
+    "revision": "f7649763dcb7a3e7641e011d3c6139f9aa8e980b",
+    "complete": true,
+    "updated_at": "2026-10-14T00:24:38.449970831Z"
   },
   {
     "url": "https://github.com/ayadim/Nuclei-bug-hunter",
@@ -446,6 +481,13 @@
     "revision": "2354a3f19ae68c870c4b7454abc7f5ce18b50e9c",
     "complete": true,
     "updated_at": "2026-10-13T13:33:04.475770219Z"
+  },
+  {
+    "url": "https://github.com/bmjoker/Nuclei2use",
+    "name": "bmjoker__Nuclei2use",
+    "revision": "b8674e4df2efbeb5a1b9e1b8ac0bffec20e4efe8",
+    "complete": true,
+    "updated_at": "2026-10-14T00:24:33.504355531Z"
   },
   {
     "url": "https://github.com/boobooHQ/private_templates",
@@ -530,6 +572,13 @@
     "revision": "039d5241c21297a20117beeb26319835cf3add25",
     "complete": true,
     "updated_at": "2026-10-13T16:39:08.04443566Z"
+  },
+  {
+    "url": "https://github.com/dioos886/Nuclei-POC",
+    "name": "dioos886__Nuclei-POC",
+    "revision": "38d38a74be7f94313916fb2849368f189019be89",
+    "complete": true,
+    "updated_at": "2026-10-14T00:24:37.649358372Z"
   },
   {
     "url": "https://github.com/dk4trin/templates-nuclei",
@@ -623,6 +672,20 @@
     "updated_at": "2026-10-13T19:13:00.802366251Z"
   },
   {
+    "url": "https://github.com/hughink/nuclei-poc",
+    "name": "hughink__nuclei-poc",
+    "revision": "7786dafceb779252baa2dc088b155702b4a59c91",
+    "complete": true,
+    "updated_at": "2026-10-14T00:24:41.08139207Z"
+  },
+  {
+    "url": "https://github.com/iamHuFei/HVVault",
+    "name": "iamHuFei__HVVault",
+    "revision": "4558fdb3abb024e701da0ad76816c6083ab91871",
+    "complete": true,
+    "updated_at": "2026-10-14T00:24:34.559844536Z"
+  },
+  {
     "url": "https://github.com/im403/nuclei-temp",
     "name": "im403__nuclei-temp",
     "revision": "51f5b1785e2431cce4d0bd94f45cfe1500c93658",
@@ -637,11 +700,25 @@
     "updated_at": "2026-10-09T10:43:20.640452197Z"
   },
   {
+    "url": "https://github.com/jiankeguyue/nuclei_pocs",
+    "name": "jiankeguyue__nuclei_pocs",
+    "revision": "b6fe26d7a428a41b95ba3c3a51381ae8a9bb6290",
+    "complete": true,
+    "updated_at": "2026-10-14T00:24:36.467422374Z"
+  },
+  {
     "url": "https://github.com/justmumu/SpringShell",
     "name": "justmumu__SpringShell",
     "revision": "72de19f6af57db2b3a58d07a03ff93f8e5090fe2",
     "complete": true,
     "updated_at": "2026-10-13T13:33:01.798747901Z"
+  },
+  {
+    "url": "https://github.com/k3ppf0r/2024-PocLib",
+    "name": "k3ppf0r__2024-PocLib",
+    "revision": "f64375e23082dff16b86ab07b2f452bd7156a31d",
+    "complete": true,
+    "updated_at": "2026-10-14T00:24:48.952513894Z"
   },
   {
     "url": "https://github.com/kabilan1290/templates",
@@ -665,6 +742,13 @@
     "updated_at": "2026-10-13T19:13:01.77531189Z"
   },
   {
+    "url": "https://github.com/l1b3ri/nuclei-poc",
+    "name": "l1b3ri__nuclei-poc",
+    "revision": "6f782d51b3b77f35d3df17a20aaca43922d8ecfb",
+    "complete": true,
+    "updated_at": "2026-10-14T00:24:35.386168501Z"
+  },
+  {
     "url": "https://github.com/luck-ying/Library-YAML-POC",
     "name": "luck-ying__Library-YAML-POC",
     "revision": "cfabd0f7bea9c13f881bed7bcd673ab72473ad4d",
@@ -675,9 +759,8 @@
     "url": "https://github.com/madisec/nuclei-templates",
     "name": "madisec__nuclei-templates",
     "revision": "18a2e7e4ef8270b53976ade35bce923dbfca05bc",
-    "cursor": "templates/wso2-apimanager-detect-11637.yaml",
-    "complete": false,
-    "updated_at": "2026-10-14T00:00:16.495807099Z"
+    "complete": true,
+    "updated_at": "2026-10-14T00:24:30.755066441Z"
   },
   {
     "url": "https://github.com/mastersir-lab/nuclei-yaml-poc",
@@ -869,6 +952,13 @@
     "updated_at": "2026-10-13T16:39:34.259212618Z"
   },
   {
+    "url": "https://github.com/rhbb/nuclei-poc",
+    "name": "rhbb__nuclei-poc",
+    "revision": "aabe76233727a38446a9993ef9caa10ced09a594",
+    "complete": true,
+    "updated_at": "2026-10-14T00:24:42.094309411Z"
+  },
+  {
     "url": "https://github.com/ricardomaia/nuclei-template-generator-for-wordpress-plugins",
     "name": "ricardomaia__nuclei-template-generator-for-wordpress-plugins",
     "revision": "f8cf9eaf3ed81d0323072143e78315b894052909",
@@ -881,6 +971,13 @@
     "revision": "cf044bd1ed47c466deade12952745d540f01eaee",
     "complete": true,
     "updated_at": "2026-10-13T19:13:10.291405671Z"
+  },
+  {
+    "url": "https://github.com/rum3ch/Ae86",
+    "name": "rum3ch__Ae86",
+    "revision": "e7e5b5e36cac676bc98dc9ce7e1823e317a215e5",
+    "complete": true,
+    "updated_at": "2026-10-14T00:24:39.425018089Z"
   },
   {
     "url": "https://github.com/rxerium/CISA-KEV",
