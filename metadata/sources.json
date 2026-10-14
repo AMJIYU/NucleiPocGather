@@ -408,10 +408,9 @@
   {
     "url": "https://github.com/adampielak/nuclei-templates",
     "name": "adampielak__nuclei-templates",
-    "revision": "68bfe7a54b4cb779bd375324c8b9ce0a6dec267e",
-    "cursor": "http/vulnerabilities/hashicorp-consul-rce-7890.yaml",
-    "complete": false,
-    "updated_at": "2026-10-14T08:42:46.262258629Z"
+    "revision": "fd81c6d6082759c37544565a687253f7c50779eb",
+    "complete": true,
+    "updated_at": "2026-10-14T08:54:01.781167343Z"
   },
   {
     "url": "https://github.com/aels/CVE-2022-37042",
