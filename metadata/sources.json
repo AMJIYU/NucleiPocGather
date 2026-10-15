@@ -408,10 +408,9 @@
   {
     "url": "https://github.com/adampielak/nuclei-templates",
     "name": "adampielak__nuclei-templates",
-    "revision": "c59d0ee2cfcb6efa71378a3540cfbf638c60bafc",
-    "cursor": "http/vulnerabilities/wordpress/crazy_bone-4e3f4e4f-6781-4134-b0ba-3625d7009d0c.yaml",
-    "complete": false,
-    "updated_at": "2026-10-15T08:18:38.752729083Z"
+    "revision": "edd8d0d5c471df9f9782f9d6998c6bb567f89827",
+    "complete": true,
+    "updated_at": "2026-10-15T08:34:06.775236266Z"
   },
   {
     "url": "https://github.com/aels/CVE-2022-37042",
@@ -983,9 +982,9 @@
   {
     "url": "https://github.com/rxerium/CISA-KEV",
     "name": "rxerium__CISA-KEV",
-    "revision": "dd100e357b76386347770a0f857b1730695332ac",
+    "revision": "d7cda3dbd55852cf94d34a9073c2b1f5c6a500bf",
     "complete": true,
-    "updated_at": "2026-10-13T20:29:29.73595342Z"
+    "updated_at": "2026-10-15T08:34:55.089865922Z"
   },
   {
     "url": "https://github.com/sadnansakin/my-nuclei-templates",
@@ -1109,9 +1108,9 @@
   {
     "url": "https://github.com/topscoder/nuclei-wordfence-cve",
     "name": "topscoder__nuclei-wordfence-cve",
-    "revision": "1dcd9123e84d2fb756c1a0e127d6d498aecda782",
+    "revision": "6fac0d84b3c6739b31394604826cd5ec1ee4410b",
     "complete": true,
-    "updated_at": "2026-10-13T15:11:40.518919519Z"
+    "updated_at": "2026-10-15T08:34:32.967565284Z"
   },
   {
     "url": "https://github.com/topscoder/nuclei-zero-day",
