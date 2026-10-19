@@ -1,0 +1,30 @@
+id: apache-streampark-detect
+info:
+  name: Apache Streampark - Detect
+  author: icarot
+  severity: info
+  description: |
+    Detects a Apache Streampark server, a easy-to-use streaming application development framework and operation platform.
+  reference:
+    - https://github.com/apache/streampark
+  classification:
+    cpe: cpe:2.3:a:apache:streampark:*:*:*:*:*:*:*,cpe:2.3:a:apache:streampark:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    product: streampark
+    shodan-query: title:"Apache StreamPark"
+    vendor: apache
+  tags: apache,detect,discovery,streampark,tech
+http:
+  - matchers:
+      - condition: and
+        type: word
+        words:
+          - <title>Apache StreamPark</title>
+      - status:
+          - 200
+        type: status
+    matchers-condition: and
+    method: GET
+    path:
+      - '{{BaseURL}}/'

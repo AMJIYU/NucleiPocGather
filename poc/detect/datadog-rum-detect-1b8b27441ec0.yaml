@@ -1,0 +1,32 @@
+id: datadog-rum-detect
+info:
+  name: Datadog Browser RUM - Detect
+  author: Shivam Kamboj
+  severity: info
+  description: |
+    Detects Datadog Browser RUM (Real User Monitoring) SDK artifacts in HTML responses.
+  reference:
+    - https://docs.datadoghq.com/real_user_monitoring/browser/
+    - https://docs.datadoghq.com/real_user_monitoring/browser/setup/
+    - https://www.npmjs.com/package/@datadog/browser-rum
+  metadata:
+    max-request: 1
+    product: browser-rum
+    shodan-query: html:"DD_RUM.init"
+    vendor: datadog
+    verified: true
+  tags: datadog,detect,discovery,rum,tech
+http:
+  - matchers:
+      - condition: and
+        # digest: 4b0a00483046022100e4e0afc84c2962faf7a103a96809e112de024d148ae5a341fcd484d134dd937902210081bb6de41a47eec78e598b4dcf4f8afd0d9a0f25fd78b9f79fc31febcc779283:922c64590222798bb761d5b6d8e72950
+
+        part: body
+        type: word
+        words:
+          - DD_RUM.init
+          - DD_RUM.onReady
+    method: GET
+    path:
+      - '{{BaseURL}}'
+    redirects: true
