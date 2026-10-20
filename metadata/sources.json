@@ -408,10 +408,9 @@
   {
     "url": "https://github.com/adampielak/nuclei-templates",
     "name": "adampielak__nuclei-templates",
-    "revision": "674009f6d97d11b0dcb8b06ebcdd7e7f7a8c8dec",
-    "cursor": "http/exposures/db-dump-detect.yaml",
-    "complete": false,
-    "updated_at": "2026-10-20T08:31:53.627720094Z"
+    "revision": "cf3adf9c5f47cbd04acd98f275344eae70ecee27",
+    "complete": true,
+    "updated_at": "2026-10-20T08:44:23.877129375Z"
   },
   {
     "url": "https://github.com/aels/CVE-2022-37042",
@@ -983,9 +982,9 @@
   {
     "url": "https://github.com/rxerium/CISA-KEV",
     "name": "rxerium__CISA-KEV",
-    "revision": "f44a1448044bd286ab7e67208ae8848fb7fa3032",
+    "revision": "0cdd08b578699f8b08233fd5b9840dcc96db922a",
     "complete": true,
-    "updated_at": "2026-10-17T07:56:34.042956575Z"
+    "updated_at": "2026-10-20T08:44:48.747113745Z"
   },
   {
     "url": "https://github.com/sadnansakin/my-nuclei-templates",
