@@ -408,9 +408,9 @@
   {
     "url": "https://github.com/adampielak/nuclei-templates",
     "name": "adampielak__nuclei-templates",
-    "revision": "7896689cc53e2e18edb1add819be542f1780ab1c",
+    "revision": "5cad75467a6d978f756d1a91c5e4772e64a36af9",
     "complete": true,
-    "updated_at": "2026-10-21T08:34:38.587407444Z"
+    "updated_at": "2026-10-22T08:37:04.674267355Z"
   },
   {
     "url": "https://github.com/aels/CVE-2022-37042",
@@ -877,9 +877,9 @@
   {
     "url": "https://github.com/projectdiscovery/nuclei-templates",
     "name": "projectdiscovery__nuclei-templates",
-    "revision": "1b8f9010d893973a7c5feb9772c2e4cfca09b013",
+    "revision": "d121a19dd2aa2c50dabc4ac7bc2aae06c704772d",
     "complete": true,
-    "updated_at": "2026-10-21T08:33:48.209165048Z"
+    "updated_at": "2026-10-22T08:36:13.408648736Z"
   },
   {
     "url": "https://github.com/ptyspawnbinbash/template-enhancer",
@@ -982,9 +982,9 @@
   {
     "url": "https://github.com/rxerium/CISA-KEV",
     "name": "rxerium__CISA-KEV",
-    "revision": "8159a470ce9cda26362362c81a623a4f807ed12a",
+    "revision": "cf8f4886d30f469ba2e006eaa86747b8061c0688",
     "complete": true,
-    "updated_at": "2026-10-21T08:35:13.96366188Z"
+    "updated_at": "2026-10-22T08:37:40.283531919Z"
   },
   {
     "url": "https://github.com/sadnansakin/my-nuclei-templates",
@@ -1108,9 +1108,9 @@
   {
     "url": "https://github.com/topscoder/nuclei-wordfence-cve",
     "name": "topscoder__nuclei-wordfence-cve",
-    "revision": "d2937acb869da55094b45a64d5f5832fcf88545c",
+    "revision": "780deb2eae659ed771dcfc0b057f98d3ef71a99a",
     "complete": true,
-    "updated_at": "2026-10-21T08:34:59.322631436Z"
+    "updated_at": "2026-10-22T08:37:25.072561981Z"
   },
   {
     "url": "https://github.com/topscoder/nuclei-zero-day",
