@@ -1,0 +1,5732 @@
+id: liferay
+
+info:
+  name: liferay_version_fingerprint
+  severity: info
+  author: glatisant & erwan
+
+requests:
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/WEB-INF/struts-config.xml"
+
+    matchers:
+      - type: dsl
+        name: 6.2.3-GA4
+        dsl:
+          - "(\"8f13219d591d72a8d790f21bc1f45700\" == md5(body))"
+      - type: dsl
+        name: 6.2.2-GA3
+        dsl:
+          - "(\"a96a350c1774f83fa72adc8e5507884e\" == md5(body))"
+      - type: dsl
+        name: 6.2.0-GA1 - 6.2.1-GA2
+        dsl:
+          - "(\"56a8154427e7967f980ba5b4626eeeae\" == md5(body))"
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"576c24eea995979b642b5bb8cafa1f8b\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"d90496937b49d30355bcf41d503e3edd\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"cb3679ea1885210ee23bd7221ffb0b19\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"ef69d9216bf8a8dbe3eed35f88822e35\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"670cd4d2c8c41abf366e0998d5e5f7a5\" == md5(body))"
+      - type: dsl
+        name: 6.0.3 - 6.0.4
+        dsl:
+          - "(\"b2c88b31e4fc97b21566128e8b7a3825\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"5951bdff6de53c9fddf6714267e78631\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"4db92184477135737140c6f7ca708de5\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"b2235e9dbda026def04e096215df85bc\" == md5(body))"
+      - type: dsl
+        name: 5.2.3
+        dsl:
+          - "(\"e6ac7a2d4e1febd14b061edd18c0d662\" == md5(body))"
+      - type: dsl
+        name: 5.2.2
+        dsl:
+          - "(\"b7c09b2b71ecdde3da3860d90538471c\" == md5(body))"
+      - type: dsl
+        name: 5.2.1
+        dsl:
+          - "(\"bf05247fb464ac79369d8c5df2bf2650\" == md5(body))"
+      - type: dsl
+        name: 5.2.0
+        dsl:
+          - "(\"c6e5c3131b3d8a2d458434b2ce749bcd\" == md5(body))"
+      - type: dsl
+        name: 5.1.2
+        dsl:
+          - "(\"2f78c868d1262c4ceeb7983334b019b6\" == md5(body))"
+      - type: dsl
+        name: 5.1.1
+        dsl:
+          - "(\"cb25a8191230e70ab494da6aa4234da6\" == md5(body))"
+      - type: dsl
+        name: 5.1.0
+        dsl:
+          - "(\"8b9d787178f82596962d8ef6e1038a13\" == md5(body))"
+      - type: dsl
+        name: 4.4.1 - 4.4.2
+        dsl:
+          - "(\"cf118b856a1634475222ee63859ff878\" == md5(body))"
+      - type: dsl
+        name: 4.4.0
+        dsl:
+          - "(\"cd3a3ee52e8e48dd65f9d06e331d755f\" == md5(body))"
+      - type: dsl
+        name: 4.3.4 - 4.3.6
+        dsl:
+          - "(\"48ca67e7422fb752969a13364f0dfa22\" == md5(body))"
+      - type: dsl
+        name: 4.3.3
+        dsl:
+          - "(\"63be194df47b3e99d81665f9bc52921c\" == md5(body))"
+      - type: dsl
+        name: 4.3.2
+        dsl:
+          - "(\"ca595142322be79dfea5286c58fa6021\" == md5(body))"
+      - type: dsl
+        name: 4.3.1
+        dsl:
+          - "(\"79cfa9e8ab0c4ccca5079aeb0f3e28fd\" == md5(body))"
+      - type: dsl
+        name: 4.3.0
+        dsl:
+          - "(\"33eaba7fec11f51069b204ede0cb282d\" == md5(body))"
+      - type: dsl
+        name: 4.2.1 - 4.2.2
+        dsl:
+          - "(\"593a1015b9b5c164460ed5394fd45cbe\" == md5(body))"
+      - type: dsl
+        name: 4.2.0
+        dsl:
+          - "(\"668bdbec46a9bc86e8c2751317225eb5\" == md5(body))"
+      - type: dsl
+        name: 4.1.0 - 4.1.3
+        dsl:
+          - "(\"ece34250f5e2f10e46021124ff38ce68\" == md5(body))"
+      - type: dsl
+        name: 4.0.0
+        dsl:
+          - "(\"afb3f3021e109a17707be4343a6f71f4\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/liferay/util.js"
+
+    matchers:
+      - type: dsl
+        name: 6.2.4-GA5 - 6.2.5-GA6
+        dsl:
+          - "(\"00cd59545489435bd1cd9afa952066ef\" == md5(body))"
+      - type: dsl
+        name: 6.2.3-GA4
+        dsl:
+          - "(\"f583e9d3f5930cd677d9568b9ec55472\" == md5(body))"
+      - type: dsl
+        name: 6.2.2-GA3
+        dsl:
+          - "(\"03b566da08ee2c974eb140a2e12eb901\" == md5(body))"
+      - type: dsl
+        name: 6.2.1-GA2
+        dsl:
+          - "(\"efb5557e04408110607be277c96a6381\" == md5(body))"
+      - type: dsl
+        name: 6.2.0-GA1
+        dsl:
+          - "(\"7a802aa795db1fce2701f20e198aec8c\" == md5(body))"
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"e21889115d4ba7742eee6212d80bda1c\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"5542770343296759848e5e4cb657a3b9\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"04d69ee24653868af1f9914a069be883\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"22b6c8daaf37e47daed3a184faa51207\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"8db5462094c407adc307c53779f4ad05\" == md5(body))"
+      - type: dsl
+        name: 6.0.4
+        dsl:
+          - "(\"24e3bca61cff8673b6bfc9f52e3440a2\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"736596cdbd938ae71991a9e524337e4b\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"7ec93fb476eba1cd65b79b68dc35e900\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"3c0a973bf3b5fc553289af9a6f8645a0\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"ef968cf4ad785fa5f9739b3f3bda52b7\" == md5(body))"
+      - type: dsl
+        name: 5.2.3
+        dsl:
+          - "(\"e8f30d8295d8c74a0a0c58e1213dee70\" == md5(body))"
+      - type: dsl
+        name: 5.2.0 - 5.2.2
+        dsl:
+          - "(\"7f7e8dc32cb340b60a91b3894631b6ed\" == md5(body))"
+      - type: dsl
+        name: 5.1.2
+        dsl:
+          - "(\"e54d8e68f4384eb37a270c2b262f0861\" == md5(body))"
+      - type: dsl
+        name: 5.1.0 - 5.1.1
+        dsl:
+          - "(\"5d281e76c0477e681c6d70c673cb9035\" == md5(body))"
+      - type: dsl
+        name: 4.4.2
+        dsl:
+          - "(\"8ca4468ff1a77b42491e9b55bae6033f\" == md5(body))"
+      - type: dsl
+        name: 4.4.0 - 4.4.1
+        dsl:
+          - "(\"3d4e76ae451ab4b010388dfdcc84cfeb\" == md5(body))"
+      - type: dsl
+        name: 4.3.6
+        dsl:
+          - "(\"f02f4d242dbbcb2cb89d0323346d71c7\" == md5(body))"
+      - type: dsl
+        name: 4.3.5
+        dsl:
+          - "(\"0f8eddbc60baec3270d87ccf181a0ca5\" == md5(body))"
+      - type: dsl
+        name: 4.3.4
+        dsl:
+          - "(\"c44b46e4bbed8397583932b3782965ec\" == md5(body))"
+      - type: dsl
+        name: 4.3.3
+        dsl:
+          - "(\"725801cb64f358f03c7379eb3b66109f\" == md5(body))"
+      - type: dsl
+        name: 4.3.2
+        dsl:
+          - "(\"f8624c464fa990e67349f49ac20c388f\" == md5(body))"
+      - type: dsl
+        name: 4.3.1
+        dsl:
+          - "(\"a7a8d44b680945da97ea1ff4e338528b\" == md5(body))"
+      - type: dsl
+        name: 4.3.0
+        dsl:
+          - "(\"4546d719b78bc0ac2179c3a22dd5ff06\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/WEB-INF/tld/liferay-ui.tld"
+
+    matchers:
+      - type: dsl
+        name: 6.2.3-GA4
+        dsl:
+          - "(\"eab63b24366fbe33c9e37e803c0e2b63\" == md5(body))"
+      - type: dsl
+        name: 6.2.2-GA3
+        dsl:
+          - "(\"f4d191e16280db9e003dce6bb18ccf1b\" == md5(body))"
+      - type: dsl
+        name: 6.2.0-GA1 - 6.2.1-GA2
+        dsl:
+          - "(\"5e1215ccf01033185fdaebd741b55398\" == md5(body))"
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"ec3e2e24d6288edf07b42511afe37a50\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"53ac3526d0907dd332882904fe7fef5c\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"88ac6848e259e23d763dba02e74cc072\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"5a48ea622e4670030b1bd65969509a5d\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"c54d1a1cea020f0330284acc4886d231\" == md5(body))"
+      - type: dsl
+        name: 6.0.3 - 6.0.4
+        dsl:
+          - "(\"fba113ea88fa59080eeca45526d96465\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"4680265e3ed45f5f4f97cf898cd56134\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"286c033afdc5eecdd3995695796ef91d\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"1f7891c62b8db800289434e0f952cbf6\" == md5(body))"
+      - type: dsl
+        name: 5.2.3
+        dsl:
+          - "(\"aa82b05c9fe5d7f211c86fa2bf4d9734\" == md5(body))"
+      - type: dsl
+        name: 5.2.2
+        dsl:
+          - "(\"af0727640982c437c0b89e8d11bdf9ad\" == md5(body))"
+      - type: dsl
+        name: 5.2.0 - 5.2.1
+        dsl:
+          - "(\"fb9e4344cee3a4bf9c4bef35c07e67c2\" == md5(body))"
+      - type: dsl
+        name: 5.1.2
+        dsl:
+          - "(\"7f40869604a9cf559aa2e8a9555f309b\" == md5(body))"
+      - type: dsl
+        name: 5.1.1
+        dsl:
+          - "(\"00843ca9c8701618e8bcf35e82353db0\" == md5(body))"
+      - type: dsl
+        name: 5.1.0
+        dsl:
+          - "(\"c2c8ff50e3c5df7d832246cafeec6e6f\" == md5(body))"
+      - type: dsl
+        name: 4.4.0 - 4.4.2
+        dsl:
+          - "(\"5e955ee6eefd588cd8b2669f33a84430\" == md5(body))"
+      - type: dsl
+        name: 4.3.4 - 4.3.6
+        dsl:
+          - "(\"dd34fc8a9fc63a52d531b9b84dea77b1\" == md5(body))"
+      - type: dsl
+        name: 4.3.3
+        dsl:
+          - "(\"162d72e13a317f66387c027e76bd897a\" == md5(body))"
+      - type: dsl
+        name: 4.3.1 - 4.3.2
+        dsl:
+          - "(\"2f0c77bfde3702427b0f8d99d9fad7b5\" == md5(body))"
+      - type: dsl
+        name: 4.3.0
+        dsl:
+          - "(\"e24840f009213944fb4330f3879990b8\" == md5(body))"
+      - type: dsl
+        name: 4.2.2
+        dsl:
+          - "(\"d8f31e509834c301d6b30829576c7504\" == md5(body))"
+      - type: dsl
+        name: 4.2.1
+        dsl:
+          - "(\"245f5b70562069fb091e0ad630bb9218\" == md5(body))"
+      - type: dsl
+        name: 4.2.0
+        dsl:
+          - "(\"d1a9f51de334bd2db8909624c4285993\" == md5(body))"
+      - type: dsl
+        name: 4.1.3
+        dsl:
+          - "(\"2d6d72aceef724ae179482a83c11c8e0\" == md5(body))"
+      - type: dsl
+        name: 4.1.1 - 4.1.2
+        dsl:
+          - "(\"6090f88dbd14f6a40bccd97de3bf27a8\" == md5(body))"
+      - type: dsl
+        name: 4.1.0
+        dsl:
+          - "(\"8ede5ef4ea21ed076e48a3b8e5f8c0b3\" == md5(body))"
+      - type: dsl
+        name: 4.0.0
+        dsl:
+          - "(\"a126c0696d8143b7e3876b5523f690a4\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/WEB-INF/web.xml"
+
+    matchers:
+      - type: dsl
+        name: 6.2.2-GA3 - 6.2.3-GA4
+        dsl:
+          - "(\"a48fe8cda72ab3f1a373970ec0d9d310\" == md5(body))"
+      - type: dsl
+        name: 6.2.0-GA1 - 6.2.1-GA2
+        dsl:
+          - "(\"f7940d32bc4e65705be19373faed58ec\" == md5(body))"
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"6a3020adbb0c933c7c83ac3d306d94e3\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"0c75330533736c5e99322386fa199ade\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"d8039e21f11deb03c501a8123e01510c\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"52c9fbcaa0ff54a93d5f6a87f4627465\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"85e3db2161b324a8c0fe4f2553193f2a\" == md5(body))"
+      - type: dsl
+        name: 6.0.3 - 6.0.4
+        dsl:
+          - "(\"1c30b529ceafe593dab8f53c176c6956\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"6bd7113c2ea780e2000792f1cdf2d1a3\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"6e236a9efa2117701e1762918f1fa063\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"b56526412ad440142d880870f27623e4\" == md5(body))"
+      - type: dsl
+        name: 5.2.3
+        dsl:
+          - "(\"6dc2707615d4bbbc9182089b634b52fb\" == md5(body))"
+      - type: dsl
+        name: 5.2.2
+        dsl:
+          - "(\"3c488c11d4a8162a717259a986ac619a\" == md5(body))"
+      - type: dsl
+        name: 5.2.1
+        dsl:
+          - "(\"1b66cb46a1ee48047d25c1bb54da681b\" == md5(body))"
+      - type: dsl
+        name: 5.2.0
+        dsl:
+          - "(\"c79bc7c2d7a4a05464cfaf173b94fd60\" == md5(body))"
+      - type: dsl
+        name: 5.1.2
+        dsl:
+          - "(\"c7cfdc2ca3f6662218b9e526910eb75a\" == md5(body))"
+      - type: dsl
+        name: 5.1.1
+        dsl:
+          - "(\"b72706a8842ed43e196ed8174423f678\" == md5(body))"
+      - type: dsl
+        name: 5.1.0
+        dsl:
+          - "(\"3c49f0fb4bd1b29280cb1c1e900ae683\" == md5(body))"
+      - type: dsl
+        name: 4.4.0 - 4.4.2
+        dsl:
+          - "(\"dd922004a7e5e030039a89df6283bb09\" == md5(body))"
+      - type: dsl
+        name: 4.3.5 - 4.3.6
+        dsl:
+          - "(\"24526cb75ed072e894d85204750f0a19\" == md5(body))"
+      - type: dsl
+        name: 4.3.4
+        dsl:
+          - "(\"76a2227fa6bf0debfd958e9fe55535fb\" == md5(body))"
+      - type: dsl
+        name: 4.3.2 - 4.3.3
+        dsl:
+          - "(\"6e657fdecefd2158fc8da3d3a94edc8f\" == md5(body))"
+      - type: dsl
+        name: 4.3.1
+        dsl:
+          - "(\"1618298a4a9600f64b8a1f41c4d922c0\" == md5(body))"
+      - type: dsl
+        name: 4.3.0
+        dsl:
+          - "(\"7be35d27942d3ab65a6dfe72c0fa1cd7\" == md5(body))"
+      - type: dsl
+        name: 4.2.2
+        dsl:
+          - "(\"dfc616f4036d2e053ad00e7441590d90\" == md5(body))"
+      - type: dsl
+        name: 4.2.1
+        dsl:
+          - "(\"141733c06d3ceffbaadde57d0d9a5af0\" == md5(body))"
+      - type: dsl
+        name: 4.2.0
+        dsl:
+          - "(\"8c374e954458740e170678b72bbaa6cd\" == md5(body))"
+      - type: dsl
+        name: 4.1.0 - 4.1.3
+        dsl:
+          - "(\"3eb78178ee4b6ad1af4405c386ce2ab2\" == md5(body))"
+      - type: dsl
+        name: 4.0.0
+        dsl:
+          - "(\"caa88c846d4b3a60ebe75c913735d1d0\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/WEB-INF/geronimo-web.xml"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3 - 6.2.3-GA4
+        dsl:
+          - "(\"93fb008d915c51aceea2073b6d877b6a\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1 - 6.1.1-GA2
+        dsl:
+          - "(\"235302b97170459832347a8ec62614f9\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"a75aaf0b1c0af9fe0cd521278a0016e2\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"c4407bc4d725d311809915b814f83b0e\" == md5(body))"
+      - type: dsl
+        name: 6.0.4
+        dsl:
+          - "(\"604aed3bef5d04c2489f23b20c1301e5\" == md5(body))"
+      - type: dsl
+        name: 6.0.1 - 6.0.3
+        dsl:
+          - "(\"11dfbdb3d0e03f121ff2ab8f3b06f542\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"b0b37004d6b9951ec1dfba8df24545d1\" == md5(body))"
+      - type: dsl
+        name: 5.2.0 - 5.2.3
+        dsl:
+          - "(\"27301f781487f2f1908e6d4e323c524d\" == md5(body))"
+      - type: dsl
+        name: 5.1.2
+        dsl:
+          - "(\"e077df1a7df710a79dc31aa1f4bc200a\" == md5(body))"
+      - type: dsl
+        name: 5.1.1
+        dsl:
+          - "(\"aa625d34dfbbcd73f761aabb43359de1\" == md5(body))"
+      - type: dsl
+        name: 5.1.0
+        dsl:
+          - "(\"c56dca9ed37b064c73e76428e3ddca70\" == md5(body))"
+      - type: dsl
+        name: 4.4.2
+        dsl:
+          - "(\"c7c18731bf9ba75fc5b0db761947dc71\" == md5(body))"
+      - type: dsl
+        name: 4.4.1
+        dsl:
+          - "(\"a5135a4df03d252dfe0ea08e106fc894\" == md5(body))"
+      - type: dsl
+        name: 4.4.0
+        dsl:
+          - "(\"c40420bb507d130816a426f5bba3f6be\" == md5(body))"
+      - type: dsl
+        name: 4.3.6
+        dsl:
+          - "(\"289b166188e3db3b069cf6711a40ab14\" == md5(body))"
+      - type: dsl
+        name: 4.3.5
+        dsl:
+          - "(\"75f71109489c54e39538cee7b8ef2f19\" == md5(body))"
+      - type: dsl
+        name: 4.3.4
+        dsl:
+          - "(\"e86ede584920d296b4285ec9af55702b\" == md5(body))"
+      - type: dsl
+        name: 4.3.3
+        dsl:
+          - "(\"1bd1b11d9173579ef7cec53ae0cd62d1\" == md5(body))"
+      - type: dsl
+        name: 4.3.2
+        dsl:
+          - "(\"5a7fa8c6b348ca73cb7d31911a820da0\" == md5(body))"
+      - type: dsl
+        name: 4.3.1
+        dsl:
+          - "(\"78d1ae5fa54bf9b95d0d3cdb10745d20\" == md5(body))"
+      - type: dsl
+        name: 4.3.0
+        dsl:
+          - "(\"2f8f3b07e577fbced98c972d2813a170\" == md5(body))"
+      - type: dsl
+        name: 4.2.1 - 4.2.2
+        dsl:
+          - "(\"b7f88369bb3a666ac3b63cec161eb038\" == md5(body))"
+      - type: dsl
+        name: 4.2.0
+        dsl:
+          - "(\"230be481392f4e6f0e83080fea593108\" == md5(body))"
+      - type: dsl
+        name: 4.1.1 - 4.1.3
+        dsl:
+          - "(\"55b5845eab635585c0dc84164cbe7032\" == md5(body))"
+      - type: dsl
+        name: 4.1.0
+        dsl:
+          - "(\"0356639e1fecc347dff92de5f9f21fd1\" == md5(body))"
+      - type: dsl
+        name: 4.0.0
+        dsl:
+          - "(\"458db36d9756de28d04bec1f64fab8d4\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/WEB-INF/liferay-portlet.xml"
+
+    matchers:
+      - type: dsl
+        name: 6.2.3-GA4
+        dsl:
+          - "(\"15a2df9551e43316c09642788cc8a68f\" == md5(body))"
+      - type: dsl
+        name: 6.2.0-GA1 - 6.2.2-GA3
+        dsl:
+          - "(\"a85269bd8b535bd5654dc4e472bb0450\" == md5(body))"
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"f7f734c60da48769259f25e6fa233afd\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"db42ecb5c1d3bfd60c3c837dbb693297\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"a608e521c227a2dcc8dba6f19755d690\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"d059abfdd1daed1fe3a7925125f3df8d\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"a223bf5b3b8954cae7d039c14f22d564\" == md5(body))"
+      - type: dsl
+        name: 6.0.3 - 6.0.4
+        dsl:
+          - "(\"6e2a1227d766b9b45595ed28cd87552b\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"0c290ead8525b984ea8569ffbe5f109d\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"bf6eacee38c2d1ad1ca13959d8f159f4\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"4cce038f1731b61c4fba9ad35fbba95e\" == md5(body))"
+      - type: dsl
+        name: 5.2.3
+        dsl:
+          - "(\"63a9a47bc1b9539fe5576dbb1497e858\" == md5(body))"
+      - type: dsl
+        name: 5.2.2
+        dsl:
+          - "(\"3f755918876b5b24e5d4b7d085417d64\" == md5(body))"
+      - type: dsl
+        name: 5.2.0 - 5.2.1
+        dsl:
+          - "(\"446e43c09c64249408d1fdfa80a4b7d2\" == md5(body))"
+      - type: dsl
+        name: 5.1.2
+        dsl:
+          - "(\"620a2be35bcbee102dfae062d4115286\" == md5(body))"
+      - type: dsl
+        name: 5.1.1
+        dsl:
+          - "(\"7c55f4f972c767af5a6014b603869fee\" == md5(body))"
+      - type: dsl
+        name: 5.1.0
+        dsl:
+          - "(\"9858594d9facd6423d8101a16e8411af\" == md5(body))"
+      - type: dsl
+        name: 4.4.0 - 4.4.2
+        dsl:
+          - "(\"c90146d244156d551ea68c381ba295d5\" == md5(body))"
+      - type: dsl
+        name: 4.3.6
+        dsl:
+          - "(\"ae7b2d12085f9159adcf6f19e3a60fd0\" == md5(body))"
+      - type: dsl
+        name: 4.3.4 - 4.3.5
+        dsl:
+          - "(\"de7f26e511c12cba9ce84d873dfbdda1\" == md5(body))"
+      - type: dsl
+        name: 4.3.3
+        dsl:
+          - "(\"4b62cfd26cb9dd5248867b5a01329f73\" == md5(body))"
+      - type: dsl
+        name: 4.3.2
+        dsl:
+          - "(\"c24e1c2e72eb9c653e59737a530b4c73\" == md5(body))"
+      - type: dsl
+        name: 4.3.1
+        dsl:
+          - "(\"deb2e693941f0294c588cd581ac27e7c\" == md5(body))"
+      - type: dsl
+        name: 4.3.0
+        dsl:
+          - "(\"27aba95d25dfc58167c4afae3e6324fe\" == md5(body))"
+      - type: dsl
+        name: 4.2.0 - 4.2.2
+        dsl:
+          - "(\"c9bed3b559fc678ab73be3d3f378c8ab\" == md5(body))"
+      - type: dsl
+        name: 4.1.0 - 4.1.3
+        dsl:
+          - "(\"2da1dcd01be78a407f071e0a5598002d\" == md5(body))"
+      - type: dsl
+        name: 4.0.0
+        dsl:
+          - "(\"814c5c3c3133c4018c4f884c5e68d020\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/WEB-INF/liferay-look-and-feel.xml"
+
+    matchers:
+      - type: dsl
+        name: 6.2.0-GA1 - 6.2.3-GA4
+        dsl:
+          - "(\"2e4f43890f5cc572c366762bb1e1daa3\" == md5(body))"
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"762b1414db05426763f46eee844195fc\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"80da1ec162292ad13db2a983eb2a9e68\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"b66f126028e2dc000f746cbae4919b19\" == md5(body))"
+      - type: dsl
+        name: 6.0.0 - 6.0.6
+        dsl:
+          - "(\"bbe0284ecf06de2eca0d964cd8a4b24a\" == md5(body))"
+      - type: dsl
+        name: 6.0.1 - 6.0.5
+        dsl:
+          - "(\"fb0fe317125e50b21bd76665682bffc4\" == md5(body))"
+      - type: dsl
+        name: 5.2.3
+        dsl:
+          - "(\"108423ede03ecc049d97d54bbc9c6950\" == md5(body))"
+      - type: dsl
+        name: 5.2.0 - 5.2.2
+        dsl:
+          - "(\"9b57afed15c4734c52a546f7bafaf25f\" == md5(body))"
+      - type: dsl
+        name: 5.1.2
+        dsl:
+          - "(\"a8d6b6dc99b8c268af27df735ee607eb\" == md5(body))"
+      - type: dsl
+        name: 5.1.1
+        dsl:
+          - "(\"7a2f9c4956d547f45e0d82a084a76f00\" == md5(body))"
+      - type: dsl
+        name: 5.1.0
+        dsl:
+          - "(\"bcb3df471d7d761b85813633dfbb869b\" == md5(body))"
+      - type: dsl
+        name: 4.4.2
+        dsl:
+          - "(\"b7cb87f0d8940ac514345bea8a4b7b85\" == md5(body))"
+      - type: dsl
+        name: 4.4.1
+        dsl:
+          - "(\"e48d47b416d48f13e74581a8e4cb643a\" == md5(body))"
+      - type: dsl
+        name: 4.4.0
+        dsl:
+          - "(\"424bc3f5b1c49652470f51f1b1d6fa57\" == md5(body))"
+      - type: dsl
+        name: 4.3.6
+        dsl:
+          - "(\"61ffa5719109d1c5811f593691acaf16\" == md5(body))"
+      - type: dsl
+        name: 4.3.5
+        dsl:
+          - "(\"2c5e274fd437401ffea5a3d6fea5da44\" == md5(body))"
+      - type: dsl
+        name: 4.3.4
+        dsl:
+          - "(\"eefdbafcfc8ca8480ea16d8145854f32\" == md5(body))"
+      - type: dsl
+        name: 4.3.3
+        dsl:
+          - "(\"b2138f9b65513b42c5edd022d789e1ce\" == md5(body))"
+      - type: dsl
+        name: 4.3.2
+        dsl:
+          - "(\"b6efb323501620f09f0f0e84db35be56\" == md5(body))"
+      - type: dsl
+        name: 4.3.1
+        dsl:
+          - "(\"fea3796ea03d2d53d07c8b8f4757c860\" == md5(body))"
+      - type: dsl
+        name: 4.3.0
+        dsl:
+          - "(\"1e4487a72a20105969309c187efc782d\" == md5(body))"
+      - type: dsl
+        name: 4.2.0 - 4.2.2
+        dsl:
+          - "(\"1535d5291732d66e57f18db4914e5885\" == md5(body))"
+      - type: dsl
+        name: 4.1.0 - 4.1.3
+        dsl:
+          - "(\"9905e2130b8fb8e01e69021f87404cf0\" == md5(body))"
+      - type: dsl
+        name: 4.0.0
+        dsl:
+          - "(\"c51790bb5ab1dabd68b048e8ad63f7cb\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/WEB-INF/tiles-defs.xml"
+
+    matchers:
+      - type: dsl
+        name: 6.2.2-GA3 - 6.2.3-GA4
+        dsl:
+          - "(\"8629f2d4e0cb0c0ab1bb17b3c4fb8ae2\" == md5(body))"
+      - type: dsl
+        name: 6.2.0-GA1 - 6.2.1-GA2
+        dsl:
+          - "(\"1f932ea961489896050d56a1feb3d675\" == md5(body))"
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"452b6759da0e0776e48e3c9c6eb27b43\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"3d0bf75961344f47acffa2920073f672\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"7ac58d9859b41360c5250616052d200b\" == md5(body))"
+      - type: dsl
+        name: 6.0.3 - 6.0.6
+        dsl:
+          - "(\"43e69755cb9e04850f4d720efc81d0ff\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"fb0b46d650baf1ada6f3f61874930633\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"c7365c76759949f4470a3684cecdb88d\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"5ec79051713c8c177ccd101d422ffd83\" == md5(body))"
+      - type: dsl
+        name: 5.2.3
+        dsl:
+          - "(\"c9e86b3bf977d76ebd140cb9d43c3b73\" == md5(body))"
+      - type: dsl
+        name: 5.2.2
+        dsl:
+          - "(\"49a30b3784bccafed8ef632661588c1e\" == md5(body))"
+      - type: dsl
+        name: 5.2.1
+        dsl:
+          - "(\"a39f3f39f0411ad21b1e745303c6d599\" == md5(body))"
+      - type: dsl
+        name: 5.2.0
+        dsl:
+          - "(\"5e48ece783459186f103d48836600fc3\" == md5(body))"
+      - type: dsl
+        name: 5.1.2
+        dsl:
+          - "(\"6035507c8d3b00a18bb7251acddc1c17\" == md5(body))"
+      - type: dsl
+        name: 5.1.1
+        dsl:
+          - "(\"39e4d90cd524170fc250ba02a1f79f3e\" == md5(body))"
+      - type: dsl
+        name: 5.1.0
+        dsl:
+          - "(\"1a1b2efaf28b58418c80cfafb3c472aa\" == md5(body))"
+      - type: dsl
+        name: 4.4.0 - 4.4.2
+        dsl:
+          - "(\"bda014d1068b06e3eb2863c9dac67f22\" == md5(body))"
+      - type: dsl
+        name: 4.3.4 - 4.3.6
+        dsl:
+          - "(\"fafbba8ba4a6022c698379f654d02176\" == md5(body))"
+      - type: dsl
+        name: 4.3.2 - 4.3.3
+        dsl:
+          - "(\"bad9c79a8804f60030fb3f60228c19a1\" == md5(body))"
+      - type: dsl
+        name: 4.3.1
+        dsl:
+          - "(\"85ecacbf8b73d3498fd555f03c23317c\" == md5(body))"
+      - type: dsl
+        name: 4.3.0
+        dsl:
+          - "(\"fbdc91b6cc270982a2cd55c186e8b9b1\" == md5(body))"
+      - type: dsl
+        name: 4.2.0 - 4.2.2
+        dsl:
+          - "(\"59eb43f9c811307d3ec986ca2c86955c\" == md5(body))"
+      - type: dsl
+        name: 4.1.0 - 4.1.3
+        dsl:
+          - "(\"163197b9c95a2d968332d8e8a9aae122\" == md5(body))"
+      - type: dsl
+        name: 4.0.0
+        dsl:
+          - "(\"02d73bfb2981050eccec01260848c6d6\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/liferay/layout_configuration.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"a32eb39c70654db57dc16786c83ea13a\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"72bd487b2d24916908344bcae6edc386\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"ae1e0d0b75ef0d48be31f67f2999b7b6\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"783e1969334319c4468bab872989a3a1\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"67926bf885cfef11dd90ce752c07d6c0\" == md5(body))"
+      - type: dsl
+        name: 6.0.4
+        dsl:
+          - "(\"9ea68ea60c794d40db8ca8164cfe416a\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"c592383fa59511ba39bad6195c2e748b\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"b55d845520bc99030a828ba1647a120f\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"1b961160aee86acfd265c61338ec6893\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"b78e39c4f4c822953b52ac63cd7b7877\" == md5(body))"
+      - type: dsl
+        name: 5.2.0 - 5.2.3
+        dsl:
+          - "(\"d69e626f12c90b9dab8ca6c176c541c6\" == md5(body))"
+      - type: dsl
+        name: 5.1.2
+        dsl:
+          - "(\"8115a8781910c283b43b99726386229b\" == md5(body))"
+      - type: dsl
+        name: 5.1.1
+        dsl:
+          - "(\"bbc04521947c4b38854de628ec0ed3a0\" == md5(body))"
+      - type: dsl
+        name: 5.1.0
+        dsl:
+          - "(\"48521c979f6f257db3b2eb1417776b7a\" == md5(body))"
+      - type: dsl
+        name: 4.4.0 - 4.4.2
+        dsl:
+          - "(\"cebc470b6fb7b8aa40452d32139a65b8\" == md5(body))"
+      - type: dsl
+        name: 4.3.2 - 4.3.6
+        dsl:
+          - "(\"42b08fc9e1823f0cd06207cda4de89f7\" == md5(body))"
+      - type: dsl
+        name: 4.3.1
+        dsl:
+          - "(\"7ccd14679a27646a12530cf67cad8c00\" == md5(body))"
+      - type: dsl
+        name: 4.3.0
+        dsl:
+          - "(\"5f8f9edac0648ab15355d230fe6a4d28\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/themes/classic/css/application.css"
+
+    matchers:
+      - type: dsl
+        name: 6.2.4-GA5 - 6.2.5-GA6
+        dsl:
+          - "(\"0b21f3dc4bd7a3f8035525ac001b3e04\" == md5(body))"
+      - type: dsl
+        name: 6.2.3-GA4
+        dsl:
+          - "(\"61f6e0c8bdb41c4276e45226563d8ce2\" == md5(body))"
+      - type: dsl
+        name: 6.2.2-GA3
+        dsl:
+          - "(\"7fec2cd03df8b0f8f96cf8e723fdcd6c\" == md5(body))"
+      - type: dsl
+        name: 6.2.0-GA1 - 6.2.1-GA2
+        dsl:
+          - "(\"05d930d6155ef9b0f582d9ddf8986a21\" == md5(body))"
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"8a5578de8363dcdb2d414ba084cf1ace\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"7f28241f29d53367b7e70f942d0299f8\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"2b1054d16c6597c5020e26e70441a609\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"a6c4cf181c4e862990284c35b2d880b6\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"a2ae5092ecdd1af5fa81398137264f6c\" == md5(body))"
+      - type: dsl
+        name: 6.0.4
+        dsl:
+          - "(\"d32f0d7d4a78e37896070eb819cae7fe\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"eb6e71bac93440853d1f7abfc13e5215\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"4ddadabc0bf5a059a1d1b49b5db70801\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"c7ac4c9df6538cb976dfc8801aec41aa\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"88688d9aaaf1fa4690fd0a2115d54c2b\" == md5(body))"
+      - type: dsl
+        name: 5.2.0 - 5.2.3
+        dsl:
+          - "(\"fb971e6909346eace19b9e8cfe377da8\" == md5(body))"
+      - type: dsl
+        name: 5.1.2
+        dsl:
+          - "(\"ff1e0b318992096eb4139878a93ded86\" == md5(body))"
+      - type: dsl
+        name: 5.1.1
+        dsl:
+          - "(\"8f031d1205c6e820af332820da3d521e\" == md5(body))"
+      - type: dsl
+        name: 5.1.0
+        dsl:
+          - "(\"82c6ca2958688ec718f7bf63aef08723\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/themes/_styled/css/application.css"
+
+    matchers:
+      - type: dsl
+        name: 6.2.4-GA5 - 6.2.5-GA6
+        dsl:
+          - "(\"0b21f3dc4bd7a3f8035525ac001b3e04\" == md5(body))"
+      - type: dsl
+        name: 6.2.3-GA4
+        dsl:
+          - "(\"61f6e0c8bdb41c4276e45226563d8ce2\" == md5(body))"
+      - type: dsl
+        name: 6.2.2-GA3
+        dsl:
+          - "(\"7fec2cd03df8b0f8f96cf8e723fdcd6c\" == md5(body))"
+      - type: dsl
+        name: 6.2.0-GA1 - 6.2.1-GA2
+        dsl:
+          - "(\"05d930d6155ef9b0f582d9ddf8986a21\" == md5(body))"
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"8a5578de8363dcdb2d414ba084cf1ace\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"7f28241f29d53367b7e70f942d0299f8\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"2b1054d16c6597c5020e26e70441a609\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"a6c4cf181c4e862990284c35b2d880b6\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"a2ae5092ecdd1af5fa81398137264f6c\" == md5(body))"
+      - type: dsl
+        name: 6.0.4
+        dsl:
+          - "(\"d32f0d7d4a78e37896070eb819cae7fe\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"eb6e71bac93440853d1f7abfc13e5215\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"4ddadabc0bf5a059a1d1b49b5db70801\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"c7ac4c9df6538cb976dfc8801aec41aa\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"88688d9aaaf1fa4690fd0a2115d54c2b\" == md5(body))"
+      - type: dsl
+        name: 5.2.0 - 5.2.3
+        dsl:
+          - "(\"fb971e6909346eace19b9e8cfe377da8\" == md5(body))"
+      - type: dsl
+        name: 5.1.2
+        dsl:
+          - "(\"ff1e0b318992096eb4139878a93ded86\" == md5(body))"
+      - type: dsl
+        name: 5.1.1
+        dsl:
+          - "(\"8f031d1205c6e820af332820da3d521e\" == md5(body))"
+      - type: dsl
+        name: 5.1.0
+        dsl:
+          - "(\"82c6ca2958688ec718f7bf63aef08723\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/liferay/liferay.js"
+
+    matchers:
+      - type: dsl
+        name: 6.2.5-GA6
+        dsl:
+          - "(\"3b5e54f4398e4c6085b8c8928f62bd05\" == md5(body))"
+      - type: dsl
+        name: 6.2.0-GA1 - 6.2.4-GA5
+        dsl:
+          - "(\"6013d84087a107c41681244415c2e81f\" == md5(body))"
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"07d815c305dabe33ac7506e0d1c075ce\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"053c01ded210d289f9e5818cbcf8cfa1\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"7afae86ca9a9822e2c7f4e1cebc2bee6\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"2ca0498ffe0a6423d5644714aa58acea\" == md5(body))"
+      - type: dsl
+        name: 6.0.1 - 6.0.5
+        dsl:
+          - "(\"8f9bf75ffe061f31807f4052896dba3b\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"421c1c9b3de3ab12ae7194964f391891\" == md5(body))"
+      - type: dsl
+        name: 5.2.3
+        dsl:
+          - "(\"fec6f43d627885e913aa8bebc73c8e65\" == md5(body))"
+      - type: dsl
+        name: 5.2.2
+        dsl:
+          - "(\"5f86b89a16d0867cbf808fe3fa0087a8\" == md5(body))"
+      - type: dsl
+        name: 5.2.0 - 5.2.1
+        dsl:
+          - "(\"beae149104d41c4264d9a3e81c8324ea\" == md5(body))"
+      - type: dsl
+        name: 5.1.2
+        dsl:
+          - "(\"809efbd5d4df5ecf7c7afef0db76be18\" == md5(body))"
+      - type: dsl
+        name: 5.1.1
+        dsl:
+          - "(\"1a0c35dad76da9fc425263c4d8588867\" == md5(body))"
+      - type: dsl
+        name: 5.1.0
+        dsl:
+          - "(\"274cd4318beb59d0bfad0bbc7d4734fb\" == md5(body))"
+      - type: dsl
+        name: 4.4.2
+        dsl:
+          - "(\"03a32970610ec32a83522b0dcacf5550\" == md5(body))"
+      - type: dsl
+        name: 4.4.0 - 4.4.1
+        dsl:
+          - "(\"1680665d5693dc36e064c49f69e353d4\" == md5(body))"
+      - type: dsl
+        name: 4.3.5 - 4.3.6
+        dsl:
+          - "(\"c2410a8a5d814e4dcd0973396234a97a\" == md5(body))"
+      - type: dsl
+        name: 4.3.3 - 4.3.4
+        dsl:
+          - "(\"11b260b3901e90bcd1170490789b131c\" == md5(body))"
+      - type: dsl
+        name: 4.3.2
+        dsl:
+          - "(\"d251b49470c56d3685bc488c5b57d44e\" == md5(body))"
+      - type: dsl
+        name: 4.3.1
+        dsl:
+          - "(\"fb10a6778fd93b58ca4af6a2db84f2d0\" == md5(body))"
+      - type: dsl
+        name: 4.3.0
+        dsl:
+          - "(\"b8cef22a245a0c1a9dbb2796094cd8a8\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/WEB-INF/portlet-custom.xml"
+
+    matchers:
+      - type: dsl
+        name: 6.2.3-GA4
+        dsl:
+          - "(\"42573bbfa3fd3c5abc0544ed769ddbb9\" == md5(body))"
+      - type: dsl
+        name: 6.2.0-GA1 - 6.2.2-GA3
+        dsl:
+          - "(\"9a61b032d8027a0f7b5ca5351be1780d\" == md5(body))"
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"02030eace9253061fb24ba1bd7fada5e\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"91b18b9fc509d200b6490626cd5e4c71\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"af16088904792d982c32aa5ff34f796e\" == md5(body))"
+      - type: dsl
+        name: 6.0.5 - 6.0.6
+        dsl:
+          - "(\"cc91dcc437e391080fce482f2ceb2303\" == md5(body))"
+      - type: dsl
+        name: 6.0.4
+        dsl:
+          - "(\"a37da824a918343902d81374acb3e7a1\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"9e0a5a0d45a7428d08b6b02bec5afada\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"7e80a40a787b0ad065600afb7fb695b3\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"5587f95ea0f736ef6281f494319379f7\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"09f4383eabd87e4da41d8428f85a2712\" == md5(body))"
+      - type: dsl
+        name: 5.2.3
+        dsl:
+          - "(\"13128a4454f44ce2bc7c8c05e48e7999\" == md5(body))"
+      - type: dsl
+        name: 5.2.2
+        dsl:
+          - "(\"1601a11d7f6100751ba2354c21f613a0\" == md5(body))"
+      - type: dsl
+        name: 5.2.0 - 5.2.1
+        dsl:
+          - "(\"529ee29702a5f280a3e47a6119000839\" == md5(body))"
+      - type: dsl
+        name: 5.1.2
+        dsl:
+          - "(\"740a34835c795a712e637fdcda909212\" == md5(body))"
+      - type: dsl
+        name: 5.1.0 - 5.1.1
+        dsl:
+          - "(\"f72b160f5b61e2e242397701c6b5670c\" == md5(body))"
+      - type: dsl
+        name: 4.4.0 - 4.4.2
+        dsl:
+          - "(\"6b13c4321d2dd7e5ce7b4e9ac615e829\" == md5(body))"
+      - type: dsl
+        name: 4.3.4 - 4.3.6
+        dsl:
+          - "(\"78040cadf973a3f2d142b9219bbe3996\" == md5(body))"
+      - type: dsl
+        name: 4.3.2 - 4.3.3
+        dsl:
+          - "(\"a601d3843de07ee1019db1360a18b7b3\" == md5(body))"
+      - type: dsl
+        name: 4.3.1
+        dsl:
+          - "(\"23f8960d49d33c6de6879535fb0cd44d\" == md5(body))"
+      - type: dsl
+        name: 4.3.0
+        dsl:
+          - "(\"a36f9b1d6fce05a46bd910afc23f71ce\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/themes/classic/css/base.css"
+
+    matchers:
+      - type: dsl
+        name: 6.2.4-GA5 - 6.2.5-GA6
+        dsl:
+          - "(\"618735a089a7712b4310a82e1f609e7e\" == md5(body))"
+      - type: dsl
+        name: 6.2.3-GA4
+        dsl:
+          - "(\"379423c5eb749bb070669db0f5d08989\" == md5(body))"
+      - type: dsl
+        name: 6.2.2-GA3
+        dsl:
+          - "(\"91aba4f5979020a96d0e1a8e4b22139c\" == md5(body))"
+      - type: dsl
+        name: 6.2.0-GA1 - 6.2.1-GA2
+        dsl:
+          - "(\"e4b9056f760e2a09bd5bbcdd15d6b780\" == md5(body))"
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"0fe6fba95ef42f71eccfb1f5502779b1\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1 - 6.1.1-GA2
+        dsl:
+          - "(\"d9c7acadb09c306db83fccc8afd4c0ad\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"2226fe0552f717a9957dc5d6c0d4b8e2\" == md5(body))"
+      - type: dsl
+        name: 6.0.1 - 6.0.5
+        dsl:
+          - "(\"6f1ca8a6db282062fb766e372864396d\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"31b70216c01a96a12fd3ca7dab81d73f\" == md5(body))"
+      - type: dsl
+        name: 5.2.3
+        dsl:
+          - "(\"c5fd825c092d412cc5c134f276f75e4f\" == md5(body))"
+      - type: dsl
+        name: 5.2.0 - 5.2.2
+        dsl:
+          - "(\"820c6cbf9513af93d9f30b8eceb62b3d\" == md5(body))"
+      - type: dsl
+        name: 5.1.2
+        dsl:
+          - "(\"b31bd9838da33a8ddb67b3f065bebac5\" == md5(body))"
+      - type: dsl
+        name: 5.1.0 - 5.1.1
+        dsl:
+          - "(\"581034f63330fdf8cdfe2d46630ebc32\" == md5(body))"
+      - type: dsl
+        name: 4.4.0 - 4.4.2
+        dsl:
+          - "(\"7bd6f1517eaf753458d85c11d1931c79\" == md5(body))"
+      - type: dsl
+        name: 4.3.6
+        dsl:
+          - "(\"3f3078692701d25118fa3c7cce5f7e8a\" == md5(body))"
+      - type: dsl
+        name: 4.3.5
+        dsl:
+          - "(\"2d390e759a05eb6389792640c37ecbb5\" == md5(body))"
+      - type: dsl
+        name: 4.3.4
+        dsl:
+          - "(\"f98d220c351913d6200597df6f586abb\" == md5(body))"
+      - type: dsl
+        name: 4.3.3
+        dsl:
+          - "(\"433b856b26cb396240b99144093882a0\" == md5(body))"
+      - type: dsl
+        name: 4.3.2
+        dsl:
+          - "(\"e5c75860d67c81e9d3a90210c02d6a6d\" == md5(body))"
+      - type: dsl
+        name: 4.3.1
+        dsl:
+          - "(\"274e5530563bb889e0805f5bdddcea56\" == md5(body))"
+      - type: dsl
+        name: 4.3.0
+        dsl:
+          - "(\"9588f031d69b84487c38002af7723c4e\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/themes/_styled/css/base.css"
+
+    matchers:
+      - type: dsl
+        name: 6.2.4-GA5 - 6.2.5-GA6
+        dsl:
+          - "(\"618735a089a7712b4310a82e1f609e7e\" == md5(body))"
+      - type: dsl
+        name: 6.2.3-GA4
+        dsl:
+          - "(\"379423c5eb749bb070669db0f5d08989\" == md5(body))"
+      - type: dsl
+        name: 6.2.2-GA3
+        dsl:
+          - "(\"91aba4f5979020a96d0e1a8e4b22139c\" == md5(body))"
+      - type: dsl
+        name: 6.2.0-GA1 - 6.2.1-GA2
+        dsl:
+          - "(\"e4b9056f760e2a09bd5bbcdd15d6b780\" == md5(body))"
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"0fe6fba95ef42f71eccfb1f5502779b1\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1 - 6.1.1-GA2
+        dsl:
+          - "(\"d9c7acadb09c306db83fccc8afd4c0ad\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"2226fe0552f717a9957dc5d6c0d4b8e2\" == md5(body))"
+      - type: dsl
+        name: 6.0.1 - 6.0.5
+        dsl:
+          - "(\"6f1ca8a6db282062fb766e372864396d\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"31b70216c01a96a12fd3ca7dab81d73f\" == md5(body))"
+      - type: dsl
+        name: 5.2.3
+        dsl:
+          - "(\"c5fd825c092d412cc5c134f276f75e4f\" == md5(body))"
+      - type: dsl
+        name: 5.2.0 - 5.2.2
+        dsl:
+          - "(\"820c6cbf9513af93d9f30b8eceb62b3d\" == md5(body))"
+      - type: dsl
+        name: 5.1.2
+        dsl:
+          - "(\"b31bd9838da33a8ddb67b3f065bebac5\" == md5(body))"
+      - type: dsl
+        name: 5.1.0 - 5.1.1
+        dsl:
+          - "(\"581034f63330fdf8cdfe2d46630ebc32\" == md5(body))"
+      - type: dsl
+        name: 4.4.0 - 4.4.2
+        dsl:
+          - "(\"7bd6f1517eaf753458d85c11d1931c79\" == md5(body))"
+      - type: dsl
+        name: 4.3.6
+        dsl:
+          - "(\"3f3078692701d25118fa3c7cce5f7e8a\" == md5(body))"
+      - type: dsl
+        name: 4.3.5
+        dsl:
+          - "(\"2d390e759a05eb6389792640c37ecbb5\" == md5(body))"
+      - type: dsl
+        name: 4.3.4
+        dsl:
+          - "(\"f98d220c351913d6200597df6f586abb\" == md5(body))"
+      - type: dsl
+        name: 4.3.3
+        dsl:
+          - "(\"433b856b26cb396240b99144093882a0\" == md5(body))"
+      - type: dsl
+        name: 4.3.2
+        dsl:
+          - "(\"e5c75860d67c81e9d3a90210c02d6a6d\" == md5(body))"
+      - type: dsl
+        name: 4.3.1
+        dsl:
+          - "(\"274e5530563bb889e0805f5bdddcea56\" == md5(body))"
+      - type: dsl
+        name: 4.3.0
+        dsl:
+          - "(\"9588f031d69b84487c38002af7723c4e\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/liferay/navigation.js"
+
+    matchers:
+      - type: dsl
+        name: 6.2.4-GA5 - 6.2.5-GA6
+        dsl:
+          - "(\"c649747681f03aa210b6cad981ff4091\" == md5(body))"
+      - type: dsl
+        name: 6.2.2-GA3 - 6.2.3-GA4
+        dsl:
+          - "(\"d7fca369e2126a1b1ff29d14f0d29c21\" == md5(body))"
+      - type: dsl
+        name: 6.2.0-GA1 - 6.2.1-GA2
+        dsl:
+          - "(\"e6b2da3ccc7cc8a1c83c51299b3194bc\" == md5(body))"
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"bd970b4a1e8096c9a02796bb500e5b27\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"02074548f568c609cd3f334d7b717b58\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"efba6084fb359e3604ad16e3aa7219da\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"60040bbab34ccd7e23d36d1fb98bf094\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"2fea65924ad6c975be489e212379f3f9\" == md5(body))"
+      - type: dsl
+        name: 6.0.3 - 6.0.4
+        dsl:
+          - "(\"4eaa6f2a1e04e54e5d2b92e63a55915c\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"0a516894a748ef45de0c4d36d5ada2f6\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"761108a8a7bdad6aeaa82dd82b3a1a45\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"8dca8cba6ffd030f375333be32447c1e\" == md5(body))"
+      - type: dsl
+        name: 5.2.3
+        dsl:
+          - "(\"236e9ff4d5c9ed07d39abafbeb470ef5\" == md5(body))"
+      - type: dsl
+        name: 5.1.2 - 5.2.2
+        dsl:
+          - "(\"65fb1ed08d9012d41c4c6baa71840056\" == md5(body))"
+      - type: dsl
+        name: 5.1.1
+        dsl:
+          - "(\"d44d0205d615946dc951c86c516cbd3f\" == md5(body))"
+      - type: dsl
+        name: 5.1.0
+        dsl:
+          - "(\"ec46e489c5598569b5fd7b30c112e7ee\" == md5(body))"
+      - type: dsl
+        name: 4.3.6 - 4.4.2
+        dsl:
+          - "(\"cf29f1c3e14d7b5fa62c563580549286\" == md5(body))"
+      - type: dsl
+        name: 4.3.5
+        dsl:
+          - "(\"c6b747b2b64bd3d73553d29c79109530\" == md5(body))"
+      - type: dsl
+        name: 4.3.2 - 4.3.4
+        dsl:
+          - "(\"b280c0cd2c1b5d2f9100e842ffaaae97\" == md5(body))"
+      - type: dsl
+        name: 4.3.1
+        dsl:
+          - "(\"e57be49eb812c2e1fec60af2e99480f7\" == md5(body))"
+      - type: dsl
+        name: 4.3.0
+        dsl:
+          - "(\"6f1f27da0c8f7630a16b48e14ebb23a9\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/liferay/portlet.js"
+
+    matchers:
+      - type: dsl
+        name: 6.2.4-GA5 - 6.2.5-GA6
+        dsl:
+          - "(\"3790472de8a60c4619b5ae22808dde57\" == md5(body))"
+      - type: dsl
+        name: 6.2.3-GA4
+        dsl:
+          - "(\"0da1c5aadb36628ef11f3c59967e9aa7\" == md5(body))"
+      - type: dsl
+        name: 6.2.0-GA1 - 6.2.2-GA3
+        dsl:
+          - "(\"cbca314d3189021a21e197534e8eaa9d\" == md5(body))"
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"6eff60ccc7ee808b1a4d69f19014befb\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"5c5a75bd4e0b43b4b3a56814722ec908\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"3a9dbb2dd37712631eaec0b00d6a430c\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"65993a868304bc346bd4811c4f113e63\" == md5(body))"
+      - type: dsl
+        name: 6.0.3 - 6.0.5
+        dsl:
+          - "(\"8a3cbf880d1c92dc0cb6846a4fa7547c\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"7ff59f820d297faf003d12d88f571b10\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"8a90dac7ad310788128e89cd6b84d54c\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"0977f07578a82629474a7c8817588a18\" == md5(body))"
+      - type: dsl
+        name: 5.2.3
+        dsl:
+          - "(\"97f2f8e19f6b2afd6114441221410d4c\" == md5(body))"
+      - type: dsl
+        name: 5.1.2 - 5.2.2
+        dsl:
+          - "(\"79db6dedcee288fc39d80e18909ca18f\" == md5(body))"
+      - type: dsl
+        name: 5.1.1
+        dsl:
+          - "(\"f8ea747e1ea0e9094f4ffd028d7f7ccf\" == md5(body))"
+      - type: dsl
+        name: 5.1.0
+        dsl:
+          - "(\"a743a820dac1f9cc787ab6d3dd91730c\" == md5(body))"
+      - type: dsl
+        name: 4.3.5 - 4.4.2
+        dsl:
+          - "(\"b2a4dd08a760784ac2a603d3d28261d4\" == md5(body))"
+      - type: dsl
+        name: 4.3.3 - 4.3.4
+        dsl:
+          - "(\"e206a4d2061c591ceb621fcaa8514b8a\" == md5(body))"
+      - type: dsl
+        name: 4.3.2
+        dsl:
+          - "(\"64656d0a2bd4437c9aaa956e691192fe\" == md5(body))"
+      - type: dsl
+        name: 4.3.1
+        dsl:
+          - "(\"de28600e66311c3e030e4d2f93d8fdc9\" == md5(body))"
+      - type: dsl
+        name: 4.3.0
+        dsl:
+          - "(\"9a0460a41a496ea468c234cb2a53ad04\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/liferay/service.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"3397d17608f7a23946767adbc454017f\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"463d45d93dbf420736d3345929ab1069\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"b086da31ab2cd9166d82245e99ca1a44\" == md5(body))"
+      - type: dsl
+        name: 6.0.4 - 6.0.6
+        dsl:
+          - "(\"944b62e479f424c3fc62bbc558c28437\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"af7bcfab4e7f6948bf9e1650ce14e8fa\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"fd0feb7a28a525cc72b0cc1eb10cccc6\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"9ffa4489b7f8fbbdd88872ff31572e98\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"b51a0c38024631f2a338f01c2836a153\" == md5(body))"
+      - type: dsl
+        name: 5.2.3
+        dsl:
+          - "(\"9b8a4a347d1254e89a39ee8382ea3aba\" == md5(body))"
+      - type: dsl
+        name: 5.2.2
+        dsl:
+          - "(\"16349d13d2a68a47c1bcdfdad33dd628\" == md5(body))"
+      - type: dsl
+        name: 5.2.1
+        dsl:
+          - "(\"c874695ee1fc70e56d760a0a5322d24e\" == md5(body))"
+      - type: dsl
+        name: 5.2.0
+        dsl:
+          - "(\"c07b11c1a5b4e0dd5741a0eb3e0174b3\" == md5(body))"
+      - type: dsl
+        name: 4.3.1
+        dsl:
+          - "(\"63603e187cf1054fb3075b6874649932\" == md5(body))"
+      - type: dsl
+        name: 4.3.0
+        dsl:
+          - "(\"71a388efd7cb54a27b4fb8febf7ed317\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/WEB-INF/liferay-plugin-package.xml"
+
+    matchers:
+      - type: dsl
+        name: 6.1.0-GA1 - 6.2.3-GA4
+        dsl:
+          - "(\"c683676170ce9a9f7206a9849d0546ac\" == md5(body))"
+      - type: dsl
+        name: 6.0.0 - 6.0.6
+        dsl:
+          - "(\"6db8212613b8060157c1547723e4f574\" == md5(body))"
+      - type: dsl
+        name: 5.2.0 - 5.2.3
+        dsl:
+          - "(\"cbb45638f691403f114c42d2632856b1\" == md5(body))"
+      - type: dsl
+        name: 5.1.2
+        dsl:
+          - "(\"a5b45bdd815193bc82494d10f9f21a66\" == md5(body))"
+      - type: dsl
+        name: 5.1.1
+        dsl:
+          - "(\"58b7c7ff3bde9af48226ec08fc5c40ac\" == md5(body))"
+      - type: dsl
+        name: 5.1.0
+        dsl:
+          - "(\"34f159b23695283f5b8f0ef587cc8e78\" == md5(body))"
+      - type: dsl
+        name: 4.4.2
+        dsl:
+          - "(\"c762991cc83ddeaf6c799624bcaa9e92\" == md5(body))"
+      - type: dsl
+        name: 4.4.1
+        dsl:
+          - "(\"2081205ac6ded421f4d4dd3cbae13f95\" == md5(body))"
+      - type: dsl
+        name: 4.4.0
+        dsl:
+          - "(\"130d9895cef909d41b218f4c686ec233\" == md5(body))"
+      - type: dsl
+        name: 4.3.6
+        dsl:
+          - "(\"24c85f47aed2f96fbcd1656c8c111fbf\" == md5(body))"
+      - type: dsl
+        name: 4.3.5
+        dsl:
+          - "(\"c60e5307596d84acc69344875919c6a1\" == md5(body))"
+      - type: dsl
+        name: 4.3.4
+        dsl:
+          - "(\"a76ff22ce7d9737fa983905340c89bc5\" == md5(body))"
+      - type: dsl
+        name: 4.3.3
+        dsl:
+          - "(\"26ec7d1a63b6abcbad8f26b88d4e8377\" == md5(body))"
+      - type: dsl
+        name: 4.3.2
+        dsl:
+          - "(\"50e945134f1c80bfc984c89bbb31abe0\" == md5(body))"
+      - type: dsl
+        name: 4.3.1
+        dsl:
+          - "(\"3e62b8fc23c4368c3cbd912dec78f9c9\" == md5(body))"
+      - type: dsl
+        name: 4.3.0
+        dsl:
+          - "(\"742f9f5476c38dcce9e095c21e30a178\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/everything_unpacked.js"
+
+    matchers:
+      - type: dsl
+        name: 5.1.2
+        dsl:
+          - "(\"4520df2e4f03f4e7d1297fdf71da9630\" == md5(body))"
+      - type: dsl
+        name: 5.1.1
+        dsl:
+          - "(\"5150d8740bdcad76ba29a6fa4ec1f0f5\" == md5(body))"
+      - type: dsl
+        name: 5.1.0
+        dsl:
+          - "(\"bed872dca4d44fe74ba8c0d8e32d75be\" == md5(body))"
+      - type: dsl
+        name: 4.4.2
+        dsl:
+          - "(\"67d1b1e6ddc85ff9cf5517b99cd16997\" == md5(body))"
+      - type: dsl
+        name: 4.4.1
+        dsl:
+          - "(\"1782eb96e827b1bba16c2c21ee945f23\" == md5(body))"
+      - type: dsl
+        name: 4.4.0
+        dsl:
+          - "(\"dc427b9cbdb7030d20c2565dda6927ea\" == md5(body))"
+      - type: dsl
+        name: 4.3.6
+        dsl:
+          - "(\"45dcd6ee792181a768a50dabcc7b0d97\" == md5(body))"
+      - type: dsl
+        name: 4.3.5
+        dsl:
+          - "(\"0abb5d17784e90e40cacadde358afdae\" == md5(body))"
+      - type: dsl
+        name: 4.3.4
+        dsl:
+          - "(\"c58e1bb5416289e4daf68eefefb09bab\" == md5(body))"
+      - type: dsl
+        name: 4.3.3
+        dsl:
+          - "(\"a0ad2213ed45ab4865dd5429360d0d49\" == md5(body))"
+      - type: dsl
+        name: 4.3.2
+        dsl:
+          - "(\"ca97251ccd1e6fc7aebd3ae4f75851e8\" == md5(body))"
+      - type: dsl
+        name: 4.3.1
+        dsl:
+          - "(\"8ad66ffa83d5e458c6c152bb599917a0\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/WEB-INF/liferay-display.xml"
+
+    matchers:
+      - type: dsl
+        name: 6.2.0-GA1 - 6.2.3-GA4
+        dsl:
+          - "(\"bebc94479693f61953029077f4e44ff6\" == md5(body))"
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"b0b5c7dd2fdd0852561009db211c0fb1\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"6224f8b87639eebdef9ba30d3814aa40\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"84a7ae6bf2c813da0be7095cc9f806fa\" == md5(body))"
+      - type: dsl
+        name: 6.0.3 - 6.0.6
+        dsl:
+          - "(\"c812305488e77c800060063c4c7140f7\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"f9a64251219a97ff4bd738b2421c78f8\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"d5fde5951f698c3f359eeb0fcd4b0328\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"33edd2d21b1b3f80f59d031bdec3f7fa\" == md5(body))"
+      - type: dsl
+        name: 5.2.3
+        dsl:
+          - "(\"4eca96a3df40fa13675a384f5b174463\" == md5(body))"
+      - type: dsl
+        name: 5.2.0 - 5.2.2
+        dsl:
+          - "(\"3a32fd27ffc7bae41e1748168a6fab3c\" == md5(body))"
+      - type: dsl
+        name: 5.1.2
+        dsl:
+          - "(\"d56b61c93fcd92f510a956f8a851039e\" == md5(body))"
+      - type: dsl
+        name: 5.1.0 - 5.1.1
+        dsl:
+          - "(\"011fabd4bcf429382885de08ed49a14e\" == md5(body))"
+      - type: dsl
+        name: 4.4.0 - 4.4.2
+        dsl:
+          - "(\"757957f866627eea8b56fb055d990af0\" == md5(body))"
+      - type: dsl
+        name: 4.3.5 - 4.3.6
+        dsl:
+          - "(\"85f61d94e39bd174b99a2540c00be383\" == md5(body))"
+      - type: dsl
+        name: 4.3.4
+        dsl:
+          - "(\"c98c5f35df19bc01e978a34150eb4130\" == md5(body))"
+      - type: dsl
+        name: 4.3.1 - 4.3.3
+        dsl:
+          - "(\"1e0ff248d94d3779eeeafe568454a372\" == md5(body))"
+      - type: dsl
+        name: 4.3.0
+        dsl:
+          - "(\"11f67d62c78eaf3b57b06ba3a08bd7e8\" == md5(body))"
+      - type: dsl
+        name: 4.2.1 - 4.2.2
+        dsl:
+          - "(\"57d72567e1d8ab440e4c6cf95686d20f\" == md5(body))"
+      - type: dsl
+        name: 4.2.0
+        dsl:
+          - "(\"c9a4061a01584d56b0c73d1d83c29324\" == md5(body))"
+      - type: dsl
+        name: 4.1.3
+        dsl:
+          - "(\"47b6ed3ae16147d993b243ed32e26548\" == md5(body))"
+      - type: dsl
+        name: 4.0.0 - 4.1.2
+        dsl:
+          - "(\"6a1c08a08a005660fb6c80f229b77dd4\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/themes/control_panel/css/application.css"
+
+    matchers:
+      - type: dsl
+        name: 6.2.4-GA5 - 6.2.5-GA6
+        dsl:
+          - "(\"0b21f3dc4bd7a3f8035525ac001b3e04\" == md5(body))"
+      - type: dsl
+        name: 6.2.3-GA4
+        dsl:
+          - "(\"61f6e0c8bdb41c4276e45226563d8ce2\" == md5(body))"
+      - type: dsl
+        name: 6.2.2-GA3
+        dsl:
+          - "(\"7fec2cd03df8b0f8f96cf8e723fdcd6c\" == md5(body))"
+      - type: dsl
+        name: 6.2.0-GA1 - 6.2.1-GA2
+        dsl:
+          - "(\"05d930d6155ef9b0f582d9ddf8986a21\" == md5(body))"
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"8a5578de8363dcdb2d414ba084cf1ace\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"7f28241f29d53367b7e70f942d0299f8\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"2b1054d16c6597c5020e26e70441a609\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"a6c4cf181c4e862990284c35b2d880b6\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"a2ae5092ecdd1af5fa81398137264f6c\" == md5(body))"
+      - type: dsl
+        name: 6.0.4
+        dsl:
+          - "(\"d32f0d7d4a78e37896070eb819cae7fe\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"eb6e71bac93440853d1f7abfc13e5215\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"4ddadabc0bf5a059a1d1b49b5db70801\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"c7ac4c9df6538cb976dfc8801aec41aa\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"88688d9aaaf1fa4690fd0a2115d54c2b\" == md5(body))"
+      - type: dsl
+        name: 5.2.0 - 5.2.3
+        dsl:
+          - "(\"fb971e6909346eace19b9e8cfe377da8\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/liferay/layout.js"
+
+    matchers:
+      - type: dsl
+        name: 6.2.2-GA3 - 6.2.5-GA6
+        dsl:
+          - "(\"e100b0139e8cf6eddf1c35f96b1be2d4\" == md5(body))"
+      - type: dsl
+        name: 6.2.0-GA1 - 6.2.1-GA2
+        dsl:
+          - "(\"7fbbc06ae5e035654b0a0e64cfe43d25\" == md5(body))"
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"0f0ae276e120d23d2832942005ff39f4\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"6cbe217b1ad09c3cc4e714c389929275\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"2f2ccc831ebe3d37c6b131c6f153943a\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"839cbf145d0587118fa29bd740a58e7f\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"37ac8cf55175f43bdb88495dc953ec45\" == md5(body))"
+      - type: dsl
+        name: 6.0.4
+        dsl:
+          - "(\"ef9f48d39021f8dbd57e1fd4631c2aae\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"6d32bbe9e6387381d38670c0198b24c8\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"06ea04e2d252f33593feaab3d03c7e60\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"ef05193df2b04396f7191643c17f824e\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"948efdf5621cabd4754b9da5221ce538\" == md5(body))"
+      - type: dsl
+        name: 5.2.3
+        dsl:
+          - "(\"08ad61a3e6371782b005fa87ee674ede\" == md5(body))"
+      - type: dsl
+        name: 5.2.0 - 5.2.2
+        dsl:
+          - "(\"7841c5e770e1f0fc376e7110a52dde34\" == md5(body))"
+      - type: dsl
+        name: 5.1.1 - 5.1.2
+        dsl:
+          - "(\"b7bb0a5b8f9c5b14e4e55431750827f9\" == md5(body))"
+      - type: dsl
+        name: 5.1.0
+        dsl:
+          - "(\"0278b1925c7bce634ff54587243ac387\" == md5(body))"
+      - type: dsl
+        name: 4.3.0 - 4.4.2
+        dsl:
+          - "(\"ec2387ec7c002668cc6ddd84d9f42271\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/everything_packed.js"
+
+    matchers:
+      - type: dsl
+        name: 5.1.2
+        dsl:
+          - "(\"4fa60a00dbc11d454698776fd9dda088\" == md5(body))"
+      - type: dsl
+        name: 5.1.1
+        dsl:
+          - "(\"9e899979760ec97155ee16eaaec9a51c\" == md5(body))"
+      - type: dsl
+        name: 5.1.0
+        dsl:
+          - "(\"1680ff6320babe4776d4f2484e24e68a\" == md5(body))"
+      - type: dsl
+        name: 4.4.2
+        dsl:
+          - "(\"a285bd9eabe3d1b66865aa2e476dbe76\" == md5(body))"
+      - type: dsl
+        name: 4.4.1
+        dsl:
+          - "(\"81bbb1373090b942835c9a051fe820b9\" == md5(body))"
+      - type: dsl
+        name: 4.4.0
+        dsl:
+          - "(\"9686144e2e935d2cf2be232220bfe9db\" == md5(body))"
+      - type: dsl
+        name: 4.3.6
+        dsl:
+          - "(\"0e016850ebc574f6d7789adaa5ab0fab\" == md5(body))"
+      - type: dsl
+        name: 4.3.5
+        dsl:
+          - "(\"2852b3144851a134b4dee631d63b6a13\" == md5(body))"
+      - type: dsl
+        name: 4.3.4
+        dsl:
+          - "(\"b7bfa34bcccb61f8e5e0b65631f2330a\" == md5(body))"
+      - type: dsl
+        name: 4.3.3
+        dsl:
+          - "(\"4c6801d859c353a5e697b8dd591f2fa7\" == md5(body))"
+      - type: dsl
+        name: 4.3.2
+        dsl:
+          - "(\"8b82dbafef8510bb88f50f7da54afdc4\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/themes/classic/css/portlet.css"
+
+    matchers:
+      - type: dsl
+        name: 6.2.4-GA5 - 6.2.5-GA6
+        dsl:
+          - "(\"98f396620641267fe1c33addc343f260\" == md5(body))"
+      - type: dsl
+        name: 6.2.2-GA3 - 6.2.3-GA4
+        dsl:
+          - "(\"521b4d48f0e1e4ce40598b545a05d243\" == md5(body))"
+      - type: dsl
+        name: 6.2.0-GA1 - 6.2.1-GA2
+        dsl:
+          - "(\"e3ac7183f4e7915ef5a28d0ea0e034df\" == md5(body))"
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"b53bc0e49f618aec27bec1292d012752\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"58725152b5bca740986080310536b23e\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"a307509af889a626d1165d5debbe4025\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"68b85b48fae34a56cfda1da41a62d161\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"8301c61ff9fae83d3bc4847f41d19fc8\" == md5(body))"
+      - type: dsl
+        name: 6.0.3 - 6.0.4
+        dsl:
+          - "(\"25707daad6b6e27d6ec2952ff716c682\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"61c8aed5c56014c3620e1854ef2d6035\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"669a9dfa3f8886527882309b0a4ecbbd\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"0d687f4f333093a899745bc2c97b0f98\" == md5(body))"
+      - type: dsl
+        name: 5.2.0 - 5.2.3
+        dsl:
+          - "(\"b0fc677694f2c4e09165d970f1d4afbf\" == md5(body))"
+      - type: dsl
+        name: 5.1.2
+        dsl:
+          - "(\"e3c9375d9f44df72d49174f232dd6613\" == md5(body))"
+      - type: dsl
+        name: 5.1.0 - 5.1.1
+        dsl:
+          - "(\"452a9492d25e70ee4e061652232c178b\" == md5(body))"
+      - type: dsl
+        name: 4.4.0 - 4.4.2
+        dsl:
+          - "(\"d7cd627ad7d0258d0cd51b678afcd0b2\" == md5(body))"
+      - type: dsl
+        name: 4.3.6
+        dsl:
+          - "(\"3aa6c5a790650074f1272a157f1a4f37\" == md5(body))"
+      - type: dsl
+        name: 4.3.4 - 4.3.5
+        dsl:
+          - "(\"ca1bdc2dc1517025c24910fc615206bd\" == md5(body))"
+      - type: dsl
+        name: 4.3.1 - 4.3.3
+        dsl:
+          - "(\"d73e99671b461100b46ddcefddb824a6\" == md5(body))"
+      - type: dsl
+        name: 4.3.0
+        dsl:
+          - "(\"55b4429ce9fbd9c794dba7dab694ac54\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/themes/_styled/css/portlet.css"
+
+    matchers:
+      - type: dsl
+        name: 6.2.4-GA5 - 6.2.5-GA6
+        dsl:
+          - "(\"98f396620641267fe1c33addc343f260\" == md5(body))"
+      - type: dsl
+        name: 6.2.2-GA3 - 6.2.3-GA4
+        dsl:
+          - "(\"521b4d48f0e1e4ce40598b545a05d243\" == md5(body))"
+      - type: dsl
+        name: 6.2.0-GA1 - 6.2.1-GA2
+        dsl:
+          - "(\"e3ac7183f4e7915ef5a28d0ea0e034df\" == md5(body))"
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"b53bc0e49f618aec27bec1292d012752\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"58725152b5bca740986080310536b23e\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"a307509af889a626d1165d5debbe4025\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"68b85b48fae34a56cfda1da41a62d161\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"8301c61ff9fae83d3bc4847f41d19fc8\" == md5(body))"
+      - type: dsl
+        name: 6.0.3 - 6.0.4
+        dsl:
+          - "(\"25707daad6b6e27d6ec2952ff716c682\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"61c8aed5c56014c3620e1854ef2d6035\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"669a9dfa3f8886527882309b0a4ecbbd\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"0d687f4f333093a899745bc2c97b0f98\" == md5(body))"
+      - type: dsl
+        name: 5.2.0 - 5.2.3
+        dsl:
+          - "(\"b0fc677694f2c4e09165d970f1d4afbf\" == md5(body))"
+      - type: dsl
+        name: 5.1.2
+        dsl:
+          - "(\"e3c9375d9f44df72d49174f232dd6613\" == md5(body))"
+      - type: dsl
+        name: 5.1.0 - 5.1.1
+        dsl:
+          - "(\"452a9492d25e70ee4e061652232c178b\" == md5(body))"
+      - type: dsl
+        name: 4.4.0 - 4.4.2
+        dsl:
+          - "(\"d7cd627ad7d0258d0cd51b678afcd0b2\" == md5(body))"
+      - type: dsl
+        name: 4.3.6
+        dsl:
+          - "(\"3aa6c5a790650074f1272a157f1a4f37\" == md5(body))"
+      - type: dsl
+        name: 4.3.4 - 4.3.5
+        dsl:
+          - "(\"ca1bdc2dc1517025c24910fc615206bd\" == md5(body))"
+      - type: dsl
+        name: 4.3.1 - 4.3.3
+        dsl:
+          - "(\"d73e99671b461100b46ddcefddb824a6\" == md5(body))"
+      - type: dsl
+        name: 4.3.0
+        dsl:
+          - "(\"55b4429ce9fbd9c794dba7dab694ac54\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-textboxlist/aui-textboxlist-min.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"100dbecd2b3082a25140fb947d3427a1\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"6f223fac0bcd87df8d516ca533ad9852\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"5b58c30104596677e531f21b263a5284\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"f3f608076a8f0ec1138f2ca1c3f24073\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"641328076dd9cd6f60283d61e3be7ada\" == md5(body))"
+      - type: dsl
+        name: 6.0.4
+        dsl:
+          - "(\"f9a2bd20bd211bc5d6cd312e78a5f36f\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"ec13ece3776b21d27f4e9eeb42342b3d\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"48eaa2542825c01aac1caf466bd9afa7\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"2c8bf2a375ddd0d85460eee35d9cb84a\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"18a996bb3ce96e5d58464ad74881c0c6\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-textboxlist/aui-textboxlist.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"becb4eee03d345b1e6e0e4a2e99dcfda\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"ebf1d0d27c7293119a18a96b327b1495\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"c661925b4fe528f1762226b02f38b6ab\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"b87d14d49ad7b7a0bd3849295c99bbf4\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"2614a00122fbceb3d54b17e44b635739\" == md5(body))"
+      - type: dsl
+        name: 6.0.4
+        dsl:
+          - "(\"ed393bc342066bd7ec6f17807a6b5d3b\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"6f67c7b621cf25246af87eb6b13a37a0\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"e1270f57e0de6dc0553939abc6780d8a\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"e52d1321a2dd17c70d9d469c2b7564f3\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"e1940b64cf71f6bba1d2584b58e62ed0\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-textboxlist/aui-textboxlist-debug.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"becb4eee03d345b1e6e0e4a2e99dcfda\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"ebf1d0d27c7293119a18a96b327b1495\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"c661925b4fe528f1762226b02f38b6ab\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"b87d14d49ad7b7a0bd3849295c99bbf4\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"2614a00122fbceb3d54b17e44b635739\" == md5(body))"
+      - type: dsl
+        name: 6.0.4
+        dsl:
+          - "(\"ed393bc342066bd7ec6f17807a6b5d3b\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"6f67c7b621cf25246af87eb6b13a37a0\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"e1270f57e0de6dc0553939abc6780d8a\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"e52d1321a2dd17c70d9d469c2b7564f3\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"e1940b64cf71f6bba1d2584b58e62ed0\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-portal-layout/aui-portal-layout.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"aa2dffd4984e441a58c5321cac542ff8\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"f2060635059f205bb0bab3252087741d\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"b1830ade08f64f48059d80f83da397c3\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"e91504628efc14e352dcfee8bd8b6c1b\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"c0c8577e3894748c99523e14fa11a85b\" == md5(body))"
+      - type: dsl
+        name: 6.0.4
+        dsl:
+          - "(\"d66d839fb55dd67cc33fd930b31a18f8\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"3331c37a84752874cee9fbf253aad347\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"6a9a83bd4037344f7c48ccefa25b812a\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"2204d8090237cec0264b19938eb30242\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"c4870dee48891cebb2d438f37c90fa9b\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-portal-layout/aui-portal-layout-min.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"2b35cb0bd0883e7965184cbde1da528f\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"0eb6cea152debb7dc89ca9389a7d606f\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"83c842559eb77dc4aca69231a8676fe4\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"68292332d24aaf62897508bc1d0d6550\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"816ba68375dad78281885a1fac521814\" == md5(body))"
+      - type: dsl
+        name: 6.0.4
+        dsl:
+          - "(\"4498fadc25621e353e6024b275ecd325\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"dbd21192c01a1e15502b54450b6c2b8e\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"f04767abe36b27a8e76ca31e84c49abf\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"24ae8eeb3ebea43b48926ec57e1ed9c8\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"e65fb5a4919338426b62c601201a2c26\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-portal-layout/aui-portal-layout-debug.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"aa2dffd4984e441a58c5321cac542ff8\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"f2060635059f205bb0bab3252087741d\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"b1830ade08f64f48059d80f83da397c3\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"e91504628efc14e352dcfee8bd8b6c1b\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"c0c8577e3894748c99523e14fa11a85b\" == md5(body))"
+      - type: dsl
+        name: 6.0.4
+        dsl:
+          - "(\"d66d839fb55dd67cc33fd930b31a18f8\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"3331c37a84752874cee9fbf253aad347\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"6a9a83bd4037344f7c48ccefa25b812a\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"2204d8090237cec0264b19938eb30242\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"c4870dee48891cebb2d438f37c90fa9b\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-image-viewer/aui-image-viewer-min.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"452ef8298118a4ad061cce4877bece39\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"1841b1f5857d78c13cfdec06d1107b47\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"cd1c294d8b50e184074b0c3ae3c0ccce\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"4b7b6ecdaf7ddbf7123dfa65b4528ca9\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"b48f9e4aad60f57deda55d7a4881f1ea\" == md5(body))"
+      - type: dsl
+        name: 6.0.4
+        dsl:
+          - "(\"67f8f7839425f6e967d700c0cb59e028\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"b6d3390504a48b0ad199124d7b062449\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"aa13aedfd404e29511f7dc100aa14883\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"02df3fc3dc7faa322e63e080e44b1664\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"2696f561fd24597769435d149ad52524\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-image-viewer/aui-image-viewer-debug.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"01bcb8cb5abf72514a631d0b71389726\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"d3aab12d5b5339d853f4d0146e47b297\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"918b26624a6a92842481b8148c07dc0a\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"eee2da63b3ad9ca199c3059fe18a1359\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"83b59b1589063a7651f03f4e639e7e9f\" == md5(body))"
+      - type: dsl
+        name: 6.0.4
+        dsl:
+          - "(\"cdadc848ac5c2108cb8f251786563621\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"bfe1885bd12f95ad7e4be8cdac412cc6\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"d84cf9dcc09455d2e9d4ced9b7688f3d\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"37f8b1a130b86d55679740ba82c2e3bb\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"80c1182c5d73e452d0992d52266dec25\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-image-viewer/aui-image-viewer.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"01bcb8cb5abf72514a631d0b71389726\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"d3aab12d5b5339d853f4d0146e47b297\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"918b26624a6a92842481b8148c07dc0a\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"eee2da63b3ad9ca199c3059fe18a1359\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"83b59b1589063a7651f03f4e639e7e9f\" == md5(body))"
+      - type: dsl
+        name: 6.0.4
+        dsl:
+          - "(\"cdadc848ac5c2108cb8f251786563621\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"bfe1885bd12f95ad7e4be8cdac412cc6\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"d84cf9dcc09455d2e9d4ced9b7688f3d\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"37f8b1a130b86d55679740ba82c2e3bb\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"80c1182c5d73e452d0992d52266dec25\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-base/aui-base-min.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"aa7b8707d2408289943cf4657a82e949\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"8437d040e11cc0960d8d7805ef89358e\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"8231a3fb9d3d86e7a429aa2a97e8a378\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"954b20875e9ec3f491a0f69623a6b932\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"6c1e255282316379a622dcc2d5869024\" == md5(body))"
+      - type: dsl
+        name: 6.0.4
+        dsl:
+          - "(\"7a57c4b4c7f2cf3f0be920a95b2e5669\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"c9b9110e0e1beee4a2e59caac48f96ae\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"8284320187a0e5a66356809f10f7befa\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"0476393cc7b042cd0bcef8eb663f561d\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"56f79559fda6caa87150bde387782b8f\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-base/aui-base-debug.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"0ab37c482436460796754e31e429d3d5\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"b170ff7a97eee4c08f954314f31708b5\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"e425f132c0f64bfe0275a8402a44bc0a\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"a4bc7101500adff87a7763d4eb7fa01a\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"ae9c43990fc7de2e2e4534b3f253ef46\" == md5(body))"
+      - type: dsl
+        name: 6.0.4
+        dsl:
+          - "(\"b60d68750311228dd28abce3199d603d\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"77e45cc9b37ffed0f623969f42c08d9c\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"3a4d3cfe3122b4ef5eecb3e49974b5e3\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"1f93503890b9b090f8a273a08aa43de3\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"ea0818baef94682eae523b029582e62f\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-base/aui-base.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"298e6ea12b1c4b39eb30c0620a882a66\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"9062a3dffefdd7992b94b58498ed00f9\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"dd435611e56db7773e1f8114fb9c336b\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"728220bbe019360915bb22f40093252d\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"d5f3f17480e8e61558ea8d0d8fd516f0\" == md5(body))"
+      - type: dsl
+        name: 6.0.4
+        dsl:
+          - "(\"b1468ea9d312e0c636bce0bf9229957f\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"4c8b5be2f9d484765b2327b714e52fac\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"add7408251f3faeccbd2be8e61abcbc3\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"0af81a6731f36c39ce5825fa78ce981d\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"a81fa7426a8b7ae8ceaebdd93640e8d9\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-tree/aui-tree-view.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"c7b21f8da6fbfa2f6aefb504e41b357c\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"d0de8f570ed6256216c052c4455c4539\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"0471fad3f77cafef660d0a166cbbee0f\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"7c4e4a08699e0e914bd9bb3ddc385648\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"cd722474fa8a7b2baf17e64d25db3789\" == md5(body))"
+      - type: dsl
+        name: 6.0.4
+        dsl:
+          - "(\"16f7cd9f5f78c914c9317ff5a1ddbc88\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"575619b71a9714d5263cc06b90519e90\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"afde7342b13e1555f67683ff119bd8f5\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"a453caea1feb1cd83f5842010c3c7e77\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"6b4392d85bba48da7f98616222898a4b\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-tree/aui-tree-min.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"c99ffcc628e0a2fc3f5972d33889184c\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"0c6844f0dee3ee2644fa83642b130842\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"46e3cad948c937eaeaf8ba1bf303ba62\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"3aaed061fadcec571221c62ba9766bd9\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"202f95a5e4d423767dac07324651f343\" == md5(body))"
+      - type: dsl
+        name: 6.0.4
+        dsl:
+          - "(\"74272b7fbf1e5ccb6c5c60fab6607d42\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"69d281f3dd2eabea2b2e3cac41fc7429\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"edd99d8c685813694e6c008a0796428a\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"174cab925d2fd22450b75723c107f9fb\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"af3dfac448faed1ca1bf5621beab9b4b\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-tree/aui-tree-debug.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"45adca53f8e5f2b4a4c0c2afabf614fe\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"f926370a05e8644057a05fa9582183dc\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"f2c9c2012995d3451f9b913f63e3122a\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"64ad108b6a9d4f933d58748d6a3d1f7c\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"57df150d154c77f12b872db4432168b3\" == md5(body))"
+      - type: dsl
+        name: 6.0.4
+        dsl:
+          - "(\"f0dd9afaf8a8a79fe5782135a636862e\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"2525db3559fb8d0640a766af916cfdae\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"9a96ea3779df09fc723dd7b90a7995cb\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"03a2db426cda2b56fc87b199ce60e20d\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"f263a8b2aca80b86cf10c0e4c5370734\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-tree/aui-tree-view-debug.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"c7b21f8da6fbfa2f6aefb504e41b357c\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"d0de8f570ed6256216c052c4455c4539\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"0471fad3f77cafef660d0a166cbbee0f\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"7c4e4a08699e0e914bd9bb3ddc385648\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"cd722474fa8a7b2baf17e64d25db3789\" == md5(body))"
+      - type: dsl
+        name: 6.0.4
+        dsl:
+          - "(\"16f7cd9f5f78c914c9317ff5a1ddbc88\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"575619b71a9714d5263cc06b90519e90\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"afde7342b13e1555f67683ff119bd8f5\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"a453caea1feb1cd83f5842010c3c7e77\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"6b4392d85bba48da7f98616222898a4b\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-tree/aui-tree.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"45adca53f8e5f2b4a4c0c2afabf614fe\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"f926370a05e8644057a05fa9582183dc\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"f2c9c2012995d3451f9b913f63e3122a\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"64ad108b6a9d4f933d58748d6a3d1f7c\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"57df150d154c77f12b872db4432168b3\" == md5(body))"
+      - type: dsl
+        name: 6.0.4
+        dsl:
+          - "(\"f0dd9afaf8a8a79fe5782135a636862e\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"2525db3559fb8d0640a766af916cfdae\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"9a96ea3779df09fc723dd7b90a7995cb\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"03a2db426cda2b56fc87b199ce60e20d\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"f263a8b2aca80b86cf10c0e4c5370734\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-tree/aui-tree-view-min.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"9963d9ee0983833c2edd3531b886a622\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"51e30bccb7820126fb099505c46d3bff\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"b11439fdc85d5490af22691ae350dc9c\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"f32b97c8dc35996c84070f9f8ae002ea\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"f799d89b667ddb07a610e8de426589ce\" == md5(body))"
+      - type: dsl
+        name: 6.0.4
+        dsl:
+          - "(\"925a519e09c35b7fd3801fc4c9bf5fcd\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"130b36c2be41121c8e25ca6e735899af\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"b9220c0f29af7f30233651d681d1269b\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"d0fa7fe00cc121d6d655dc481caa9a0f\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"1254dff875838053af2f5d3bf2a03a8e\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-editable/aui-editable-debug.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"318b5e870f91e032ade5608d4602884c\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"d2807b94c527094b2077ec36180cadd3\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"7d3ac320a6f9bcff2da0461d02562c46\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"8fa4c9dd0c887f958410b52bf98803f5\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"67ea40a7ec6210c7d34a43d20ccc5600\" == md5(body))"
+      - type: dsl
+        name: 6.0.4
+        dsl:
+          - "(\"0cbcb32e80cd6f73b22158b52fd12e8b\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"3c6c5a87db38dc1eba062e0fa23d1ac7\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"3d1dbfb8c3a0ba7da8975788dfe5f7f7\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"25ca78499d80755f54f628a3f166716f\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"2109b1573e94ba5d3b5996e591b7aab3\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-editable/aui-editable.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"318b5e870f91e032ade5608d4602884c\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"d2807b94c527094b2077ec36180cadd3\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"7d3ac320a6f9bcff2da0461d02562c46\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"8fa4c9dd0c887f958410b52bf98803f5\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"67ea40a7ec6210c7d34a43d20ccc5600\" == md5(body))"
+      - type: dsl
+        name: 6.0.4
+        dsl:
+          - "(\"0cbcb32e80cd6f73b22158b52fd12e8b\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"3c6c5a87db38dc1eba062e0fa23d1ac7\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"3d1dbfb8c3a0ba7da8975788dfe5f7f7\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"25ca78499d80755f54f628a3f166716f\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"2109b1573e94ba5d3b5996e591b7aab3\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-editable/aui-editable-min.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"601905472bdeb11a86fef7a17b71516f\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"da77641d7071b28e49948834c4cc16c1\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"891be4e4d81171d549bb825d829029a2\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"8fd01e40646f5832d2847ea47dd0054c\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"ebcc4fe82e90ceb04be9124fd494cda7\" == md5(body))"
+      - type: dsl
+        name: 6.0.4
+        dsl:
+          - "(\"d1f8c739ed164555d2f7ee46e70143e4\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"00fe52782d4329cb41601062e7c5aab8\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"be945249a4120621fb4629434ee4609d\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"64228ae274444aca4b3d438bc168fa93\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"d0e33ebddcbb6ac223fd6759f7f3fc06\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-node/aui-node-min.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"e7c33067ad60d5509df56a6b0cd34c9a\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"ea8599ac4148302e66a3084564447761\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"3fd997aa39b1487a699233fdfe5c717c\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"fb111001604512136e665be826e767ee\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"59fd72db02a56d6069c562c0991afe9a\" == md5(body))"
+      - type: dsl
+        name: 6.0.4
+        dsl:
+          - "(\"4ebc1af502725d9b7f8ba394ae35b43b\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"e360fa25805851ff53b8c494f472d5b5\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"51a854702be73fb6145aaac778281e6a\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"73a8078d16d9f9a6edbbd07829d14f87\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"18e57fe2c8c884a096762abb891db273\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-node/aui-node.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"dfe8b73164f385c440d7a27cac601e0c\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"d3d83a9255512cdc1cd66d02a837100d\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"3719113b0e11e18cca69a2b92e24b03b\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"a580f5931b799b552e0de020081f3e8f\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"6d5292bbca8fa71a6ca34f343ccb65ec\" == md5(body))"
+      - type: dsl
+        name: 6.0.4
+        dsl:
+          - "(\"2383e582b58335bfd7228812196c07fb\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"a6090e15c72400d9969313a3382b93bb\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"83a80210778e8cf8372df0dfc15adf3d\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"eb7a96776ffd8c34031c19596f88ba21\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"4c333e413651f11b3a0235934d147870\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-node/aui-node-debug.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"dfe8b73164f385c440d7a27cac601e0c\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"d3d83a9255512cdc1cd66d02a837100d\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"3719113b0e11e18cca69a2b92e24b03b\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"a580f5931b799b552e0de020081f3e8f\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"6d5292bbca8fa71a6ca34f343ccb65ec\" == md5(body))"
+      - type: dsl
+        name: 6.0.4
+        dsl:
+          - "(\"2383e582b58335bfd7228812196c07fb\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"a6090e15c72400d9969313a3382b93bb\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"83a80210778e8cf8372df0dfc15adf3d\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"eb7a96776ffd8c34031c19596f88ba21\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"4c333e413651f11b3a0235934d147870\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-resize/aui-resize.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"9aa245a01c6786347e6adac58c85bd64\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"1f037b774aebf27edfdb155f2ed345ab\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"94f375003f814072bb5954d8ff456116\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"6b2c36d6c0d1b386380a0cb35f82e385\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"eddba8fc207b114879f57737fc5b0bba\" == md5(body))"
+      - type: dsl
+        name: 6.0.4
+        dsl:
+          - "(\"62f40110b578fffd74b2ad518df940ad\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"0543e0083dd0de6e0c4159589ab7efcd\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"4acedc49450d9e15d1a3f4aa22fd27a0\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"d8137028afb7117d0a0176ce34697f1a\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"545599f4aaa040b117ee0e674b92f3aa\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-resize/aui-resize-debug.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"9aa245a01c6786347e6adac58c85bd64\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"1f037b774aebf27edfdb155f2ed345ab\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"94f375003f814072bb5954d8ff456116\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"6b2c36d6c0d1b386380a0cb35f82e385\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"eddba8fc207b114879f57737fc5b0bba\" == md5(body))"
+      - type: dsl
+        name: 6.0.4
+        dsl:
+          - "(\"62f40110b578fffd74b2ad518df940ad\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"0543e0083dd0de6e0c4159589ab7efcd\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"4acedc49450d9e15d1a3f4aa22fd27a0\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"d8137028afb7117d0a0176ce34697f1a\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"545599f4aaa040b117ee0e674b92f3aa\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-resize/aui-resize-min.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"cd0bc09a62a7ae17f01a067840fce11b\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"63bc323653079dd490c6517a911f9fc5\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"351b5a3b7b9a5403c622b70ac4d7e967\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"7a3b4dd76cb7e91a00d7c3ab0939225e\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"396bbf4df5afd7225bdb2693c95466d5\" == md5(body))"
+      - type: dsl
+        name: 6.0.4
+        dsl:
+          - "(\"a626525b47e29c74ef2b67a395f29e4d\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"3375a1910de9cf0c720c31bc52aa3ff8\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"6759a1fbd15486ee1b90c9960d40fbc5\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"42a02cc2898a6630b4e2da650e92e930\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"dcbc067f68f0dcf4fe8cedbd01256673\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-calendar/aui-calendar.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"15fd4e76cbf27c28762ef907e6cbf525\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"2867985b74eb6f59b4c067fcadeb360b\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"d97e488580995834cc4c5865b2646a92\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"3f135be0fc3ba8cf0edc457acd9dd0fd\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"5a37355c44379794271d511bfafba367\" == md5(body))"
+      - type: dsl
+        name: 6.0.4
+        dsl:
+          - "(\"f1e9bcf3bb38d23c2b2e1d97c6a21057\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"44cc6055476518d45caac0adf2f34872\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"a6e40b1744c3aacd076094bb3160bac1\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"4569a9a59f24a05d4d652b3422928d6a\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"d5334decc305e9dfbba1f98ce2e05dd2\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-calendar/aui-calendar-min.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"76d32d8ea1781e4fc01f191ac3b9dd0e\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"a54983b6f148a7e979f0b98feb5ab6ad\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"c5212c6736c24836d31903522e9e7425\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"60031e92b80b1b4d129f6dbf0b6dc4f2\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"91b99057f37a19f31d26b983f62d0d4a\" == md5(body))"
+      - type: dsl
+        name: 6.0.4
+        dsl:
+          - "(\"59a71ffe46a0a88e69eb93087596c50c\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"a1521457f38890bd3d13d26f489d7373\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"076419987f60221f0c6ca472dba04489\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"f382b45fbdc3b281d021b6f2a3c6daa2\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"038ba8ec39657d0b3834bf6c5987268e\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-calendar/aui-calendar-debug.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"15fd4e76cbf27c28762ef907e6cbf525\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"2867985b74eb6f59b4c067fcadeb360b\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"d97e488580995834cc4c5865b2646a92\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"3f135be0fc3ba8cf0edc457acd9dd0fd\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"5a37355c44379794271d511bfafba367\" == md5(body))"
+      - type: dsl
+        name: 6.0.4
+        dsl:
+          - "(\"f1e9bcf3bb38d23c2b2e1d97c6a21057\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"44cc6055476518d45caac0adf2f34872\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"a6e40b1744c3aacd076094bb3160bac1\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"4569a9a59f24a05d4d652b3422928d6a\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"d5334decc305e9dfbba1f98ce2e05dd2\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/WEB-INF/tld/liferay-portlet-ext.tld"
+
+    matchers:
+      - type: dsl
+        name: 6.2.2-GA3 - 6.2.3-GA4
+        dsl:
+          - "(\"a475bb7f5d9361f5e3e6d9757950c557\" == md5(body))"
+      - type: dsl
+        name: 6.1.2-GA3 - 6.2.1-GA2
+        dsl:
+          - "(\"c76315fa89eaca10e13ad31dc747448a\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"72844a36a91c2a64d94b3685f735836f\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"e3baa1d1cbe88d0b0a0ef59ec15b3947\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"9a28bef2ec90ac72ecaf99b6969d4749\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"735e016898532a159e357cd548fc16ee\" == md5(body))"
+      - type: dsl
+        name: 6.0.1 - 6.0.4
+        dsl:
+          - "(\"8fc9c145e68502622f951c67479d1746\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"10d16b10aea8aa2387b402f4ca43e4b7\" == md5(body))"
+      - type: dsl
+        name: 5.2.3
+        dsl:
+          - "(\"111f959cd66c1bcb321d05b2a90bc616\" == md5(body))"
+      - type: dsl
+        name: 5.2.0 - 5.2.2
+        dsl:
+          - "(\"8192081f218390979782dc9a16e612b5\" == md5(body))"
+      - type: dsl
+        name: 5.1.2
+        dsl:
+          - "(\"7b4d9ac482f71b4b3ee333e93e443e88\" == md5(body))"
+      - type: dsl
+        name: 5.1.0 - 5.1.1
+        dsl:
+          - "(\"ce2e8f23e8512cb4eb807ecefdd6234f\" == md5(body))"
+      - type: dsl
+        name: 4.3.2 - 4.4.2
+        dsl:
+          - "(\"9999754f34310bb281202c58f9a2f505\" == md5(body))"
+      - type: dsl
+        name: 4.3.1
+        dsl:
+          - "(\"d4cbc256977a0e79dfcfb2c519d1796e\" == md5(body))"
+      - type: dsl
+        name: 4.3.0
+        dsl:
+          - "(\"28ab0566724cd44a9615b0ed95aa2365\" == md5(body))"
+      - type: dsl
+        name: 4.2.0 - 4.2.2
+        dsl:
+          - "(\"028d57e38834878d4bf319f67ea4c863\" == md5(body))"
+      - type: dsl
+        name: 4.1.0 - 4.1.3
+        dsl:
+          - "(\"32c5d31841e12e9a4ad426f8d967fe3e\" == md5(body))"
+      - type: dsl
+        name: 4.0.0
+        dsl:
+          - "(\"0272fbb88a3bbe71fea70938e64b8f61\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/themes/_unstyled/templates/init.vm"
+
+    matchers:
+      - type: dsl
+        name: 6.2.2-GA3 - 6.2.5-GA6
+        dsl:
+          - "(\"031fb685712cfe58b86c6a4c42819e81\" == md5(body))"
+      - type: dsl
+        name: 6.2.0-GA1 - 6.2.1-GA2
+        dsl:
+          - "(\"4f8efcb923d9b35b4a9c13b3113af016\" == md5(body))"
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"98621d69755719e91aa5f6ec1b424ece\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"4da72823146638dc86d23239b063966b\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"064a88a7852853e8f98f3a7bf3de93f6\" == md5(body))"
+      - type: dsl
+        name: 6.0.3 - 6.0.6
+        dsl:
+          - "(\"0f6e86e9340e4bb9a638c8654c3d2920\" == md5(body))"
+      - type: dsl
+        name: 6.0.1 - 6.0.2
+        dsl:
+          - "(\"029ff2112cc0df03cb5605905ca14ae9\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"8260a2eee2fd07d99c7b85bf238c96f7\" == md5(body))"
+      - type: dsl
+        name: 5.2.3
+        dsl:
+          - "(\"accedb5a060741b9f9712759953eaf1b\" == md5(body))"
+      - type: dsl
+        name: 5.2.2
+        dsl:
+          - "(\"bc75bdf552d322e9c16aae31302911fa\" == md5(body))"
+      - type: dsl
+        name: 5.2.0 - 5.2.1
+        dsl:
+          - "(\"57bb1f647864dcc1975cce732fc4b581\" == md5(body))"
+      - type: dsl
+        name: 5.1.2
+        dsl:
+          - "(\"8f8c19a4fb944ee2648b2e4686bc5c9d\" == md5(body))"
+      - type: dsl
+        name: 5.1.0 - 5.1.1
+        dsl:
+          - "(\"aee4c7909b13f844a0126e7b1ed2e487\" == md5(body))"
+      - type: dsl
+        name: 4.4.1 - 4.4.2
+        dsl:
+          - "(\"5800ca3a59bc938c2d1e6f2d3e82de38\" == md5(body))"
+      - type: dsl
+        name: 4.4.0
+        dsl:
+          - "(\"b9589ebb8816bd18cb59fb9216c73eeb\" == md5(body))"
+      - type: dsl
+        name: 4.3.4 - 4.3.6
+        dsl:
+          - "(\"ab9e53dbd1e1aa0708dad1f6905f68af\" == md5(body))"
+      - type: dsl
+        name: 4.3.2 - 4.3.3
+        dsl:
+          - "(\"05d5edbf3501a44952f38e38128f911b\" == md5(body))"
+      - type: dsl
+        name: 4.3.1
+        dsl:
+          - "(\"d8727f29483ac0f1ba7c32a037546371\" == md5(body))"
+      - type: dsl
+        name: 4.3.0
+        dsl:
+          - "(\"a1725627e3a41aee8ff9f431f6fe8ff4\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/themes/control_panel/css/custom.css"
+
+    matchers:
+      - type: dsl
+        name: 6.2.3-GA4 - 6.2.5-GA6
+        dsl:
+          - "(\"e01251be0e64a3aad2bf359478ec5683\" == md5(body))"
+      - type: dsl
+        name: 6.2.2-GA3
+        dsl:
+          - "(\"19007667b77f55ad0e228ca4251baff1\" == md5(body))"
+      - type: dsl
+        name: 6.2.0-GA1 - 6.2.1-GA2
+        dsl:
+          - "(\"318c80463a5a4ad1896023e8ae153baf\" == md5(body))"
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"b5697d92f2cddd9601f2d2e8402cf60b\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"44c6269132720a8c10775c14cf26336e\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"a5873cc1acf395c28a081176105ad6c4\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"1d64006793e2a93fd88ea141ebcbc4f3\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"e7daf74b4fa7f765ef8f0cdad5f05789\" == md5(body))"
+      - type: dsl
+        name: 6.0.3 - 6.0.4
+        dsl:
+          - "(\"f926b01c534ab8a3d16dcc6592bcdcaa\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"f6d0e4ed4af09a7504df2f33f1aafe00\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"61816fdb3dab44dc838174aa9b8a4d52\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"291531148729f54f9499870c9167cb76\" == md5(body))"
+      - type: dsl
+        name: 5.2.3
+        dsl:
+          - "(\"dd7592b5c39e48f05008b34e8ff1cb57\" == md5(body))"
+      - type: dsl
+        name: 5.2.0 - 5.2.2
+        dsl:
+          - "(\"b921b50b46c12dbc2a60ac556a858e0f\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/liferay/auto_fields.js"
+
+    matchers:
+      - type: dsl
+        name: 6.2.0-GA1 - 6.2.5-GA6
+        dsl:
+          - "(\"2875d79db57156d3d0893a6ee3f94b24\" == md5(body))"
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"153ee64f41fb46d12e47a0273d277475\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"548398453705127867e58a316d164c73\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"64689a57cd67c7408f5acdaf5106b193\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"ea10407f289c5e74f3eeacb5db3b21b5\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"a4c18cf99097ad4de9876cfb6f996054\" == md5(body))"
+      - type: dsl
+        name: 6.0.3 - 6.0.4
+        dsl:
+          - "(\"caf7acc86862db136770fc7350906a2b\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"394117e7cfb9bf8eb3540c29a14edade\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"ee9a14391bceedf735f952bc9b396f04\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"79a40af8af5017bd6d75fe7b0260d801\" == md5(body))"
+      - type: dsl
+        name: 5.2.3
+        dsl:
+          - "(\"e1d90abc9e51db2434018fb4b88cf20e\" == md5(body))"
+      - type: dsl
+        name: 5.2.0 - 5.2.2
+        dsl:
+          - "(\"0b1089f1c91c5b80795b324bdc79ea43\" == md5(body))"
+      - type: dsl
+        name: 5.1.0 - 5.1.2
+        dsl:
+          - "(\"b77bf8590e70afae1cbcdbf49cc9ad0f\" == md5(body))"
+      - type: dsl
+        name: 4.3.1 - 4.4.2
+        dsl:
+          - "(\"91c3277e589ffbe6febed037ff83a1e5\" == md5(body))"
+      - type: dsl
+        name: 4.3.0
+        dsl:
+          - "(\"8fbb19bbde38a237be84c9495f294d9e\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/liferay/upload.js"
+
+    matchers:
+      - type: dsl
+        name: 6.2.4-GA5 - 6.2.5-GA6
+        dsl:
+          - "(\"f98e19e15cd0b38cee3e23d75fa53505\" == md5(body))"
+      - type: dsl
+        name: 6.2.2-GA3 - 6.2.3-GA4
+        dsl:
+          - "(\"9317fb727d378f60e17f0a1388e59c35\" == md5(body))"
+      - type: dsl
+        name: 6.2.1-GA2
+        dsl:
+          - "(\"34e47b522a242119a385bf527a1d2805\" == md5(body))"
+      - type: dsl
+        name: 6.2.0-GA1
+        dsl:
+          - "(\"681036457a7b958d217886e9c2fbfd98\" == md5(body))"
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"5a136107e8c5c467c372ad95618b11fb\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"c908ea7db714c07386bc52d16607b8f5\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"3e1d9db8b55410e2ff54e850102447b9\" == md5(body))"
+      - type: dsl
+        name: 6.0.4 - 6.0.6
+        dsl:
+          - "(\"00196da86ff15a98d514cc4b3be32f79\" == md5(body))"
+      - type: dsl
+        name: 6.0.2 - 6.0.3
+        dsl:
+          - "(\"f1f3c6465f8b9bf80d52baee314ce142\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"84891b39d93119b5af14113bef9da521\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"4f7228b67049fe6c4f38ce31af222d04\" == md5(body))"
+      - type: dsl
+        name: 5.2.3
+        dsl:
+          - "(\"25a6d82bbe770e7f17eabf427d776663\" == md5(body))"
+      - type: dsl
+        name: 5.2.2
+        dsl:
+          - "(\"a17820093f540228cd37365724bfd82b\" == md5(body))"
+      - type: dsl
+        name: 5.2.0 - 5.2.1
+        dsl:
+          - "(\"764d2bb45b46e6a26c8639e75fec9c13\" == md5(body))"
+      - type: dsl
+        name: 5.1.0 - 5.1.2
+        dsl:
+          - "(\"7a9ab6a45ef8dd8fc8ecf2841299fda2\" == md5(body))"
+      - type: dsl
+        name: 4.4.2
+        dsl:
+          - "(\"7daa5456ce40e220e19d48e41605eb06\" == md5(body))"
+      - type: dsl
+        name: 4.4.0 - 4.4.1
+        dsl:
+          - "(\"18c317c5965c1c0ad9e9d889d09040d1\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/liferay/session.js"
+
+    matchers:
+      - type: dsl
+        name: 6.2.2-GA3 - 6.2.5-GA6
+        dsl:
+          - "(\"0fd053b501ce2685bc384cd862e0d5c9\" == md5(body))"
+      - type: dsl
+        name: 6.2.1-GA2
+        dsl:
+          - "(\"d13ce99f44f4feafdb2d06b117a31809\" == md5(body))"
+      - type: dsl
+        name: 6.2.0-GA1
+        dsl:
+          - "(\"f830e6dfd9c0c211d38520306a66dd55\" == md5(body))"
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"ef900cfffffdd4b30be29cbe39512974\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"5e93028b4816488f02611d258c9899cc\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"0bac3c77cb535a825896e2f42c4707e9\" == md5(body))"
+      - type: dsl
+        name: 6.0.3 - 6.0.6
+        dsl:
+          - "(\"74ad22eb76bc1bb788a5c3fa938c09cc\" == md5(body))"
+      - type: dsl
+        name: 6.0.1 - 6.0.2
+        dsl:
+          - "(\"b9ec39eaa06f086ab446d4422116b3ee\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"2fd235b1e8c4a530d703b0125dcb7224\" == md5(body))"
+      - type: dsl
+        name: 5.2.3
+        dsl:
+          - "(\"2a4be5a80d7fc696863f27e9f11371ac\" == md5(body))"
+      - type: dsl
+        name: 5.2.0 - 5.2.2
+        dsl:
+          - "(\"b566852122f40e18bf3be84229f5162d\" == md5(body))"
+      - type: dsl
+        name: 5.1.1 - 5.1.2
+        dsl:
+          - "(\"bc57cd9d549e336feae7a9edcf64fd45\" == md5(body))"
+      - type: dsl
+        name: 5.1.0
+        dsl:
+          - "(\"90df051b8cef37b4155045edc7159402\" == md5(body))"
+      - type: dsl
+        name: 4.4.1 - 4.4.2
+        dsl:
+          - "(\"126a9338b5d77eb9909c9a3b41102928\" == md5(body))"
+      - type: dsl
+        name: 4.4.0
+        dsl:
+          - "(\"981e4dd364dbbe777e5b2194be553b8e\" == md5(body))"
+      - type: dsl
+        name: 4.3.2 - 4.3.6
+        dsl:
+          - "(\"45d4ee78787eb5a610f5d8f83607e22e\" == md5(body))"
+      - type: dsl
+        name: 4.3.1
+        dsl:
+          - "(\"23a7a5f5c5969074a8ba5baa00f30b95\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-image-viewer/aui-image-viewer-gallery-min.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"6b784cf3170120168f26c0526de7c0de\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"a41d76299ef42fdcb6b4c1f75395bc23\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"5ed2df3ddeb72b082d8659924b3552ca\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"e6ff8959e1f1ec84b1c0459a792c0207\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"af55a475e2699e715b67192f840bc81c\" == md5(body))"
+      - type: dsl
+        name: 6.0.4
+        dsl:
+          - "(\"edae70c7ffffe7db5bd7d8dfec7bfbe0\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"030eb585054f34f3da03f1cc77aa710d\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"f67ba4da3799c5642f12f70b13ed7ee1\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"42afc5728a29cd266454ac4264bc409a\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-image-viewer/aui-image-viewer-base.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"f5f3dd223f8cb1b0538c80994db8a6a7\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"3eb33fc7ad3267a9af4b653428f7c55c\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"5f2145f97b783d27246664674c2d91cf\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"6bd489f9acab7100aed5f8cd8ebbddb8\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"d3e58108806eb35175b87f49afe38f00\" == md5(body))"
+      - type: dsl
+        name: 6.0.4
+        dsl:
+          - "(\"7774b884c4d91ec06ee5cd6e0cf75ac9\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"7a1dd2f9ccc188366447fa26244c316f\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"3067ebc9bb2af88233e9d00c5d0efdf4\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"94fc1970ae6a3e9b4070a1898632225f\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-image-viewer/aui-image-viewer-base-min.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"dfd7d2f79ca3b273b469aa2ca0a4f3be\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"8bfff2526f33839024528313c90ecbb1\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"a77d9287810816ba2855a5b91869a153\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"9e887bd07ba6ae8b97007fc15f5ec370\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"5a9a365c3c4a509458adff119585d395\" == md5(body))"
+      - type: dsl
+        name: 6.0.4
+        dsl:
+          - "(\"83486be4e9f6dcb926af012d75a46f6b\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"75bbff47b2491f26d92c5ff6145bf74f\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"d0ce6670d2db95e6630d882dc92f8c8f\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"6fb4bdc1fd40a08457b6ff0ca94345fb\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-image-viewer/aui-image-viewer-base-debug.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"f5f3dd223f8cb1b0538c80994db8a6a7\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"3eb33fc7ad3267a9af4b653428f7c55c\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"5f2145f97b783d27246664674c2d91cf\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"6bd489f9acab7100aed5f8cd8ebbddb8\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"d3e58108806eb35175b87f49afe38f00\" == md5(body))"
+      - type: dsl
+        name: 6.0.4
+        dsl:
+          - "(\"7774b884c4d91ec06ee5cd6e0cf75ac9\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"7a1dd2f9ccc188366447fa26244c316f\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"3067ebc9bb2af88233e9d00c5d0efdf4\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"94fc1970ae6a3e9b4070a1898632225f\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-io/aui-io.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"076dc72cc6fafa01cb085fc5811cf13a\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"2bd8420dc8e647ff5d7e4188f716da93\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"e63af3c230b5016c94212d7e12de63ae\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"c630040d4324eb097c35429706996dcf\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"256ab51d8061885d2f6df5e5a115e106\" == md5(body))"
+      - type: dsl
+        name: 6.0.4
+        dsl:
+          - "(\"1f2adc83c2006827f68914bb030e186c\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"a6aef7746cf2f931a07879bea44b78c9\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"f4e86bb9eac90f53b10e0f07536e387b\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"6f99c119e6e8774480de464a8e638e0e\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-io/aui-io-debug.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"076dc72cc6fafa01cb085fc5811cf13a\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"2bd8420dc8e647ff5d7e4188f716da93\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"e63af3c230b5016c94212d7e12de63ae\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"c630040d4324eb097c35429706996dcf\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"256ab51d8061885d2f6df5e5a115e106\" == md5(body))"
+      - type: dsl
+        name: 6.0.4
+        dsl:
+          - "(\"1f2adc83c2006827f68914bb030e186c\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"a6aef7746cf2f931a07879bea44b78c9\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"f4e86bb9eac90f53b10e0f07536e387b\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"6f99c119e6e8774480de464a8e638e0e\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-io/aui-io-min.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"d1e01bb8dca6191dd4b916317cbfa557\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"0c1da5a29fa68be4bf9841095547ebe4\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"001b98f2cfd57707a454f17084a4bba6\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"63af3f8b33a97d2892fe48a9d009b06d\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"17266accce3c1eb4fc39bdf8e508d1f9\" == md5(body))"
+      - type: dsl
+        name: 6.0.4
+        dsl:
+          - "(\"295fab3a072819afb1590c150390df0e\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"38075b7091b5f26d2c3d1cffef23ff8a\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"55ca0f08fc2068fab6562cd664eb464b\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"d9ca08ba408bb8f34921a62d3efea178\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-node/aui-node-base-min.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"2223e5b13161b13f57a3feb53cc83097\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"c6b28512cccf7707177116ffdfbfce99\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"1e3460501d14137103cd5f140885edcc\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"256c947493f753bfbd7f5c463e4e0f80\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"dfb8371d35ff12dec1ea81d5b23e2cae\" == md5(body))"
+      - type: dsl
+        name: 6.0.4
+        dsl:
+          - "(\"d724a7be5a2e19fbf7764d6d658ed1af\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"821462e21bf260da286f6d0b9b0893a2\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"993485be4a37c2c9b9256479ed959f69\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"70026a6d49ab110668fdfa3542e6ca84\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-node/aui-node-base.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"23b69f8f2e7e118e044cf59aac7c1f53\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"db9f914aefc1048a027d832e29bf4928\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"7eb1f7e224242f6d0d1cdab7770af769\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"b1d0a8415790dffec268ed628697d7a6\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"aedde3be2c58f2c10fc84250a44b4f6f\" == md5(body))"
+      - type: dsl
+        name: 6.0.4
+        dsl:
+          - "(\"db652e7baa693431df5efcb68d033d19\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"b1c90a56e497a80507d2490756d806bf\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"5e770eaf2555f40d17de9b96568b673f\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"45246396141f384fbd89782dd7a918f0\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-node/aui-node-base-debug.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"23b69f8f2e7e118e044cf59aac7c1f53\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"db9f914aefc1048a027d832e29bf4928\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"7eb1f7e224242f6d0d1cdab7770af769\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"b1d0a8415790dffec268ed628697d7a6\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"aedde3be2c58f2c10fc84250a44b4f6f\" == md5(body))"
+      - type: dsl
+        name: 6.0.4
+        dsl:
+          - "(\"db652e7baa693431df5efcb68d033d19\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"b1c90a56e497a80507d2490756d806bf\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"5e770eaf2555f40d17de9b96568b673f\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"45246396141f384fbd89782dd7a918f0\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-button-item/aui-button-item-debug.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"9ca6c3baef0d1849d2a311f141b1010c\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"95e37bc609a6b1c257384c3d335c6794\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"02993cc16d6e2038d28b9af3eded3c0f\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"eaacff60fef9d32e0f611ff9d56ed8f0\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"8291a61c09f8d2687e6ff5f1bac716b4\" == md5(body))"
+      - type: dsl
+        name: 6.0.4
+        dsl:
+          - "(\"ecd7c3016dd1472c165d60774177045b\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"33e712e5cced22b454a75b1dfd099071\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"80724d65e80a341ea41fb3d8e11aca96\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"249142b6695f94fe955ba8748ed8251c\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-button-item/aui-button-item.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"9ca6c3baef0d1849d2a311f141b1010c\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"95e37bc609a6b1c257384c3d335c6794\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"02993cc16d6e2038d28b9af3eded3c0f\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"eaacff60fef9d32e0f611ff9d56ed8f0\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"8291a61c09f8d2687e6ff5f1bac716b4\" == md5(body))"
+      - type: dsl
+        name: 6.0.4
+        dsl:
+          - "(\"ecd7c3016dd1472c165d60774177045b\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"33e712e5cced22b454a75b1dfd099071\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"80724d65e80a341ea41fb3d8e11aca96\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"249142b6695f94fe955ba8748ed8251c\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-button-item/aui-button-item-min.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"1ff8b778e30dfe7473288bbca3cd182e\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"19ac232fc33112b0106dae05db4d5548\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"c17b07d9c42a68b106152b23ceb2bb0b\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"8ce09fcab92ff148f95114656792c55a\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"a9badfb3ba396fcc7ab6ab00765488a1\" == md5(body))"
+      - type: dsl
+        name: 6.0.4
+        dsl:
+          - "(\"6340d9af4343448b547bae8804d11266\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"39d292693e9e12cbbba4f2c137ccf99d\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"9a0ba89ec7e96a6282b019cab889bbbf\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"26aa2872bd89f43883f3dcb59e210fae\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/themes/classic/templates/portal_normal.vm"
+
+    matchers:
+      - type: dsl
+        name: 6.2.0-GA1 - 6.2.5-GA6
+        dsl:
+          - "(\"d92c19c38cc1a996d2dcbca63d8277fe\" == md5(body))"
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"8c54ceb9f7001bcf793579358719687c\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"022e4c8d605dae3fc546237852ff700b\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"b4076bfdd0e75f8e46775d56a67f804f\" == md5(body))"
+      - type: dsl
+        name: 6.0.3 - 6.0.6
+        dsl:
+          - "(\"5d2d8cb4298e35090c6d2298b9e3e77c\" == md5(body))"
+      - type: dsl
+        name: 6.0.1 - 6.0.2
+        dsl:
+          - "(\"0d4a97b2831665e023add047f2cc557a\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"b55c763016d9b32026e17c79edab75d2\" == md5(body))"
+      - type: dsl
+        name: 5.2.3
+        dsl:
+          - "(\"a1341351861891d6618efe68ad8656fe\" == md5(body))"
+      - type: dsl
+        name: 5.2.2
+        dsl:
+          - "(\"ca2e8dcfee3b106f98edabff33df8ac4\" == md5(body))"
+      - type: dsl
+        name: 5.2.0 - 5.2.1
+        dsl:
+          - "(\"e43cb5f4df7aec5fccc65ff7f5a04e6f\" == md5(body))"
+      - type: dsl
+        name: 5.1.2
+        dsl:
+          - "(\"276c2d0e624591b635700709a47f71c7\" == md5(body))"
+      - type: dsl
+        name: 5.1.0 - 5.1.1
+        dsl:
+          - "(\"3bcbb8be5406ab6ee61f866da248f354\" == md5(body))"
+      - type: dsl
+        name: 4.4.0 - 4.4.2
+        dsl:
+          - "(\"5a5a0f3a0a4f3455a04163297bf12fd7\" == md5(body))"
+      - type: dsl
+        name: 4.3.5 - 4.3.6
+        dsl:
+          - "(\"9b0ceadb75dcd6a4c02e41e0a173a985\" == md5(body))"
+      - type: dsl
+        name: 4.3.4
+        dsl:
+          - "(\"bd6ca691d4cdaf8bc5722f1b282bd5b2\" == md5(body))"
+      - type: dsl
+        name: 4.3.1 - 4.3.3
+        dsl:
+          - "(\"53bee84b086b0f854e57bc197e3e5bf2\" == md5(body))"
+      - type: dsl
+        name: 4.3.0
+        dsl:
+          - "(\"afe391de773c63868efc9c9e53e2aa0f\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/themes/_unstyled/templates/portal_normal.vm"
+
+    matchers:
+      - type: dsl
+        name: 6.2.0-GA1 - 6.2.5-GA6
+        dsl:
+          - "(\"597fb07b10e6c71d97c6d8bb8674d4c3\" == md5(body))"
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"8c54ceb9f7001bcf793579358719687c\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"022e4c8d605dae3fc546237852ff700b\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"b4076bfdd0e75f8e46775d56a67f804f\" == md5(body))"
+      - type: dsl
+        name: 6.0.3 - 6.0.6
+        dsl:
+          - "(\"5d2d8cb4298e35090c6d2298b9e3e77c\" == md5(body))"
+      - type: dsl
+        name: 6.0.1 - 6.0.2
+        dsl:
+          - "(\"0d4a97b2831665e023add047f2cc557a\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"b55c763016d9b32026e17c79edab75d2\" == md5(body))"
+      - type: dsl
+        name: 5.2.3
+        dsl:
+          - "(\"a1341351861891d6618efe68ad8656fe\" == md5(body))"
+      - type: dsl
+        name: 5.2.2
+        dsl:
+          - "(\"ca2e8dcfee3b106f98edabff33df8ac4\" == md5(body))"
+      - type: dsl
+        name: 5.2.0 - 5.2.1
+        dsl:
+          - "(\"e43cb5f4df7aec5fccc65ff7f5a04e6f\" == md5(body))"
+      - type: dsl
+        name: 5.1.2
+        dsl:
+          - "(\"276c2d0e624591b635700709a47f71c7\" == md5(body))"
+      - type: dsl
+        name: 5.1.0 - 5.1.1
+        dsl:
+          - "(\"3bcbb8be5406ab6ee61f866da248f354\" == md5(body))"
+      - type: dsl
+        name: 4.4.0 - 4.4.2
+        dsl:
+          - "(\"5a5a0f3a0a4f3455a04163297bf12fd7\" == md5(body))"
+      - type: dsl
+        name: 4.3.5 - 4.3.6
+        dsl:
+          - "(\"9b0ceadb75dcd6a4c02e41e0a173a985\" == md5(body))"
+      - type: dsl
+        name: 4.3.4
+        dsl:
+          - "(\"bd6ca691d4cdaf8bc5722f1b282bd5b2\" == md5(body))"
+      - type: dsl
+        name: 4.3.1 - 4.3.3
+        dsl:
+          - "(\"53bee84b086b0f854e57bc197e3e5bf2\" == md5(body))"
+      - type: dsl
+        name: 4.3.0
+        dsl:
+          - "(\"afe391de773c63868efc9c9e53e2aa0f\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/portlet/asset_category_admin/js/main.js"
+
+    matchers:
+      - type: dsl
+        name: 6.2.3-GA4 - 6.2.5-GA6
+        dsl:
+          - "(\"841ff07569e795affec9baa42cb44e06\" == md5(body))"
+      - type: dsl
+        name: 6.2.1-GA2 - 6.2.2-GA3
+        dsl:
+          - "(\"51b0c1ff3e788b5111a4e2cb1d5e3706\" == md5(body))"
+      - type: dsl
+        name: 6.2.0-GA1
+        dsl:
+          - "(\"4ea6e4f3f4fa2a5ea215a3513cbd1477\" == md5(body))"
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"ba0c4d945069d5983719eecf1d8afa35\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"f6974afb945ffdd4ab51c291e7c8fc95\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"69cef23141f9e943483f6e34ada9ed34\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"711f6bcc2f333a37fb803ccbaccb1586\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"8e26e644adf97b22c7465a0b053c3d8e\" == md5(body))"
+      - type: dsl
+        name: 6.0.4
+        dsl:
+          - "(\"6e813ada0e29e3aa2b9b82660793bb54\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"42a7c58f22bbdde79a049f8ec075400b\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"83397479b138227ae3466eddfc15858f\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/liferay/asset_categories_selector.js"
+
+    matchers:
+      - type: dsl
+        name: 6.2.3-GA4 - 6.2.5-GA6
+        dsl:
+          - "(\"9d1082c28f5f21d7e3890ca0af2229c0\" == md5(body))"
+      - type: dsl
+        name: 6.2.2-GA3
+        dsl:
+          - "(\"2f1fb06fcbdef34490295955874b4ac6\" == md5(body))"
+      - type: dsl
+        name: 6.2.1-GA2
+        dsl:
+          - "(\"3183be9dcb94247d2bc0644703c66a7a\" == md5(body))"
+      - type: dsl
+        name: 6.2.0-GA1
+        dsl:
+          - "(\"e16008d568a473a59b09437d7c113846\" == md5(body))"
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"3afbd9cd02d097c7c10b4be935cfea28\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"a603e2f00f1d401a256874764d64bd82\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"bc21ad8a47cee8487f5548a00464d9e6\" == md5(body))"
+      - type: dsl
+        name: 6.0.3 - 6.0.6
+        dsl:
+          - "(\"1343435dcf05ebbd8bdaed64e306c940\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"2b2e535b6974538fba211e955c8e1010\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"dcf19717cb2933c5589c7020ef0e7d90\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"148529ff241bc693c32aae11f1917047\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/liferay/panel_floating.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"774320d6598f72d300b544dab69bf1d5\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"672e9079657c7fedace57a27fbb9c91a\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"351bc6061c81386f26be46333a2c0956\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"885dc227da643826f5a849c8712f9dd5\" == md5(body))"
+      - type: dsl
+        name: 6.0.5
+        dsl:
+          - "(\"c415e4ec6c503e45310665a3cb1aaf95\" == md5(body))"
+      - type: dsl
+        name: 6.0.2 - 6.0.4
+        dsl:
+          - "(\"be8c5575a696969ef43f8886a81d05b1\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"b1eed059704d6add964574f980c40aa1\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"7f643fe82d12f359c2778fdc1c2406be\" == md5(body))"
+      - type: dsl
+        name: 5.2.3
+        dsl:
+          - "(\"d62adb831f785e535bc42bf7ad384149\" == md5(body))"
+      - type: dsl
+        name: 5.2.0 - 5.2.2
+        dsl:
+          - "(\"1300ee0e9bdf81d80e10d4bd5a0207c6\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-tree/aui-tree-data-debug.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"9c88b7be955fc922814feaff30eef409\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"cd2b4e48e6707579c8dadd60e46325f9\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"f2b3e33acf124ca39af8ba82d167488f\" == md5(body))"
+      - type: dsl
+        name: 6.0.5 - 6.0.6
+        dsl:
+          - "(\"af4a6243819bfec8be1e7a72cb15d83c\" == md5(body))"
+      - type: dsl
+        name: 6.0.4
+        dsl:
+          - "(\"230d3ffd74f564eaf02421e8ccd572bf\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"d83e598ac0858378334c0c97f572f422\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"6a62b142dcd779dac5eeff0861a99825\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"9949ff528cc39c9512730dfd633c05e7\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"2ac875e5540676fc218c3ba229e27156\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-tree/aui-tree-data.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"9c88b7be955fc922814feaff30eef409\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"cd2b4e48e6707579c8dadd60e46325f9\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"f2b3e33acf124ca39af8ba82d167488f\" == md5(body))"
+      - type: dsl
+        name: 6.0.5 - 6.0.6
+        dsl:
+          - "(\"af4a6243819bfec8be1e7a72cb15d83c\" == md5(body))"
+      - type: dsl
+        name: 6.0.4
+        dsl:
+          - "(\"230d3ffd74f564eaf02421e8ccd572bf\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"d83e598ac0858378334c0c97f572f422\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"6a62b142dcd779dac5eeff0861a99825\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"9949ff528cc39c9512730dfd633c05e7\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"2ac875e5540676fc218c3ba229e27156\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-tree/aui-tree-data-min.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"a7db91ea7739990db30caac0eae6fc2b\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"c2e65aeade866a90469de457d6ba2f11\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"079794149288cfb5e2dd2045087adbbf\" == md5(body))"
+      - type: dsl
+        name: 6.0.5 - 6.0.6
+        dsl:
+          - "(\"b657c9599c4120742bf825407264d67b\" == md5(body))"
+      - type: dsl
+        name: 6.0.4
+        dsl:
+          - "(\"5342277c843dffca74453ce30e6700d3\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"602873be7c6173478c41fb2d28e3309b\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"b183d7491b56a753e31916c795ac6f17\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"ab8caf07d1ae56d12a5b659591ce954c\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"8ee29ec11799ac4e0aad4d67abd2fc52\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-paginator/aui-paginator-min.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"d90c2dae6ae53d3103f3e3eb9c209d48\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"09c4abc9bcc4981aeb93370f670b41b1\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"949f0bb1c5a755c3bc2bdec75d5ed950\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"91ffaf45c340a408a2f7fbf2bc769f69\" == md5(body))"
+      - type: dsl
+        name: 6.0.4 - 6.0.5
+        dsl:
+          - "(\"4e861a5e87eac4bbe0b05a352f1de390\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"8ea272cc1675e6a4a5b373105d5cf34c\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"76cdcdc56ac6e31d12f0cc670bdfd23c\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"d3cd383bdf5ccca2a5ed5ea4e968aaca\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"5a57eb194a118a4f2427738c9fbfa16c\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-paginator/aui-paginator.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"fbe9bd27359dba796b5a1811f31fc864\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"037ba7be779a1844145b401b0304eea8\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"86c3ab0f25f15929452c251d1a8f867b\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"d8c0d3ed2f722b353bf3d723b93af8a2\" == md5(body))"
+      - type: dsl
+        name: 6.0.4 - 6.0.5
+        dsl:
+          - "(\"b6c5227abd61c761998505b807b587be\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"bd0aecebe34086e300029ecfa1c3afca\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"777cf271a01925d3035bc9ff11debc64\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"89a6aa7dfb589034f1eaecd1134f11ec\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"78fc2eca78ccf29f388ccf9c86156722\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-paginator/aui-paginator-debug.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"fbe9bd27359dba796b5a1811f31fc864\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"037ba7be779a1844145b401b0304eea8\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"86c3ab0f25f15929452c251d1a8f867b\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"d8c0d3ed2f722b353bf3d723b93af8a2\" == md5(body))"
+      - type: dsl
+        name: 6.0.4 - 6.0.5
+        dsl:
+          - "(\"b6c5227abd61c761998505b807b587be\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"bd0aecebe34086e300029ecfa1c3afca\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"777cf271a01925d3035bc9ff11debc64\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"89a6aa7dfb589034f1eaecd1134f11ec\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"78fc2eca78ccf29f388ccf9c86156722\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-chart/aui-chart-debug.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"558bac7ec1e56acfff0062703f0505f0\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"ff3b7719c8aa3a3b1dbef1f624307b10\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"2751e0d9191154270348118e374940a7\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"470c7a94e3306dd4794b0c364c0be831\" == md5(body))"
+      - type: dsl
+        name: 6.0.4 - 6.0.5
+        dsl:
+          - "(\"7587199744c948de934a554934d96b46\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"7a88edb138f9b8fdb3739a56114cd881\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"d1ac832d6cc53a54b4193edf5e515453\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"6c58aa228dfab178c10f88e33d64fe9a\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"f739f7e9186257387fcd2e8c31705ac4\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-chart/aui-chart-min.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"3a0cdc7eb0c53bdcdb76761fee57edfe\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"f2548bb186c9334d5d76d01afbca0041\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"27ee3d122b377b1d19f9ef75171ef63a\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"b4acefb922bce93c335deddee4cb0959\" == md5(body))"
+      - type: dsl
+        name: 6.0.4 - 6.0.5
+        dsl:
+          - "(\"b65cdc83a4f8303d69616a6200650545\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"efff80da3b5ac43af00970ae84bab61b\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"11433ade19ef4dd2782a9e77e56abc12\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"b1518860e14f44c265fa63cfb4927187\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"0b3a093f75dcb2da212d39c7ebbd2d15\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-chart/aui-chart.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"558bac7ec1e56acfff0062703f0505f0\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"ff3b7719c8aa3a3b1dbef1f624307b10\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"2751e0d9191154270348118e374940a7\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"470c7a94e3306dd4794b0c364c0be831\" == md5(body))"
+      - type: dsl
+        name: 6.0.4 - 6.0.5
+        dsl:
+          - "(\"7587199744c948de934a554934d96b46\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"7a88edb138f9b8fdb3739a56114cd881\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"d1ac832d6cc53a54b4193edf5e515453\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"6c58aa228dfab178c10f88e33d64fe9a\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"f739f7e9186257387fcd2e8c31705ac4\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-form/aui-form.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"73cf642d3d2750ab77453f44c0474605\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"c793e123c620c4591d59eb03845702d3\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"f73a2509d7cad16bb3c22d08407cdb6d\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"40798cabcbf7c953757e8ba22a9cc288\" == md5(body))"
+      - type: dsl
+        name: 6.0.4 - 6.0.5
+        dsl:
+          - "(\"1430eaf751ac53793c84ee0c2ac980d4\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"8a58af1f0112899e1f3e2f89dff102ad\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"2e89cfade6b50a40d2455246d5d29887\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"fc004903ca6a6a8e7d84a387e9aaf735\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"0932bdadb8c2c1f658eb54a0bee1d48a\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-form/aui-form-debug.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"73cf642d3d2750ab77453f44c0474605\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"c793e123c620c4591d59eb03845702d3\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"f73a2509d7cad16bb3c22d08407cdb6d\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"40798cabcbf7c953757e8ba22a9cc288\" == md5(body))"
+      - type: dsl
+        name: 6.0.4 - 6.0.5
+        dsl:
+          - "(\"1430eaf751ac53793c84ee0c2ac980d4\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"8a58af1f0112899e1f3e2f89dff102ad\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"2e89cfade6b50a40d2455246d5d29887\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"fc004903ca6a6a8e7d84a387e9aaf735\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"0932bdadb8c2c1f658eb54a0bee1d48a\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-form/aui-form-min.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"778e89bd9e61729def7ccc06eecbd7b1\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"a1a203928f3b0fb8ed8df01cbf9f5d3b\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"add7b627c927b36641665dfd9e84ad05\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"29e28a228d65bf471cf011c517aaa7e2\" == md5(body))"
+      - type: dsl
+        name: 6.0.4 - 6.0.5
+        dsl:
+          - "(\"9f1d7a6c5b9e734c387c90ff2be07465\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"1112c3bdd0a1e8664c42cee618b53e47\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"ecdcd44ce9be105fbc1a21dd4baee3d4\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"f71fcdc2fb7bf270624779ad27962ba3\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"a6f614f2aa9286ccce32db03078cdccc\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-rating/aui-rating.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"57ccd50672a872729b044e8d3ce87321\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"db499c05d2b39c1784d4ef5899d4b2b7\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"10897b0729d3cb812dd053cc419b8f18\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"4bccf823bb77e0dff8df2640db833ea0\" == md5(body))"
+      - type: dsl
+        name: 6.0.4 - 6.0.5
+        dsl:
+          - "(\"f955e4284fac4f5af3b3e616e8b02e26\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"f6c6652f60b4b7b14287ac8001c318a6\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"f819d0f6d738b8bf088bde53f4699aae\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"33c7abb7f9c397c3e1ab25dbff0009ea\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"6a73ad14ca9891806f1cb39e50006326\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-rating/aui-rating-min.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"54a105fa740dd1595718417e7dac4125\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"427006c4c59d14686349fd7634a587b1\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"49b7616e6417a5292746832e2d873b98\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"4436fe158bfaaa4813ef6cd3c03527a1\" == md5(body))"
+      - type: dsl
+        name: 6.0.4 - 6.0.5
+        dsl:
+          - "(\"e6357a743e8e5d3f0b7d547703899e81\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"788a8d9f9fff135b122c509a500a2d27\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"0511a00314ac7c3dc27bf0100dba242d\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"d4251aa232840303c3a19deb120afa5a\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"bd1feca5c5764c6ed7b670725b2caac3\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-rating/aui-rating-debug.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"57ccd50672a872729b044e8d3ce87321\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"db499c05d2b39c1784d4ef5899d4b2b7\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"10897b0729d3cb812dd053cc419b8f18\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"4bccf823bb77e0dff8df2640db833ea0\" == md5(body))"
+      - type: dsl
+        name: 6.0.4 - 6.0.5
+        dsl:
+          - "(\"f955e4284fac4f5af3b3e616e8b02e26\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"f6c6652f60b4b7b14287ac8001c318a6\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"f819d0f6d738b8bf088bde53f4699aae\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"33c7abb7f9c397c3e1ab25dbff0009ea\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"6a73ad14ca9891806f1cb39e50006326\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-dialog/aui-dialog-debug.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"1667605e3937d2a6714254f9f97915b8\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"5e86756d63e371277c316bc5d339871a\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"dcf727aea94b8fd07f1d7a7c35ea7c01\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"9e07f93041afae0fe2ebc142b8519808\" == md5(body))"
+      - type: dsl
+        name: 6.0.4 - 6.0.5
+        dsl:
+          - "(\"363c7a51eac1c751394405c408c4d785\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"d3b7b34e6255eb62590f4518bb0896ac\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"6df7adae5c837b6b7c74e68b076a8042\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"e95bdc3fb60dde3533867e205a4f65c9\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"03fffec45367d3f4171c7b99063dc39d\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-dialog/aui-dialog-min.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"c14a375680412bf7ba5d23b7e5ddd1b9\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"61b3bf225638b77703fb591ec6f9e2d1\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"d92f92dce506a25fb70313c3bf0a2be0\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"d98212b059eddb6e5c14ada184e4d093\" == md5(body))"
+      - type: dsl
+        name: 6.0.4 - 6.0.5
+        dsl:
+          - "(\"111b408dc5c2b02caa34791c9fe75662\" == md5(body))"
+      - type: dsl
+        name: 6.0.3
+        dsl:
+          - "(\"478a2f3864f857e2224702258af4f86a\" == md5(body))"
+      - type: dsl
+        name: 6.0.2
+        dsl:
+          - "(\"40f69243954c7ff72f322bc1565bd2b0\" == md5(body))"
+      - type: dsl
+        name: 6.0.1
+        dsl:
+          - "(\"3ef7eb8ce9cce3207ef661f13ad2afdd\" == md5(body))"
+      - type: dsl
+        name: 6.0.0
+        dsl:
+          - "(\"52df59f2c5ec8e4e328d9bfe8a5266e5\" == md5(body))"
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/html/js/aui/aui-dialog/aui-dialog.js"
+
+    matchers:
+      - type: dsl
+        name: 6.1.2-GA3
+        dsl:
+          - "(\"1667605e3937d2a6714254f9f97915b8\" == md5(body))"
+      - type: dsl
+        name: 6.1.1-GA2
+        dsl:
+          - "(\"5e86756d63e371277c316bc5d339871a\" == md5(body))"
+      - type: dsl
+        name: 6.1.0-GA1
+        dsl:
+          - "(\"dcf727aea94b8fd07f1d7a7c35ea7c01\" == md5(body))"
+      - type: dsl
+        name: 6.0.6
+        dsl:
+          - "(\"9e07f93041afae0fe2ebc142b8519808\" == md5(body))"
+      - type: dsl
+        name: 6.0.4 - 6.0.5
+        dsl:
+          - "
