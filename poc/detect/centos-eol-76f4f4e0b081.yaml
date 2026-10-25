@@ -1,0 +1,28 @@
+id: centos-eol
+info:
+  name: CentOS EOL - Detect
+  author: staticnoise
+  severity: info
+  description: |
+    Detected CentOS systems that had reached End-of-Life (EOL) status by identifying outdated version information in HTTP response.
+  reference:
+    - https://endoflife.date/centos
+    - https://blog.centos.org/2023/04/end-dates-are-coming-for-centos-stream-8-and-centos-linux-7/
+  metadata:
+    fofa-query: 'header="Server: Apache/" && "centos"'
+    max-request: 1
+    shodan-query: '"Server: Apache/" "centos"'
+  tags: centos,discovery,eol,tech
+http:
+  - host-redirects: true
+    matchers:
+      - part: header
+        regex:
+          - Apache/(\d+\.\d+\.\d+) \((centos|CentOS)\)
+        # digest: 490a0046304402202dd33b1ec5c795246704253e5be05a3ddbf213640283e7e1b979dd3cce0e59fc02201f0b51801c2fc08a5ce0fdd66a243be37296c9eebd4939582b3be59162f35d0c:922c64590222798bb761d5b6d8e72950
+
+        type: regex
+    max-redirects: 2
+    method: GET
+    path:
+      - '{{BaseURL}}'

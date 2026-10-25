@@ -1,0 +1,43 @@
+id: adsb-ultrafeeder-detect
+info:
+  name: ADSB Ultrafeeder Beast Mode - Detection
+  author: Random-Robbie
+  severity: info
+  description: |
+    Detected ADS-B (Automatic Dependent Surveillance–Broadcast) ultrafeeders operating with the Beast Mode protocol on port 30005. These devices capture aircraft transponder signals using software-defined radios (SDRs) and distribute the decoded data over the internet.
+  reference:
+    - https://github.com/flightaware/dump1090
+    - https://github.com/wiedehopf/readsb
+    - https://mode-s.org/decode/content/ads-b/1-basics.html
+  metadata:
+    fofa-query: port="30005" && body="ADSB"
+    max-request: 1
+    shodan-query: html:"ADSB"
+    verified: true
+  tags: adsb,discovery,enum,flight,network,tcp
+tcp:
+  - extractors:
+      - name: beast_message_types
+        regex:
+          - 1a(3[1-3])
+        type: regex
+      - name: feed_quality
+        regex:
+          - (1a)
+        # digest: 4b0a0048304602210081ed332c6aa0e9ea4fbda7c1ae49a442158a53b3122ad48c8ba62fb704a5a34f022100e2c48b2f1b22db5f4f18ab2165da90f37a670e26a924d37215df460ff0b586c2:922c64590222798bb761d5b6d8e72950
+
+        type: regex
+    host:
+      - '{{Hostname}}'
+    inputs:
+      - data: 0
+        type: hex
+    matchers:
+      - binary:
+          - 1a31
+          - 1a32
+          - 1a33
+        condition: or
+        type: binary
+    port: 30005
+    read-size: 2048
