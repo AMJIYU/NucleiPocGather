@@ -409,9 +409,8 @@
     "url": "https://github.com/adampielak/nuclei-templates",
     "name": "adampielak__nuclei-templates",
     "revision": "1f9e65bc1ef85d02975440b9cdb4e9e8965ec422",
-    "cursor": "http/exposures/exposed-authentication-asmx-7287.yaml",
-    "complete": false,
-    "updated_at": "2026-10-26T08:53:47.331655798Z"
+    "complete": true,
+    "updated_at": "2026-10-26T09:01:55.885442097Z"
   },
   {
     "url": "https://github.com/aels/CVE-2022-37042",
@@ -598,9 +597,9 @@
   {
     "url": "https://github.com/edoardottt/missing-cve-nuclei-templates",
     "name": "edoardottt__missing-cve-nuclei-templates",
-    "revision": "9e00046726e75f41498a678f5cf36621ff6b2d62",
+    "revision": "08c36c186bbcd27093eecae19d1d1cf811890e04",
     "complete": true,
-    "updated_at": "2026-10-19T08:52:06.120829755Z"
+    "updated_at": "2026-10-26T09:02:13.650525082Z"
   },
   {
     "url": "https://github.com/ekinsb/Nuclei-Templates",
