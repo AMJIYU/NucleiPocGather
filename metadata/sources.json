@@ -408,9 +408,10 @@
   {
     "url": "https://github.com/adampielak/nuclei-templates",
     "name": "adampielak__nuclei-templates",
-    "revision": "ef384ee2b9f83fa15d76161c8aded88f25c8604f",
-    "complete": true,
-    "updated_at": "2026-10-25T08:32:17.175172314Z"
+    "revision": "1f9e65bc1ef85d02975440b9cdb4e9e8965ec422",
+    "cursor": "http/exposures/exposed-authentication-asmx-7287.yaml",
+    "complete": false,
+    "updated_at": "2026-10-26T08:53:47.331655798Z"
   },
   {
     "url": "https://github.com/aels/CVE-2022-37042",
@@ -548,9 +549,9 @@
   {
     "url": "https://github.com/daffainfo/my-nuclei-templates",
     "name": "daffainfo__my-nuclei-templates",
-    "revision": "646d8caf2620da38cf0da0d372254bebdd8d2cfc",
+    "revision": "34e64aa997f3f05a30149774d76ea2ce3efc78dc",
     "complete": true,
-    "updated_at": "2026-10-19T08:51:02.347884684Z"
+    "updated_at": "2026-10-26T08:53:11.451268229Z"
   },
   {
     "url": "https://github.com/damon-sec/Nuclei-templates-Collection",
@@ -877,9 +878,9 @@
   {
     "url": "https://github.com/projectdiscovery/nuclei-templates",
     "name": "projectdiscovery__nuclei-templates",
-    "revision": "b6fd8ba791874e70ea76b42a448f346f3fad4238",
+    "revision": "e4820f0a255a016983ef843dc993276058bbd3d7",
     "complete": true,
-    "updated_at": "2026-10-25T08:24:22.070707985Z"
+    "updated_at": "2026-10-26T08:53:01.811082069Z"
   },
   {
     "url": "https://github.com/ptyspawnbinbash/template-enhancer",
