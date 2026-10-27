@@ -408,9 +408,10 @@
   {
     "url": "https://github.com/adampielak/nuclei-templates",
     "name": "adampielak__nuclei-templates",
-    "revision": "1f9e65bc1ef85d02975440b9cdb4e9e8965ec422",
-    "complete": true,
-    "updated_at": "2026-10-26T09:01:55.885442097Z"
+    "revision": "e5d222bd983ba285b7b7f7336bbb84a57452b601",
+    "cursor": "http/exposed-panels/axway-securetransport-webclient_1.yaml",
+    "complete": false,
+    "updated_at": "2026-10-27T08:59:31.455267192Z"
   },
   {
     "url": "https://github.com/aels/CVE-2022-37042",
@@ -877,9 +878,9 @@
   {
     "url": "https://github.com/projectdiscovery/nuclei-templates",
     "name": "projectdiscovery__nuclei-templates",
-    "revision": "e4820f0a255a016983ef843dc993276058bbd3d7",
+    "revision": "ecfecad2dec6d5d0ea506b8a3329f0e5a0f792f5",
     "complete": true,
-    "updated_at": "2026-10-26T08:53:01.811082069Z"
+    "updated_at": "2026-10-27T08:58:39.722308023Z"
   },
   {
     "url": "https://github.com/ptyspawnbinbash/template-enhancer",
