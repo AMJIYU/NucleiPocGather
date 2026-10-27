@@ -409,9 +409,8 @@
     "url": "https://github.com/adampielak/nuclei-templates",
     "name": "adampielak__nuclei-templates",
     "revision": "e5d222bd983ba285b7b7f7336bbb84a57452b601",
-    "cursor": "http/vulnerabilities/wordpress/lasa.yaml",
-    "complete": false,
-    "updated_at": "2026-10-27T09:05:28.331003567Z"
+    "complete": true,
+    "updated_at": "2026-10-27T09:14:12.800023203Z"
   },
   {
     "url": "https://github.com/aels/CVE-2022-37042",
@@ -598,9 +597,9 @@
   {
     "url": "https://github.com/edoardottt/missing-cve-nuclei-templates",
     "name": "edoardottt__missing-cve-nuclei-templates",
-    "revision": "08c36c186bbcd27093eecae19d1d1cf811890e04",
+    "revision": "4e20682a666d8ed96d0cee15485fac7c160be5dc",
     "complete": true,
-    "updated_at": "2026-10-26T09:02:13.650525082Z"
+    "updated_at": "2026-10-27T09:14:40.35451892Z"
   },
   {
     "url": "https://github.com/ekinsb/Nuclei-Templates",
@@ -983,9 +982,9 @@
   {
     "url": "https://github.com/rxerium/CISA-KEV",
     "name": "rxerium__CISA-KEV",
-    "revision": "39606b637c08bf0ac41faa98c4ffbc0b21f23d76",
+    "revision": "fa2df81da1933ad98dc99f518eea1b555a4a5516",
     "complete": true,
-    "updated_at": "2026-10-24T08:24:16.855905513Z"
+    "updated_at": "2026-10-27T09:14:59.349979686Z"
   },
   {
     "url": "https://github.com/sadnansakin/my-nuclei-templates",
