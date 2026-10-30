@@ -1,0 +1,51 @@
+id: cherry_plugin-fa2bc3ae-1162-496b-8bc3-5bee1c0ff702
+
+info:
+  name: >
+    Cherry Plugin < 1.2.7 - Arbitrary File Upload
+  author: topscoder
+  severity: critical
+  description: >
+    
+  reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/fa2bc3ae-1162-496b-8bc3-5bee1c0ff702?source=api-scan
+  classification:
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
+  metadata:
+    fofa-query: "wp-content/plugins/cherry-plugin/"
+    google-query: inurl:"/wp-content/plugins/cherry-plugin/"
+    shodan-query: 'http.html:"wp-content/plugins/cherry-plugin/"'
+  tags: cve,wordpress,wp-plugin,cherry-plugin,critical,candidate
+
+http:
+  - method: GET
+    redirects: true
+    max-redirects: 3
+    path:
+      - "{{BaseURL}}/wp-content/plugins/cherry-plugin/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag:\\s*([0-9.]+)"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - "cherry-plugin"
+        part: body
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '< 1.2.7')
