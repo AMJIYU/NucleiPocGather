@@ -408,9 +408,9 @@
   {
     "url": "https://github.com/adampielak/nuclei-templates",
     "name": "adampielak__nuclei-templates",
-    "revision": "786ac74a670f0e5b886b1ccd50afdd8c5e69f94a",
+    "revision": "cc39e468e65edacde5c6713f7140840426b52564",
     "complete": true,
-    "updated_at": "2026-11-09T11:29:24.464457326Z"
+    "updated_at": "2026-11-10T11:10:36.505999427Z"
   },
   {
     "url": "https://github.com/aels/CVE-2022-37042",
@@ -877,9 +877,9 @@
   {
     "url": "https://github.com/projectdiscovery/nuclei-templates",
     "name": "projectdiscovery__nuclei-templates",
-    "revision": "0aee9e90725104501985724bc68e45cbc82bc38e",
+    "revision": "ed7f0bf171ab0eb57f136c43064deb9872e107dc",
     "complete": true,
-    "updated_at": "2026-11-09T11:28:33.652822615Z"
+    "updated_at": "2026-11-10T11:09:32.087545589Z"
   },
   {
     "url": "https://github.com/ptyspawnbinbash/template-enhancer",

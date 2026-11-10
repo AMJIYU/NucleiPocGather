@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-11-09T11:31:07.080200401Z",
-  "total": 702586,
-  "compatible": 611882,
+  "generated_at": "2026-11-10T11:12:54.46633267Z",
+  "total": 702592,
+  "compatible": 611888,
   "incompatible": 90704,
-  "duplicates": 290638,
+  "duplicates": 289535,
   "categories": {
     "api": 15280,
-    "auth": 269168,
+    "auth": 269174,
     "cloud": 10136,
     "cnvd": 1515,
     "container": 1862,
     "cve": 334252,
-    "detect": 65240,
-    "exposure": 62055,
+    "detect": 65242,
+    "exposure": 62061,
     "fuzz": 1234,
     "java": 9078,
     "lfi": 33575,
@@ -34,9 +34,9 @@
   "severities": {
     "critical": 68083,
     "high": 137643,
-    "info": 74619,
+    "info": 74621,
     "low": 136276,
-    "medium": 194589,
+    "medium": 194593,
     "unknown": 672
   }
 }
