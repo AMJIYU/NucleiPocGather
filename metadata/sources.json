@@ -408,9 +408,9 @@
   {
     "url": "https://github.com/adampielak/nuclei-templates",
     "name": "adampielak__nuclei-templates",
-    "revision": "e0f6925179c85e884cd8804e8714abe3e3069b9e",
+    "revision": "22a9a922b76d93e5cef80a62c37c030c81574af3",
     "complete": true,
-    "updated_at": "2026-11-11T10:56:12.778188047Z"
+    "updated_at": "2026-11-12T11:03:48.632847023Z"
   },
   {
     "url": "https://github.com/aels/CVE-2022-37042",
@@ -877,9 +877,9 @@
   {
     "url": "https://github.com/projectdiscovery/nuclei-templates",
     "name": "projectdiscovery__nuclei-templates",
-    "revision": "0d4157cc395ce8df20298c18c263d3b4a5e8a45d",
+    "revision": "f99ca476bb7e82e6de3c15834584e16eeff29d88",
     "complete": true,
-    "updated_at": "2026-11-11T10:55:19.796920771Z"
+    "updated_at": "2026-11-12T11:02:58.966215043Z"
   },
   {
     "url": "https://github.com/ptyspawnbinbash/template-enhancer",
@@ -1108,9 +1108,9 @@
   {
     "url": "https://github.com/topscoder/nuclei-wordfence-cve",
     "name": "topscoder__nuclei-wordfence-cve",
-    "revision": "3b74b19b4f62aa39cf08081ec2252b9d5e03359b",
+    "revision": "6963a757e41cb10f0915c343d76c15670b8142dd",
     "complete": true,
-    "updated_at": "2026-11-11T10:56:35.100433109Z"
+    "updated_at": "2026-11-12T11:04:08.019947435Z"
   },
   {
     "url": "https://github.com/topscoder/nuclei-zero-day",
