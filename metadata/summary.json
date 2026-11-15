@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-11-14T10:24:41.402953763Z",
-  "total": 704349,
-  "compatible": 613645,
+  "generated_at": "2026-11-15T10:52:56.173360694Z",
+  "total": 704385,
+  "compatible": 613681,
   "incompatible": 90704,
-  "duplicates": 291137,
+  "duplicates": 291154,
   "categories": {
     "api": 15295,
-    "auth": 270788,
-    "cloud": 10156,
+    "auth": 270824,
+    "cloud": 10160,
     "cnvd": 1517,
-    "container": 1862,
-    "cve": 335583,
+    "container": 1866,
+    "cve": 335610,
     "detect": 65253,
     "exposure": 62194,
     "fuzz": 1234,
@@ -19,11 +19,11 @@
     "microsoft": 3388,
     "network": 11465,
     "other": 16733,
-    "rce": 54341,
+    "rce": 54337,
     "sqli": 8958,
     "ssrf": 4186,
     "upload": 19833,
-    "wordpress": 397958,
+    "wordpress": 397994,
     "xss": 30643,
     "xxe": 1005
   },
@@ -32,10 +32,10 @@
     "yaml_or_structure": 20829
   },
   "severities": {
-    "critical": 68208,
-    "high": 138199,
+    "critical": 68218,
+    "high": 138211,
     "info": 74628,
-    "low": 137106,
+    "low": 137120,
     "medium": 194832,
     "unknown": 672
   }
