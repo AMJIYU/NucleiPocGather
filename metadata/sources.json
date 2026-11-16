@@ -408,9 +408,9 @@
   {
     "url": "https://github.com/adampielak/nuclei-templates",
     "name": "adampielak__nuclei-templates",
-    "revision": "e131c20de37cbb554bd12d954f895f57d8c741d0",
+    "revision": "baa29504b3050dad0f50e45e192f35e834a24a30",
     "complete": true,
-    "updated_at": "2026-11-15T10:51:11.326192185Z"
+    "updated_at": "2026-11-16T11:13:44.059912469Z"
   },
   {
     "url": "https://github.com/aels/CVE-2022-37042",
@@ -548,9 +548,9 @@
   {
     "url": "https://github.com/daffainfo/my-nuclei-templates",
     "name": "daffainfo__my-nuclei-templates",
-    "revision": "4a4e4eb799be18d1098d6ea7a054ac4587fb79d5",
+    "revision": "3fc8f6ae581abb3351de5692ea5d62d7d299aacd",
     "complete": true,
-    "updated_at": "2026-11-09T11:28:42.187639559Z"
+    "updated_at": "2026-11-16T11:12:53.143941697Z"
   },
   {
     "url": "https://github.com/damon-sec/Nuclei-templates-Collection",
@@ -597,9 +597,9 @@
   {
     "url": "https://github.com/edoardottt/missing-cve-nuclei-templates",
     "name": "edoardottt__missing-cve-nuclei-templates",
-    "revision": "4e20682a666d8ed96d0cee15485fac7c160be5dc",
+    "revision": "d9bca5ea8c59a9243bd8bd5bd1c4b0800cfe940f",
     "complete": true,
-    "updated_at": "2026-10-27T09:14:40.35451892Z"
+    "updated_at": "2026-11-16T11:14:16.311371568Z"
   },
   {
     "url": "https://github.com/ekinsb/Nuclei-Templates",
@@ -877,9 +877,9 @@
   {
     "url": "https://github.com/projectdiscovery/nuclei-templates",
     "name": "projectdiscovery__nuclei-templates",
-    "revision": "fe25b057e93300d8f8b9ec1ed6f1c1ba4360e2a0",
+    "revision": "84e9c308bbdf0c26157a8fae4bb36f18e37ae691",
     "complete": true,
-    "updated_at": "2026-11-15T10:50:19.940102512Z"
+    "updated_at": "2026-11-16T11:12:42.630361357Z"
   },
   {
     "url": "https://github.com/ptyspawnbinbash/template-enhancer",
@@ -1108,9 +1108,9 @@
   {
     "url": "https://github.com/topscoder/nuclei-wordfence-cve",
     "name": "topscoder__nuclei-wordfence-cve",
-    "revision": "034a138bd590523ae8e8878330f20b23a1346954",
+    "revision": "2fb7b7648172049fab7a3d9eb866879c70815a53",
     "complete": true,
-    "updated_at": "2026-11-15T10:51:30.108690924Z"
+    "updated_at": "2026-11-16T11:14:08.817391453Z"
   },
   {
     "url": "https://github.com/topscoder/nuclei-zero-day",
