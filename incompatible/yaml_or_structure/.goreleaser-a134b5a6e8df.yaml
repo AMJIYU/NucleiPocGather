@@ -1,0 +1,62 @@
+version: 2
+
+# goreleaser v2 配置
+# 注意：v2 已移除 archives.replacements / snapshot.name_template；顶层校验文件键仍是 checksum
+release:
+  # Repo in which the release will be created.
+  # Default is extracted from the origin remote URL or empty if its private hosted.
+  github:
+    owner: hktalent
+    name: scan4all_Pro
+
+  draft: false
+  replace_existing_draft: true
+  target_commitish: '{{ .Commit }}'
+  discussion_category_name: General
+  mode: replace
+  header: |
+    ##  ({{ .Date }})
+    Welcome to use and promote
+  footer: |
+    ## Thanks!
+builds:
+  # cgo 必需：naabu 的 SYN 扫描依赖 libpcap（gopacket/pcap）
+  - env:
+      - CGO_ENABLED=1
+    goos: [windows, linux, darwin]
+    goarch: [amd64, 386, arm, arm64]
+    ignore:
+      - goos: darwin
+        goarch: 386
+      - goos: windows
+        goarch: arm
+      - goos: windows
+        goarch: arm64
+    flags:
+      - -trimpath
+    ldflags:
+      - -s -w -X main.Version={{ .Version }}
+archives:
+  - formats: [tar.gz]
+    format_overrides:
+      - goos: windows
+        formats: [zip]
+    name_template: >-
+      {{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}
+    files:
+      - LICENSE*
+      - README*
+      - config/**/*
+checksum:
+  name_template: 'checksums.txt'
+snapshot:
+  version_template: "{{ incpatch .Version }}-next"
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - db/GeoIP2-City.mmdb.zip
+      - testLeak.sh
+      - xxx.csv
+      - '^docs:'
+      - '^testnmanp:'
