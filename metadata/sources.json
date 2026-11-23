@@ -408,9 +408,9 @@
   {
     "url": "https://github.com/adampielak/nuclei-templates",
     "name": "adampielak__nuclei-templates",
-    "revision": "5f2d7eb88c2dac7a16dffc97199e34b3dbc98583",
+    "revision": "efe49822dd6cc0d20998360f8f31bfced4f11789",
     "complete": true,
-    "updated_at": "2026-11-22T11:19:27.159063797Z"
+    "updated_at": "2026-11-23T12:31:57.208386305Z"
   },
   {
     "url": "https://github.com/aels/CVE-2022-37042",
@@ -548,9 +548,9 @@
   {
     "url": "https://github.com/daffainfo/my-nuclei-templates",
     "name": "daffainfo__my-nuclei-templates",
-    "revision": "3fc8f6ae581abb3351de5692ea5d62d7d299aacd",
+    "revision": "1be4578a768eb2422db83e3bb0ad7e2d21b0d8b7",
     "complete": true,
-    "updated_at": "2026-11-16T11:12:53.143941697Z"
+    "updated_at": "2026-11-23T12:31:08.264771538Z"
   },
   {
     "url": "https://github.com/damon-sec/Nuclei-templates-Collection",
@@ -597,9 +597,9 @@
   {
     "url": "https://github.com/edoardottt/missing-cve-nuclei-templates",
     "name": "edoardottt__missing-cve-nuclei-templates",
-    "revision": "d9bca5ea8c59a9243bd8bd5bd1c4b0800cfe940f",
+    "revision": "8f7356a89ae34ed8c5c8dca519e1cbe335a4af23",
     "complete": true,
-    "updated_at": "2026-11-16T11:14:16.311371568Z"
+    "updated_at": "2026-11-23T12:32:18.018247102Z"
   },
   {
     "url": "https://github.com/ekinsb/Nuclei-Templates",
@@ -877,9 +877,9 @@
   {
     "url": "https://github.com/projectdiscovery/nuclei-templates",
     "name": "projectdiscovery__nuclei-templates",
-    "revision": "a346d8f00c61bf95bbd30365f12cf923be51ba3d",
+    "revision": "bb6ff085458720ec78f1cc3b4099625b8e77b763",
     "complete": true,
-    "updated_at": "2026-11-22T11:18:35.421437551Z"
+    "updated_at": "2026-11-23T12:30:59.103225886Z"
   },
   {
     "url": "https://github.com/ptyspawnbinbash/template-enhancer",
