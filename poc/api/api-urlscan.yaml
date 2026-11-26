@@ -1,0 +1,41 @@
+id: api-urlscan
+
+info:
+  name: URLScan API Test
+  author: daffainfo
+  severity: info
+  description: Scan and Analyse URLs
+  reference:
+    - https://urlscan.io/docs/api/
+    - https://github.com/daffainfo/all-about-apikey/tree/main/urlscan
+  metadata:
+    max-request: 1
+  tags: token-spray,urlscan
+
+self-contained: true
+
+http:
+  - raw:
+      - |
+        GET https://urlscan.io/user/quotas/ HTTP/1.1
+        Host: urlscan.io
+        Content-Type: application/json
+        API-Key: {{token}}
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - '"limits"'
+
+      - type: regex
+        part: body
+        regex:
+          - '"scope":\s*"ip-address"'
+        negative: true
+
+      - type: status
+        status:
+          - 200
+# digest: 4a0a0047304502204af2c2351b69bb8c1ce5c15f509db8120343e607148998af827d598d7b8a21b9022100f1d532c8477ce14d02237b159ccba0797c7811b57104c9c7d6aadbeaf43d50ac:922c64590222798bb761d5b6d8e72950
